@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP-Wissensdatenbank – Gesamtplan</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 12pt;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 40px;
+        }
+        h1 {
+            color: #003366;
+            font-size: 28pt;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 15px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #003366;
+            font-size: 20pt;
+            margin-top: 50px;
+            border-bottom: 2px solid #00A3E0;
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #00A3E0;
+            font-size: 16pt;
+            margin-top: 35px;
+        }
+        h4 {
+            color: #003366;
+            font-size: 13pt;
+            margin-top: 25px;
+        }
+        .subtitle {
+            font-size: 13pt;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .meta {
+            display: flex;
+            gap: 30px;
+            margin: 25px 0 35px 0;
+            padding: 15px 20px;
+            background: #f0f8ff;
+            border-radius: 8px;
+            border-left: 5px solid #00A3E0;
+            font-size: 11pt;
+        }
+        .meta span {
+            color: #555;
+        }
+        .meta strong {
+            color: #003366;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #003366;
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 10pt;
+            color: #c7254e;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 16px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 9.5pt;
+            line-height: 1.5;
+            margin: 20px 0;
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            color: inherit;
+        }
+        blockquote {
+            border-left: 5px solid #00A3E0;
+            margin: 20px 0;
+            padding: 12px 20px;
+            background-color: #f0f8ff;
+            border-radius: 0 8px 8px 0;
+        }
+        ul, ol {
+            margin: 12px 0;
+            padding-left: 30px;
+        }
+        li {
+            margin: 6px 0;
+        }
+        strong {
+            color: #003366;
+        }
+        a {
+            color: #00A3E0;
+            text-decoration: none;
+            border-bottom: 1px dotted #00A3E0;
+        }
+        a:hover {
+            border-bottom-style: solid;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #eee;
+            margin: 40px 0;
+        }
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #003366;
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13pt;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            z-index: 1000;
+            transition: background 0.2s;
+        }
+        .print-button:hover {
+            background-color: #00A3E0;
+        }
+        @media print {
+            .print-button, .no-print {
+                display: none !important;
+            }
+            body {
+                font-size: 11pt;
+                padding: 0;
+            }
+            pre {
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+            h2 {
+                page-break-before: always;
+            }
+            h2:first-of-type {
+                page-break-before: avoid;
+            }
+            table {
+                page-break-inside: avoid;
+            }
+            pre {
+                page-break-inside: avoid;
+            }
+        }
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 10pt;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 9pt;
+            font-weight: 600;
+            margin: 2px 2px;
+        }
+        .tag-green { background: #d4edda; color: #155724; }
+        .tag-blue { background: #cce5ff; color: #004085; }
+        .tag-yellow { background: #fff3cd; color: #856404; }
+        .tag-red { background: #f8d7da; color: #721c24; }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .card h4 {
+            margin-top: 0;
+        }
+        .diagram-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 10pt;
+            line-height: 1.4;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        .toc {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px 30px;
+            margin: 20px 0;
+        }
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .toc li {
+            margin: 6px 0;
+        }
+        .toc a {
+            border: none;
+        }
+        .phase {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            padding: 15px 20px;
+            border-left: 4px solid #00A3E0;
+            background: #f8f9fa;
+            border-radius: 0 8px 8px 0;
+        }
+        .phase-nr {
+            font-size: 24pt;
+            font-weight: 800;
+            color: #00A3E0;
+            min-width: 60px;
+            text-align: center;
+        }
+        .phase-content {
+            flex: 1;
+        }
+        .phase-content h4 {
+            margin: 0 0 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+<button class="print-button" onclick="window.print()">PDF erstellen</button>
+
+<h1>MCP-Wissensdatenbank</h1>
+<p class="subtitle">Architektur- und Umsetzungsplan f&uuml;r die Anbindung von Wissensquellen an Support-Ticketsysteme per MCP-Server</p>
+
+<div class="meta">
+    <span><strong>Projekt:</strong> engel&amp;engel gmbh</span>
+    <span><strong>Stand:</strong> Juli 2026</span>
+    <span><strong>Version:</strong> 1.0 (Entwurf)</span>
+</div>
+
+<div class="toc">
+    <h3>Inhaltsverzeichnis</h3>
+    <ul>
+        <li><a href="#ziel">1. Zielsetzung</a></li>
+        <li><a href="#architektur">2. Gesamtarchitektur</a></li>
+        <li><a href="#komponenten">3. Komponenten</a></li>
+        <li><a href="#mcp-tools">4. MCP-Tools</a></li>
+        <li><a href="#integration">5. Integration der Systeme</a></li>
+        <li><a href="#faq-extern">6. Externes FAQ-Portal</a></li>
+        <li><a href="#roadmap">7. Umsetzungsfahrplan</a></li>
+    </ul>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="ziel">1. Zielsetzung</h2>
+<!-- ============================================================ -->
+
+<p>Dieser Plan beschreibt die Architektur und Umsetzung eines <strong>MCP-Servers (Model Context Protocol)</strong>, der Support-Mitarbeitern den direkten Zugriff auf verschiedene Wissensquellen erm&ouml;glicht &ndash; ohne das Ticketsystem verlassen zu m&uuml;ssen.</p>
+
+<h3>Kernziele</h3>
+<ul>
+    <li><strong>Zentrale Wissensbasis:</strong> Support-Mitarbeiter greifen w&auml;hrend der Ticketbearbeitung auf Wissensdatenbanken zu</li>
+    <li><strong>Historische Daten nutzen:</strong> Das alte Ticketsystem wird als archivierte Datenquelle eingebunden</li>
+    <li><strong>MCP-Standard:</strong> Das neue Ticketsystem kommuniziert per MCP-Protokoll mit dem Wissensserver</li>
+    <li><strong>Multi-Source-Suche:</strong> Mehrere Wissenspools (Wiki, Runbooks, FAQ) werden zentral durchsuchbar</li>
+    <li><strong>Externes FAQ:</strong> Ein Kunden-FAQ-Portal hinter Login wird f&uuml;r Supporter erschlossen</li>
+</ul>
+
+<h3>Ausgangssituation</h3>
+<table>
+    <tr><th>System</th><th>Status</th><th>Herausforderung</th></tr>
+    <tr>
+        <td>Altes Ticketsystem</td>
+        <td><span class="tag tag-red">Wird abgeschafft</span></td>
+        <td>Historische Daten m&uuml;ssen erhalten und durchsuchbar bleiben</td>
+    </tr>
+    <tr>
+        <td>Neues Ticketsystem</td>
+        <td><span class="tag tag-green">Aktiv</span></td>
+        <td>Muss MCP-Client integrieren oder per Plugin angebunden werden</td>
+    </tr>
+    <tr>
+        <td>Interne Wissensdatenbank</td>
+        <td><span class="tag tag-blue">Vorhanden</span></td>
+        <td>Muss &uuml;ber Adapter an den MCP-Server angebunden werden</td>
+    </tr>
+    <tr>
+        <td>Externes FAQ-Portal</td>
+        <td><span class="tag tag-yellow">Geplant</span></td>
+        <td>Hinter Login &ndash; muss f&uuml;r Supporter erschlossen werden</td>
+    </tr>
+</table>
+
+
+<!-- ============================================================ -->
+<h2 id="architektur">2. Gesamtarchitektur</h2>
+<!-- ============================================================ -->
+
+<h3>&Uuml;bersicht</h3>
+
+<div class="diagram-box">
+                         Support-Mitarbeiter
+                        (im neuen Ticketsystem)
+                                  │
+                                  ▼
+                      Neues Ticketsystem
+                  ┌──────────────────────────┐
+                  │   MCP-Client integriert   │
+                  │  - Sendet Problemkontext  │
+                  │  - Erh&auml;lt L&ouml;sungsvorschl&auml;ge   │
+                  └──────────┬───────────────┘
+                             │ MCP-Protokoll (HTTP/JSON-RPC)
+                             ▼
+┌────────────────────────────────────────────────────────────┐
+│                   MCP-Wissensdatenbank-Server                │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐    │
+│  │              Orchestrierungsschicht                   │    │
+│  │  - MCP-Tools empfangen &amp; routen                     │    │
+│  │  - Authentifizierung (Bearer-Token)                  │    │
+│  │  - Caching (TTL)                                     │    │
+│  │  - Antworten vereinheitlichen                        │    │
+│  └──────────────────────┬──────────────────────────────┘    │
+│                         │                                    │
+│    ┌────────────────────┼────────────────────┐              │
+│    ▼                    ▼                    ▼              │
+│ ┌──────────┐    ┌──────────────┐    ┌──────────────┐       │
+│ │ KB-      │    │ Ticket-     │    │ FAQ-         │       │
+│ │ Adapter  │    │ History-    │    │ Adapter      │       │
+│ │          │    │ Adapter     │    │              │       │
+│ │ REST-API │    │ SQL/ES      │    │ API/Crawl    │       │
+│ │ Confluence│   │ (Read-only) │    │ (Auth)       │       │
+│ └────┬─────┘    └──────┬──────┘    └──────┬───────┘       │
+└──────┼─────────────────┼──────────────────┼───────────────┘
+       │                 │                  │
+       ▼                 ▼                  ▼
+┌──────────────┐ ┌──────────────┐ ┌──────────────────┐
+│  Interne     │ │  Exportierte  │ │  Externes FAQ-   │
+│  Wissensdaten│ │  Ticket-DB   │ │  Portal          │
+│  bank        │ │  (Read-only) │ │  (hinter Login)  │
+│  (Confluence/│ │              │ │                  │
+│   Wiki)      │ │  SQL/Dump    │ │  API o. Crawler  │
+└──────────────┘ └──────────────┘ └──────────────────┘
+</div>
+
+<h3>Technologie-Entscheidungen</h3>
+<table>
+    <tr><th>Aspekt</th><th>Entscheidung</th><th>Begr&uuml;ndung</th></tr>
+    <tr><td>Protokoll</td><td>MCP over HTTP (JSON-RPC 2.0)</td><td>Standard, einfaches Routing</td></tr>
+    <tr><td>Sprache</td><td>TypeScript (ESM)</td><td>Bew&auml;hrt in bestehenden MCP-Projekten</td></tr>
+    <tr><td>Framework</td><td>Express.js + MCP SDK</td><td>StreamableHTTP, erprobt</td></tr>
+    <tr><td>Datenbank</td><td>PostgreSQL</td><td>Volltextsuche, JSON-Support</td></tr>
+    <tr><td>Cache</td><td>Redis (optional)</td><td>H&auml;ufige Suchanfragen beschleunigen</td></tr>
+    <tr><td>Auth</td><td>Bearer-Token</td><td>Einfach, sicher, auditierbar</td></tr>
+    <tr><td>Deployment</td><td>Docker + Coolify</td><td>Bestehende Infrastruktur nutzen</td></tr>
+</table>
+
+
+<!-- ============================================================ -->
+<h2 id="komponenten">3. Komponenten</h2>
+<!-- ============================================================ -->
+
+<h3>3.1 MCP-Wissensdatenbank-Server</h3>
+
+<p>Der zentrale MCP-Server ist das Herzst&uuml;ck. Er nimmt Anfragen von MCP-Clients entgegen und liefert strukturierte Antworten.</p>
+
+<h4>Projektstruktur (Vorschlag)</h4>
+<pre>mcp-wissensdatenbank/
+├── src/
+│   ├── index.ts               # Einstiegspunkt (Express)
+│   ├── server.ts              # MCP-Transport (StreamableHTTP)
+│   ├── tools.ts               # Tool-Definitionen + Dispatch
+│   ├── auth.ts                # Token-Validierung
+│   ├── cache.ts               # TTL-Cache
+│   ├── adapters/
+│   │   ├── knowledge-base.ts  # Interne Wissensdatenbank
+│   │   ├── ticket-history.ts  # Altes Ticketsystem (Export)
+│   │   └── faq-external.ts    # Externes FAQ-Portal
+│   ├── pipelines/
+│   │   └── solution-suggest.ts# L&ouml;sungsvorschl&auml;ge aggregieren
+│   └── utils/
+│       ├── text-search.ts     # Volltextsuche-Helfer
+│       └── formatter.ts       # Antwort-Formatierung
+├── config/
+│   └── sources.json           # Datenquellen-Konfiguration
+├── Dockerfile
+├── .gitlab-ci.yml
+└── package.json</pre>
+
+<h3>3.2 Adapter &mdash; Interne Wissensdatenbank</h3>
+<table>
+    <tr><th>System</th><th>Adapter-Typ</th><th>Aufwand</th></tr>
+    <tr><td>Confluence</td><td>REST-API</td><td>Mittel</td></tr>
+    <tr><td>BookStack</td><td>REST-API</td><td>Gering</td></tr>
+    <tr><td>MediaWiki</td><td>REST-API</td><td>Gering</td></tr>
+    <tr><td>Markdown-Dateien (Git)</td><td>File-Reader mit Index</td><td>Gering</td></tr>
+    <tr><td>Eigenes Wiki</td><td>SQL-Direktzugriff</td><td>Mittel</td></tr>
+</table>
+
+<h3>3.3 Adapter &mdash; Altes Ticketsystem</h3>
+<p>Das alte Ticketsystem wird abgeschaltet. Die historischen Daten m&uuml;ssen exportiert und f&uuml;r die Suche erschlossen werden.</p>
+<ol>
+    <li><strong>Vollexport</strong> des alten Ticketsystems (CSV, SQL-Dump, JSON)</li>
+    <li><strong>Datenbereinigung</strong> und Normalisierung</li>
+    <li><strong>Import</strong> in eine Suchdatenbank (PostgreSQL / Elasticsearch)</li>
+    <li><strong>Read-only-Zugriff</strong> &uuml;ber den MCP-Server</li>
+</ol>
+
+<div class="card">
+    <h4>Wichtiger Hinweis</h4>
+    <p>Der Export dient ausschlie&szlig;lich der Referenz. Neue Tickets werden nur im neuen System erstellt. Es gibt keine Live-Synchronisation &ndash; der Export ist ein einmaliger Snapshot.</p>
+</div>
+
+
+<!-- ============================================================ -->
+<h2 id="mcp-tools">4. MCP-Tools</h2>
+<!-- ============================================================ -->
+
+<table>
+    <tr><th>Tool</th><th>Beschreibung</th><th>Datenquelle</th></tr>
+    <tr>
+        <td><code>kb_search</code></td>
+        <td>Volltextsuche in der Wissensdatenbank</td>
+        <td>Interne KB</td>
+    </tr>
+    <tr>
+        <td><code>kb_get_article</code></td>
+        <td>Einzelnen Artikel abrufen</td>
+        <td>Interne KB</td>
+    </tr>
+    <tr>
+        <td><code>kb_list_categories</code></td>
+        <td>Kategorien/Ordnerstruktur auflisten</td>
+        <td>Interne KB</td>
+    </tr>
+    <tr>
+        <td><code>ticket_search_history</code></td>
+        <td>Historische Tickets durchsuchen</td>
+        <td>Altes Ticketsystem (Export)</td>
+    </tr>
+    <tr>
+        <td><code>ticket_get_history</code></td>
+        <td>Einzelnes historisches Ticket abrufen</td>
+        <td>Altes Ticketsystem (Export)</td>
+    </tr>
+    <tr>
+        <td><code>faq_search</code></td>
+        <td>FAQ durchsuchen</td>
+        <td>Internes FAQ</td>
+    </tr>
+    <tr>
+        <td><code>faq_search_external</code></td>
+        <td>Externes FAQ-Portal durchsuchen</td>
+        <td>Externes Portal (via API/Scrape)</td>
+    </tr>
+    <tr>
+        <td><code>solution_suggest</code></td>
+        <td>L&ouml;sungsvorschl&auml;ge zu Problembeschreibung</td>
+        <td>Alle Quellen (aggregiert)</td>
+    </tr>
+</table>
+
+<h3>Solutions-Pipeline</h3>
+<p>Die <code>solution_suggest</code>-Pipeline aggregiert Ergebnisse aus allen Quellen und gewichtet sie:</p>
+
+<div class="diagram-box">Problem-Beschreibung
+        │
+        ▼
+┌───────────────────┐
+│  Parallele Suche   │
+│  in allen Quellen  │
+│                    │
+│  - KB-Artikel      │
+│  - Hist. Tickets   │
+│  - FAQ             │
+│  - Externes FAQ    │
+└─────────┬──────────┘
+          │
+          ▼
+┌───────────────────┐
+│  Ranking &amp; Merge  │
+│                    │
+│  1. KB-Artikel     │
+│  2. FAQ-Treffer    │
+│  3. Hist. Tickets  │
+└─────────┬──────────┘
+          │
+          ▼
+┌───────────────────┐
+│  Antwort an Client │
+│  (Top-5 Ergebnisse │
+│   mit Quelle/Link) │
+└───────────────────┘</div>
+
+<h4>Ranking-Faktoren</h4>
+<table>
+    <tr><th>Faktor</th><th>Gewicht</th><th>Beschreibung</th></tr>
+    <tr><td>Keyword-&Uuml;bereinstimmung</td><td>40 %</td><td>Wie viele Suchbegriffe werden gefunden</td></tr>
+    <tr><td>Aktualit&auml;t</td><td>20 %</td><td>Neuere Artikel/Aktualisierungen</td></tr>
+    <tr><td>Kategorie-&Uuml;bereinstimmung</td><td>20 %</td><td>Gleiche Kategorie wie Ticket</td></tr>
+    <tr><td>Nutzer-Bewertung</td><td>10 %</td><td>Wie hilfreich wurde der Artikel bewertet</td></tr>
+    <tr><td>Quelle</td><td>10 %</td><td>Vertrauensw&uuml;rdigkeit der Quelle</td></tr>
+</table>
+
+
+<!-- ============================================================ -->
+<h2 id="integration">5. Integration der Systeme</h2>
+<!-- ============================================================ -->
+
+<h3>5.1 Altes Ticketsystem &rarr; MCP-Server</h3>
+<div class="diagram-box">Altes Ticketsystem ──▶ Datenexport ──▶ Suchindex ──▶ MCP-Server
+(wird abgeschafft)    (CSV/SQL/JSON)  (PG/ES)      ticket_search_history()</div>
+<p>Der Export ist ein <strong>einmaliger Snapshot</strong>. Nach erfolgreicher Migration wird das alte System abgeschaltet.</p>
+
+<h3>5.2 Neues Ticketsystem &rarr; MCP-Client</h3>
+<table>
+    <tr><th>Methode</th><th>Beschreibung</th><th>Aufwand</th></tr>
+    <tr><td>Native MCP-Unterst&uuml;tzung</td><td>Ticketsystem hat natives MCP-Client-Interface</td><td>Gering</td></tr>
+    <tr><td>Browser-Plugin</td><td>MCP-Client als Browser-Erweiterung</td><td>Mittel</td></tr>
+    <tr><td>Custom Widget</td><td>Eigenes UI-Element in der Ticket-Oberfl&auml;che</td><td>Hoch</td></tr>
+    <tr><td>Slash-Command</td><td><code>/kb &lt;suche&gt;</code> im Ticket-Editor</td><td>Gering</td></tr>
+</table>
+
+<h3>5.3 Wissenspools im &Uuml;berblick</h3>
+<table>
+    <tr><th>Quelle</th><th>Typ</th><th>Inhalt</th><th>Priorit&auml;t</th></tr>
+    <tr><td>Interne Wissensdatenbank</td><td>Strukturiert</td><td>Technische Artikel, Anleitungen</td><td><span class="tag tag-green">Hoch</span></td></tr>
+    <tr><td>Historische Tickets</td><td>Archiv</td><td>Gel&ouml;ste Probleme, L&ouml;sungen</td><td><span class="tag tag-green">Hoch</span></td></tr>
+    <tr><td>FAQ (intern)</td><td>Strukturiert</td><td>H&auml;ufige Fragen</td><td><span class="tag tag-blue">Mittel</span></td></tr>
+    <tr><td>Externes FAQ-Portal</td><td>Web (hinter Login)</td><td>Kunden-FAQ</td><td><span class="tag tag-blue">Mittel</span></td></tr>
+    <tr><td>Runbooks/SOPs</td><td>Markdown/Git</td><td>Standardvorgehen</td><td><span class="tag tag-blue">Mittel</span></td></tr>
+    <tr><td>Hersteller-Dokumentation</td><td>Web/PDF</td><td>Vendor-Docs</td><td><span class="tag tag-yellow">Niedrig</span></td></tr>
+</table>
+
+<h3>5.4 Authentifizierung</h3>
+<table>
+    <tr><th>Bereich</th><th>Ma&szlig;nahme</th></tr>
+    <tr><td>MCP-Server Zugriff</td><td>Bearer-Token pro Client (Ticketsystem, Browser, CLI)</td></tr>
+    <tr><td>Token-Scopes</td><td>Feingranulare Rechte (z.B. nur <code>kb_search</code>, kein <code>ticket_search_history</code>)</td></tr>
+    <tr><td>Externes FAQ</td><td>MCP-Server authentisiert sich gegen&uuml;ber Portal (API-Key/JWT/Basic)</td></tr>
+    <tr><td>Transport</td><td>HTTPS-only (TLS 1.3)</td></tr>
+    <tr><td>Rate-Limiting</td><td>100 Requests/Minute pro IP und Token</td></tr>
+    <tr><td>Audit-Log</td><td>Jede Suche wird geloggt (wer, wann, was)</td></tr>
+</table>
+
+
+<!-- ============================================================ -->
+<h2 id="faq-extern">6. Externes FAQ-Portal</h2>
+<!-- ============================================================ -->
+
+<h3>Konzept</h3>
+<p>Ein externes FAQ-Portal bietet Kunden selbstst&auml;ndige Hilfe zu h&auml;ufigen Problemen. Das Portal liegt <strong>hinter einer Authentifizierung</strong> (Login-Bereich). Support-Mitarbeiter sollen dieses FAQ ebenfalls durchsuchen k&ouml;nnen &ndash; ohne sich separat einzuloggen. Der MCP-Server &uuml;bernimmt die Authentifizierung transparent.</p>
+
+<h3>Anbindungsvarianten</h3>
+<table>
+    <tr><th>Variante</th><th>Beschreibung</th><th>Vorteile</th><th>Nachteile</th><th>Empfehlung</th></tr>
+    <tr>
+        <td><strong>A: REST-API</strong></td>
+        <td>FAQ-Portal bietet API f&uuml;r Suche</td>
+        <td>Sauber, schnell, wenig Ressourcen</td>
+        <td>API muss vom Portal bereitgestellt werden</td>
+        <td><span class="tag tag-green">Beste L&ouml;sung</span></td>
+    </tr>
+    <tr>
+        <td><strong>B: Headless-Browser</strong></td>
+        <td>Playwright crawlt die FAQ-Seiten</td>
+        <td>Keine API n&ouml;tig</td>
+        <td>Langsam, wartungsintensiv</td>
+        <td><span class="tag tag-yellow">Fallback</span></td>
+    </tr>
+    <tr>
+        <td><strong>C: Regelm&auml;&szlig;iger Export</strong></td>
+        <td>FAQ-Export (XML/JSON) wird importiert</td>
+        <td>Einfach, performant</td>
+        <td>Nicht tagesaktuell</td>
+        <td><span class="tag tag-blue">MVP-Phase</span></td>
+    </tr>
+</table>
+
+<h3>Empfohlenes Vorgehen</h3>
+<div class="phase">
+    <div class="phase-nr">1</div>
+    <div class="phase-content">
+        <h4>MVP: Export (Variante C)</h4>
+        <p>Schnell umsetzbar, keine API n&ouml;tig. Daten werden t&auml;glich importiert (max. 24h alt).</p>
+    </div>
+</div>
+<div class="phase">
+    <div class="phase-nr">2</div>
+    <div class="phase-content">
+        <h4>Optimierung: REST-API (Variante A)</h4>
+        <p>Sobald das FAQ-Portal eine API bereitstellt, wird der Export durch Live-API ersetzt.</p>
+    </div>
+</div>
+<div class="phase">
+    <div class="phase-nr">3</div>
+    <div class="phase-content">
+        <h4>Stabilit&auml;t: Hybrid (API + Export)</h4>
+        <p>API als Prim&auml;rquelle, Export als Fallback bei Nichterreichbarkeit.</p>
+    </div>
+</div>
+
+
+<!-- ============================================================ -->
+<h2 id="roadmap">7. Umsetzungsfahrplan</h2>
+<!-- ============================================================ -->
+
+<h3>&Uuml;bersicht &ndash; 11 Wochen</h3>
+
+<div class="phase">
+    <div class="phase-nr">1</div>
+    <div class="phase-content">
+        <h4>Basis &middot; Woche 1&ndash;2</h4>
+        <p>MCP-Server-Grundger&uuml;st: Express + MCP-SDK + Auth + CI/CD + Docker + Deployment</p>
+        <p><strong>Ergebnis:</strong> Lauff&auml;higer MCP-Server mit Auth, aber ohne Datenquellen.</p>
+    </div>
+</div>
+
+<div class="phase">
+    <div class="phase-nr">2</div>
+    <div class="phase-content">
+        <h4>Wissensdatenbank &middot; Woche 3&ndash;6</h4>
+        <p>Datenmodell, PostgreSQL, <code>kb_search</code>/<code>kb_get_article</code>/<code>kb_list_categories</code>, Ticket-Export + Import, <code>ticket_search_history</code>/<code>ticket_get_history</code></p>
+        <p><strong>Ergebnis:</strong> Suche in Wissensdatenbank + historischen Tickets.</p>
+    </div>
+</div>
+
+<div class="phase">
+    <div class="phase-nr">3</div>
+    <div class="phase-content">
+        <h4>FAQ-Integration &middot; Woche 7&ndash;9</h4>
+        <p>Internes FAQ identifizieren, externes FAQ-Portal analysieren, <code>faq_search</code>/<code>faq_search_external</code>/<code>solution_suggest</code></p>
+        <p><strong>Ergebnis:</strong> L&ouml;sungsvorschl&auml;ge aus allen Quellen.</p>
+    </div>
+</div>
+
+<div class="phase">
+    <div class="phase-nr">4</div>
+    <div class="phase-content">
+        <h4>Optimierung &middot; Woche 10&ndash;11</h4>
+        <p>Caching, Ranking, Audit-Log, Rate-Limiting, Monitoring, Lasttest, Rollout, Schulung</p>
+        <p><strong>Ergebnis:</strong> Produktionsreifer MCP-Server mit Monitoring.</p>
+    </div>
+</div>
+
+<h3>Ressourcenabsch&auml;tzung</h3>
+<table>
+    <tr><th>Rolle</th><th>Tage</th><th>Phasen</th></tr>
+    <tr><td>Backend-Entwickler (TypeScript)</td><td>25</td><td>Phase 1&ndash;4</td></tr>
+    <tr><td>Datenbank/DevOps</td><td>10</td><td>Phase 2 + 4</td></tr>
+    <tr><td>FAQ-Portal-Integration</td><td>8</td><td>Phase 3</td></tr>
+    <tr><td>Projektleitung/Koordination</td><td>5</td><td>Begleitend</td></tr>
+    <tr><td><strong>Gesamt</strong></td><td><strong>48 PT</strong></td><td><strong>11 Wochen</strong></td></tr>
+</table>
+
+<h3>Infrastruktur-Kosten (mtl.)</h3>
+<table>
+    <tr><th>Ressource</th><th>Kosten</th><th>Anmerkung</th></tr>
+    <tr><td>Docker-Host (Coolify)</td><td>—</td><td>Bereits vorhanden</td></tr>
+    <tr><td>PostgreSQL</td><td>~5 &euro;/mtl.</td><td>Oder vorhandene Instanz nutzen</td></tr>
+    <tr><td>Redis (optional)</td><td>~3 &euro;/mtl.</td><td>F&uuml;r Caching</td></tr>
+    <tr><td><strong>Gesamt</strong></td><td><strong>~8 &euro;/mtl.</strong></td><td></td></tr>
+</table>
+
+<h3>Detaillierte Aufgaben</h3>
+<table>
+    <tr><th>Phase</th><th>Aufgabe</th><th>Dauer</th></tr>
+    <tr><td rowspan="7">1. Basis</td><td>Git-Projekt anlegen (mcp-wissensdatenbank)</td><td>1 Tag</td></tr>
+    <tr><td>MCP-Server-Skeleton (Express + MCP-SDK + Auth)</td><td>3 Tage</td></tr>
+    <tr><td>Health-/Metrics-Endpunkt</td><td>1 Tag</td></tr>
+    <tr><td>CI/CD-Pipeline (.gitlab-ci.yml + Docker)</td><td>2 Tage</td></tr>
+    <tr><td>Deployment auf Coolify</td><td>1 Tag</td></tr>
+    <tr><td>Basis-Tests (Tool-Count, Smoke-Test)</td><td>1 Tag</td></tr>
+    <tr><td>Dokumentation (README, AGENTS.md)</td><td>1 Tag</td></tr>
+    <tr><td colspan="3"></td></tr>
+    <tr><td rowspan="12">2. Wissensdatenbank</td><td>Datenmodell f&uuml;r Wissensartikel definieren</td><td>2 Tage</td></tr>
+    <tr><td>PostgreSQL-Tabellen + Indexe</td><td>1 Tag</td></tr>
+    <tr><td>kb_search-Tool implementieren</td><td>2 Tage</td></tr>
+    <tr><td>kb_get_article-Tool implementieren</td><td>1 Tag</td></tr>
+    <tr><td>kb_list_categories-Tool implementieren</td><td>1 Tag</td></tr>
+    <tr><td>Wissensdatenbank-Bef&uuml;llung</td><td>3 Tage</td></tr>
+    <tr><td>Altes Ticketsystem exportieren</td><td>2 Tage</td></tr>
+    <tr><td>Export bereinigen + normalisieren</td><td>3 Tage</td></tr>
+    <tr><td>Hist. Tickets in Suchindex importieren</td><td>2 Tage</td></tr>
+    <tr><td>ticket_search_history-Tool</td><td>2 Tage</td></tr>
+    <tr><td>ticket_get_history-Tool</td><td>1 Tag</td></tr>
+    <tr><td>Integrationstests</td><td>2 Tage</td></tr>
+    <tr><td colspan="3"></td></tr>
+    <tr><td rowspan="7">3. FAQ</td><td>Internes FAQ identifizieren + exportieren</td><td>2 Tage</td></tr>
+    <tr><td>faq_search-Tool implementieren</td><td>2 Tage</td></tr>
+    <tr><td>Externes FAQ-Portal analysieren</td><td>2 Tage</td></tr>
+    <tr><td>FAQ-Export/-Import (Var. C)</td><td>2 Tage</td></tr>
+    <tr><td>FAQ-API-Adapter (Var. A)</td><td>3 Tage</td></tr>
+    <tr><td>faq_search_external-Tool</td><td>2 Tage</td></tr>
+    <tr><td>solution_suggest-Pipeline</td><td>3 Tage</td></tr>
+    <tr><td colspan="3"></td></tr>
+    <tr><td rowspan="7">4. Optimierung</td><td>Caching-Strategie (TTL)</td><td>2 Tage</td></tr>
+    <tr><td>Ranking verbessern (Feedback-Loop)</td><td>2 Tage</td></tr>
+    <tr><td>Audit-Log</td><td>1 Tag</td></tr>
+    <tr><td>Rate-Limiting konfigurieren</td><td>1 Tag</td></tr>
+    <tr><td>Monitoring (Prometheus)</td><td>1 Tag</td></tr>
+    <tr><td>Lasttest (k6 / autocannon)</td><td>2 Tage</td></tr>
+    <tr><td>Rollout + Supporter-Schulung</td><td>2 Tage</td></tr>
+</table>
+
+<hr>
+
+<div class="footer">
+    <p><strong>engel&amp;engel gmbh</strong> | MCP-Wissensdatenbank-Plan | Stand: Juli 2026</p>
+    <p>Zum Speichern als PDF: Auf &bdquo;PDF erstellen&ldquo; klicken oder Strg+P / Cmd+P &rarr; Als PDF speichern</p>
+</div>
+
+</body>
+</html>
