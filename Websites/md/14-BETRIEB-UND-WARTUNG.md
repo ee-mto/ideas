@@ -10,6 +10,7 @@ Betrieben wird **ein System**: der VPS mit Coolify, GitLab Runner und den Auslie
 | **Coolify** | Version, Container, Domains, TLS-Zertifikate, Deployments |
 | **GitLab + Runner** | Runner-Image, Secrets, Pipeline-Status, Repository-Backups |
 | **Auslieferung** (Caddy/Traefik) | Cache, Security-Header, Ausfallsicherheit |
+| **Domains und DNS** (Hetzner) | Zonen und Einträge je Praxis, API-Token, Ablaufüberwachung |
 
 ## 2. Deployment-Workflow
 
@@ -17,7 +18,7 @@ Betrieben wird **ein System**: der VPS mit Coolify, GitLab Runner und den Auslie
 | --- | --- |
 | Sprechzeiten, Aktuelles | Praxis meldet → Praxis-Repository anpassen → Commit → Pipeline baut → Coolify deployt |
 | Design/Theme | Theme-Repository anpassen → Staging-Build über alle Praxen → Freigabe → Ausrollen |
-| Neue Praxis | Repository anlegen, Theme binden, Domain in Coolify hinterlegen, DNS umstellen, Pipeline |
+| Neue Praxis | Domain registrieren, DNS-Zone per API anlegen, Einträge aus dem Deployment setzen, Domain in Coolify hinterlegen, Pipeline |
 | Notfall | Coolify auf das vorherige Deployment zurückstellen oder Commit reverten |
 
 ## 3. Monitoring

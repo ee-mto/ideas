@@ -33,7 +33,8 @@ Statische Website (HTML/CSS/JS) ohne Redaktionssystem und ohne Datenbank, zentra
 | Baustein | Rolle |
 | --- | --- |
 | **GitLab** | Repositories und Pipeline: Theme und Praxis-Daten versioniert, Builds reproduzierbar, Änderungen rückholbar |
-| **Neuer VPS** (Terra Cloud, deutsches Rechenzentrum) | Rechenleistung für Build und Auslieferung, DSGVO-konform |
+| **Neuer VPS** (Hetzner Cloud oder Terra Cloud, deutsches Rechenzentrum) | Rechenleistung für Build und Auslieferung, DSGVO-konform |
+| **Domains und DNS** (Hetzner) | Registrierung über Hetzner; Zonen und Einträge kostenlos per API — damit wird jede neue Praxis automatisiert ausgerollt |
 | **Coolify** | Deployment, Domains, SSL-Zertifikate, Container |
 
 Eine Praxis ist damit kein eigenes Hosting-Paket mehr, sondern ein Repository plus Domain auf einer gemeinsamen, zentral betriebenen Plattform.
@@ -45,7 +46,7 @@ Eine Praxis ist damit kein eigenes Hosting-Paket mehr, sondern ein Repository pl
 | Posten | Größenordnung |
 | --- | --- |
 | VPS (Terra Cloud) inkl. Backup | ca. 30–80 €/Monat |
-| Domains (10 × ca. 12 €/Jahr) | ca. 10 €/Monat |
+| Domains (10 × ca. 12 €/Jahr, Hetzner; DNS kostenlos) | ca. 10 €/Monat |
 | KI-Nutzung (Claude, für Texte und Pflege) | ca. 20–120 €/Monat |
 | **Sachkosten gesamt** | **ca. 60–210 €/Monat** |
 | Arbeitszeit laufend | 8–15 Stunden/Monat |

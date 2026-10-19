@@ -7,7 +7,7 @@
 | Posten | Kosten | Anmerkung |
 | --- | --- | --- |
 | **VPS** (Terra Cloud) | ja | die einzige nennenswerte Infrastruktur |
-| Backup/Snapshots, Domains | ja | kleine Posten |
+| Backup/Snapshots, Domains | ja | kleine Posten — bei Hetzner ist die **DNS-Verwaltung kostenlos**, bezahlt wird nur die Registrierung |
 | **Coolify** | **0 €** | Open Source, selbst betrieben |
 | **GitLab** (Community Edition, selbst betrieben) | **0 €** | Open Source |
 | **Hugo** | **0 €** | Open Source |
@@ -22,7 +22,7 @@ Es gibt also **keine Lizenzkosten**: die Kosten sind ein Server, ein paar Domain
 | Posten | Größenordnung | Art |
 | --- | --- | --- |
 | VPS inkl. Backup (ein Server für alle Praxen) | ca. 30–80 €/Monat | laufend |
-| Domains (10 × ca. 12 €/Jahr) | ca. 10 €/Monat | laufend |
+| Domains (10 × ca. 12 €/Jahr, Registrierung bei Hetzner) | ca. 10 €/Monat | laufend |
 | Lizenzen (Coolify, GitLab, Hugo) | 0 € | – |
 | KI-Nutzung (Claude) | ca. 20–120 €/Monat | laufend |
 | **Sachkosten gesamt** | **ca. 60–210 €/Monat** | laufend |

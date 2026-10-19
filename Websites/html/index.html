@@ -149,9 +149,9 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
 </thead>
 <tbody>
 <tr>
-<td><strong>Terra Cloud (VPS)</strong></td>
-<td>Deutsches Rechenzentrum (Wortmann AG), Hosting der Management- und Delivery-Ebene</td>
-<td>Erfüllt strikte DSGVO-/BDSG-Auflagen für Mediziner; Serverstandort Deutschland ist ein wichtiges Verkaufsargument.</td>
+<td><strong>VPS</strong> (Hetzner Cloud oder Terra Cloud)</td>
+<td>Deutsches Rechenzentrum, Hosting der Management- und Delivery-Ebene</td>
+<td>Erfüllt strikte DSGVO-/BDSG-Auflagen für Mediziner; Serverstandort Deutschland ist ein wichtiges Verkaufsargument. Bei Hetzner kommen Domains und DNS über dieselbe API dazu (Kapitel 11).</td>
 </tr>
 <tr>
 <td><strong>Coolify (v4)</strong></td>
@@ -1261,9 +1261,9 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
 <td>Theme und Praxis-Daten sind versioniert, Builds reproduzierbar, Änderungen nachvollziehbar und rückholbar</td>
 </tr>
 <tr>
-<td><strong>Neuer VPS</strong> (Terra Cloud, deutsches Rechenzentrum)</td>
+<td><strong>Neuer VPS</strong> (Hetzner Cloud oder Terra Cloud, deutsches Rechenzentrum)</td>
 <td>Rechenleistung für Build und Auslieferung</td>
-<td>DSGVO-/BDSG-konform; der Serverstandort Deutschland ist ein Verkaufsargument</td>
+<td>DSGVO-/BDSG-konform; Serverstandort Deutschland ist ein Verkaufsargument, Hetzner bringt zusätzlich eine durchgängige API mit</td>
 </tr>
 <tr>
 <td><strong>Coolify</strong></td>
@@ -1295,7 +1295,43 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
 </tr>
 </tbody>
 </table>
-<h2>3. Ablauf einer Änderung</h2>
+<h2>3. Domains und DNS</h2>
+<p>Die Domains werden bei <strong>Hetzner</strong> registriert und verwaltet. Der entscheidende Vorteil: Hetzner stellt für <strong>DNS-Zonen und DNS-Einträge eine vollständige REST-API</strong> bereit — kostenlos und ohne Zusatzvertrag.</p>
+<table>
+<thead>
+<tr>
+<th>Aufgabe</th>
+<th>Weg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Domain registrieren und verlängern</td>
+<td>Hetzner Console bzw. Domain Registration Robot (E-Mail-Schnittstelle, keine REST-API)</td>
+</tr>
+<tr>
+<td>DNS-Zone anlegen</td>
+<td>REST-API, Console oder CLI</td>
+</tr>
+<tr>
+<td>DNS-Einträge pflegen (A, AAAA, MX, TXT, CAA …)</td>
+<td>REST-API je Praxis — im Deployment automatisierbar</td>
+</tr>
+<tr>
+<td>TLS-Zertifikate</td>
+<td>Coolify (Let's Encrypt) übernimmt Validierung und Erneuerung</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Praktischer Nutzen:</strong> Beim Onboarding einer Praxis entstehen die DNS-Einträge (Website, <code>www</code>, Mail, Verifizierungen) automatisch aus dem Deployment — kein Klicken in einem fremden Panel, keine Übertragungsfehler.</p>
+<p><strong>Grenzen, die man kennen sollte:</strong></p>
+<ul>
+<li>Standardmäßig <strong>25 Zonen</strong> (über ein Support-Ticket erhöhbar), <strong>500 Records je Zone</strong>.</li>
+<li><strong>DNSSEC wird derzeit nicht unterstützt.</strong></li>
+<li>Die Registrierung selbst läuft nicht über die REST-API — sie ist ein einmaliger Schritt im Onboarding.</li>
+</ul>
+<p><strong>Wichtig bei Praxen mit bestehender Website:</strong> MX-Einträge (Mail) dürfen beim Umzug nicht überschrieben werden; der Mail-Umzug wird getrennt geplant (Kapitel 03).</p>
+<h2>4. Ablauf einer Änderung</h2>
 <pre><code class="language-text">Commit (Theme oder Praxis-Daten)
         |
         v
@@ -1307,9 +1343,9 @@ Artefakt (fertige statische Seiten)
         v
 Coolify-Webhook -&gt; Container aktualisieren -&gt; live
 </code></pre>
-<h2>4. Hugo als Generator</h2>
+<h2>5. Hugo als Generator</h2>
 <p>Hugo erzeugt aus Theme und Praxis-Daten die fertigen Seiten — in Millisekunden und ohne Laufzeitumgebung auf dem Webserver. Das Theme wird als Git-Submodule oder Hugo-Modul in fester Version je Praxis gebunden, damit ein Update eine bewusste Entscheidung bleibt (Kapitel 02).</p>
-<h2>5. Warum kein Redaktionssystem</h2>
+<h2>6. Warum kein Redaktionssystem</h2>
 <p>Die Pflege läuft <strong>zentral über engel&amp;engel</strong>. Die Praxis meldet Änderungen, wir setzen sie um — damit entfällt eine Redaktionsoberfläche vollständig.</p>
 <table>
 <thead>
@@ -1354,23 +1390,60 @@ Coolify-Webhook -&gt; Container aktualisieren -&gt; live
 </table>
 <p><strong>Der Nachteil wird bewusst getragen:</strong> Änderungen kosten die Praxis eine Meldung und uns Arbeitszeit — deshalb braucht das Modell ein definiertes Kontingent und klare Reaktionszeiten. Im Gegenzug bleibt die Verantwortung für Rechtssicherheit und Qualität an einer Stelle.</p>
 <p><strong>Was die Praxis trotzdem kann:</strong> jederzeit Änderungen melden — per Telefon oder formloser E-Mail, ohne Formulare, ohne Login, mit Eingangsbestätigung.</p>
-<h2>6. Anforderungen an den VPS</h2>
+<h2>7. Anforderungen an den VPS</h2>
 <ul>
 <li><strong>Build ist CPU-lastig, Auslieferung ist leicht:</strong> die Dimensionierung richtet sich nach der Zahl der Praxen und der Häufigkeit von Theme-Builds, nicht nach dem Traffic.</li>
 <li><strong>Speicher:</strong> Praxis-Repositories und Build-Artefakte sind klein; Backups brauchen mehr Platz als die Daten selbst.</li>
 <li><strong>Getrennte Umgebungen:</strong> Vorschau/Staging und Produktion getrennt halten, Vorschauen zugriffsgeschützt und nicht indexierbar.</li>
 <li><strong>Reserve einplanen:</strong> Wachstum entsteht durch Praxen, nicht durch Lastspitzen.</li>
 </ul>
-<h2>7. Konsequenzen</h2>
+<h2>8. Konsequenzen</h2>
 <ul>
 <li><strong>Ein System zu betreiben:</strong> VPS, Coolify, Runner und Container brauchen Updates, Monitoring und Backups (Kapitel 14).</li>
 <li><strong>Ausfallkonzentration:</strong> fällt der VPS aus, sind alle Praxen offline — dafür braucht es einen dokumentierten Notfallplan (Kapitel 14).</li>
-<li><strong>Know-how:</strong> Hugo, GitLab CI, Docker und Coolify müssen im Haus beherrscht werden.</li>
+<li><strong>Know-how:</strong> Hugo, GitLab CI, Docker, Coolify und die DNS-API müssen im Haus beherrscht werden.</li>
 <li><strong>Trennung bleibt:</strong> Theme, Praxis-Daten und Auslieferung sind getrennte Ebenen (Kapitel 01) — eine Theme-Änderung wirkt zentral, ohne die Praxis-Daten zu berühren.</li>
 </ul>
-<h2>8. Offene Punkte</h2>
+<h2>9. Ausblick: weitere Hetzner-Dienste</h2>
+<p>Fällt die Entscheidung auf Hetzner, liegen weitere Bausteine in derselben Umgebung — im deutschen Rechenzentrum und über dieselben Werkzeuge erreichbar. Für heute reicht der VPS; das hier ist nur ein Ausblick:</p>
+<table>
+<thead>
+<tr>
+<th>Dienst</th>
+<th>Möglicher Nutzen später</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Load Balancer</strong></td>
+<td>Auslieferung auf zwei Instanzen verteilen (Redundanz statt Klumpenrisiko)</td>
+</tr>
+<tr>
+<td><strong>Object Storage</strong> (S3-kompatibel)</td>
+<td>Backups und Build-Artefakte auslagern</td>
+</tr>
+<tr>
+<td><strong>Storage Box</strong></td>
+<td>Backups per Borg/Restic/rsync, 1–20 TB</td>
+</tr>
+<tr>
+<td><strong>Firewalls, private Netzwerke</strong></td>
+<td>Staging und Produktion sauber trennen</td>
+</tr>
+<tr>
+<td><strong>Snapshots/Backups</strong></td>
+<td>schnelle Wiederherstellung des VPS</td>
+</tr>
+<tr>
+<td><strong>Cloud-API, hcloud-CLI, Terraform</strong></td>
+<td>Infrastruktur als Code statt Klickarbeit</td>
+</tr>
+</tbody>
+</table>
+<h2>10. Offene Punkte</h2>
 <ol>
-<li>VPS-Größe und Anbieter final festlegen (Terra Cloud) und mit echten Preisen kalkulieren.</li>
+<li><strong>VPS-Anbieter final entscheiden:</strong> Hetzner Cloud (durchgängige API, großes Portfolio) oder Terra Cloud — mit echten Preisen kalkulieren.</li>
+<li><strong>Domains bei Hetzner registrieren</strong> und die DNS-Zonen per API an die Pipeline anbinden (Onboarding-Schritt).</li>
 <li>Das bestehende Praxistemplate als Hugo-Theme umsetzen (eigenes Arbeitspaket).</li>
 <li>Redundanz und Notfallkonzept festlegen: Wie werden die statischen Seiten ausgeliefert, wenn VPS oder Coolify ausfallen?</li>
 <li>Backup- und Wiederherstellungskonzept für Repositories, Theme und Secrets dokumentieren.</li>
@@ -1648,6 +1721,10 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 <td><strong>Auslieferung</strong> (Caddy/Traefik)</td>
 <td>Cache, Security-Header, Ausfallsicherheit</td>
 </tr>
+<tr>
+<td><strong>Domains und DNS</strong> (Hetzner)</td>
+<td>Zonen und Einträge je Praxis, API-Token, Ablaufüberwachung</td>
+</tr>
 </tbody>
 </table>
 <h2>2. Deployment-Workflow</h2>
@@ -1669,7 +1746,7 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 </tr>
 <tr>
 <td>Neue Praxis</td>
-<td>Repository anlegen, Theme binden, Domain in Coolify hinterlegen, DNS umstellen, Pipeline</td>
+<td>Domain registrieren, DNS-Zone per API anlegen, Einträge aus dem Deployment setzen, Domain in Coolify hinterlegen, Pipeline</td>
 </tr>
 <tr>
 <td>Notfall</td>
@@ -1892,7 +1969,7 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 <tr>
 <td>Backup/Snapshots, Domains</td>
 <td>ja</td>
-<td>kleine Posten</td>
+<td>kleine Posten — bei Hetzner ist die <strong>DNS-Verwaltung kostenlos</strong>, bezahlt wird nur die Registrierung</td>
 </tr>
 <tr>
 <td><strong>Coolify</strong></td>
@@ -1943,7 +2020,7 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 <td>laufend</td>
 </tr>
 <tr>
-<td>Domains (10 × ca. 12 €/Jahr)</td>
+<td>Domains (10 × ca. 12 €/Jahr, Registrierung bei Hetzner)</td>
 <td>ca. 10 €/Monat</td>
 <td>laufend</td>
 </tr>
