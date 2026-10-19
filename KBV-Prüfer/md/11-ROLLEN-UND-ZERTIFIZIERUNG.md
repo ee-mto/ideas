@@ -89,5 +89,4 @@ Die KBV bietet selbst keine Schulung und keine Musterfragen an; Vorbereitungskur
 - KBV-Antragsformular: https://www.kbv.de/documents/infothek/ita/antrag-zertifizierung-paragraf-390-sgb-v.pdf
 - KBV-Hub FAQ zur Zertifizierung: https://hub.kbv.de/spaces/itsrl/pages/67765477/FAQ
 - KBV-Verzeichnis zertifizierter Dienstleister: https://www.kbv.de/documents/infothek/ita/it-sicherheitsrichtlinie-zertifizierte-dienstleister-liste.pdf
-- KZBV IT-Sicherheit: https://www.kzbv.de/zahnaerzte/digitales/it%E2%80%90sicherheit/
 - § 390 SGB V: https://www.gesetze-im-internet.de/sgb_5/__390.html

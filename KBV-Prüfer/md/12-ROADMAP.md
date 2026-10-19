@@ -26,12 +26,11 @@ Vom Nachweis zur laufenden Betreuung. Die Reihenfolge ist bewusst so gewählt, d
 
 ## 3. Offene Fragen
 
-1. **Marktgröße** im eigenen Einzugsgebiet (Kapitel 09, Abschnitt 5) — zu erheben aus KBV-Statistik und KZBV-Jahrbuch.
-2. **Wer wird zertifiziert** — und wer die zweite Person? (Nachweise sind der langsamste Schritt.)
-3. **Verhältnis zum Website-Geschäft:** Dieselben Praxen sind Kunden beider Leistungen — Bündelung als Verkaufsvorteil nutzen?
-4. **Kooperation statt Konkurrenz:** Zusammenarbeit mit regionalen Systemhäusern, die die Netzwerktechnik vor Ort machen, während wir prüfen und dokumentieren?
-5. **Preisanker:** Einmal-Audit oder SLV als Einstieg bewerben? (Kapitel 01 und 08 legen den SLV als Ziel nahe.)
-6. **NIS-2-Begleitung** als eigene Leistung aufnehmen (nur für betroffene große Praxen/MVZ)?
+1. **Wer wird zertifiziert** — und wer die zweite Person? (Nachweise sind der langsamste Schritt.)
+2. **Verhältnis zum Website-Geschäft:** Dieselben Praxen sind Kunden beider Leistungen — Bündelung als Verkaufsvorteil nutzen?
+3. **Kooperation statt Konkurrenz:** Zusammenarbeit mit regionalen Systemhäusern, die die Netzwerktechnik vor Ort machen, während wir prüfen und dokumentieren?
+4. **Preisanker:** Einmal-Audit oder SLV als Einstieg bewerben? (Kapitel 01 und 08 legen den SLV als Ziel nahe.)
+5. **NIS-2-Begleitung** als eigene Leistung aufnehmen (nur für betroffene große Praxen/MVZ)?
 
 ## 4. Risiken
 

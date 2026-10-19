@@ -9,14 +9,13 @@ Dieses Kapitel fasst zusammen, worauf das Angebot aufsetzt: die **Richtlinie nac
 | **Bezeichnung** | „Richtlinie nach § 390 SGB V über die Anforderungen zur Gewährleistung der IT-Sicherheit" (IT-Sicherheitsrichtlinie der KBV) |
 | **Fassung** | veröffentlicht 31.03.2025, in Kraft seit 01.04.2025; ersetzt die Richtlinie nach § 75b SGB V vom 16.12.2020 |
 | **Übergangsfrist** | neu hinzugekommene Anforderungen gelten seit **01.10.2025** |
-| **Zahnärzte** | KBV und KZBV erlassen die Richtlinie gemeinsam; laut BSI ist die Fassung seit Oktober 2025 (KBV) bzw. Januar 2026 (KZBV) verbindlich |
 | **Umfang** | 19 Seiten; Teil A (Geltungsbereich, Praxisgrößen, Anforderungen), Teil B (Inkrafttreten), **fünf Anlagen** |
 | **Charakter** | beschreibt den Stand der technischen und organisatorischen Maßnahmen nach Art. 32 DSGVO — Vertraulichkeit, Integrität, Verfügbarkeit |
 
 ## 2. Rechtsgrundlage
 
 - **§ 390 SGB V** (vormals § 75b SGB V) verpflichtet die Kassenärztlichen Bundesvereinigungen, die Anforderungen festzulegen — im Einvernehmen mit dem BSI.
-- **§ 390 Abs. 6 SGB V:** Die Richtlinie ist für die an der vertragsärztlichen (und vertragszahnärztlichen) Versorgung teilnehmenden Leistungserbringer **verbindlich**. Sie gilt unabhängig davon, ob die Praxis an die Telematikinfrastruktur angebunden ist.
+- **§ 390 Abs. 6 SGB V:** Die Richtlinie ist für die an der vertragsärztlichen Versorgung teilnehmenden Leistungserbringer **verbindlich**. Sie gilt unabhängig davon, ob die Praxis an die Telematikinfrastruktur angebunden ist.
 - **§ 390 Abs. 4 SGB V:** Die Anforderungen müssen dem Stand der Technik entsprechen und spätestens alle zwei Jahre angepasst werden — die Richtlinie wird also weiterentwickelt (nächster Turnaround wäre bis April 2027).
 - **§ 390 Abs. 7 SGB V:** Die KBV **zertifiziert auf Antrag Mitarbeitende von IT-Anbietern** (Personenzertifizierung, siehe Kapitel 11).
 
@@ -25,7 +24,7 @@ Dieses Kapitel fasst zusammen, worauf das Angebot aufsetzt: die **Richtlinie nac
 - Verantwortlich ist der **Praxisinhaber**. Er kann die Umsetzung einzelner Anforderungen **delegieren** — die Verantwortung bleibt aber bei ihm.
 - Risiken können laut Präambel der Richtlinie ausdrücklich **an Dritte wie IT-Dienstleister übertragen** oder bewusst akzeptiert werden. Genau hier setzt das Risiko-Formular an (Kapitel 04).
 - Gegenüber der KV besteht **keine Nachweispflicht**; die KBV empfiehlt lediglich eine interne Dokumentation von Umsetzung und Kontrolle.
-- **Keine Praxis-Audits:** KBV und KZBV sehen derzeit keine Kontrollen in Form von Audits oder Praxisbegehungen vor. § 390 SGB V enthält keine eigenen Sanktionen — Sanktionen drohen über DSGVO, Straf- und Berufsrecht.
+- **Keine Praxis-Audits:** Die KBV sieht derzeit keine Kontrollen in Form von Audits oder Praxisbegehungen vor. § 390 SGB V enthält keine eigenen Sanktionen — Sanktionen drohen über DSGVO, Straf- und Berufsrecht.
 
 ## 4. Praxisgrößen und Anlagen
 
@@ -87,6 +86,5 @@ Für die Positionierung wichtig, weil es den kostenpflichtigen Teil scharf abgre
 - KBV-Seite IT-Sicherheit in der Praxis: https://www.kbv.de/praxis/digitalisierung/it-sicherheit
 - BSI-Pressemitteilung 14.07.2026 zu Cyberangriffen auf Praxen: https://www.bsi.bund.de/DE/Service-Navi/Presse/Pressemitteilungen/Presse2026/260714_Cyberangriffe_auf_Praxen.html
 - KBV PraxisInfo NIS-2: https://www.kbv.de/documents/infothek/publikationen/praxisinfo/praxisinfo-it-sicherheit-nis-2.pdf
-- KZBV IT-Sicherheit: https://www.kzbv.de/zahnaerzte/digitales/it%E2%80%90sicherheit/
 - KVWL-Umsetzungshilfe: https://www.kvwl.de/it-sicherheit
 - BSI-Kurzbroschüre IT-Sicherheit in Praxen: https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/Broschueren/Kurzbroschuere_IT-Sicherheit_Praxen.pdf

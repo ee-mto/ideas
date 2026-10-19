@@ -1,6 +1,6 @@
 # Das SLV-Konstrukt
 
-Der Service-Level-Vertrag (SLV) ist der Kern des Geschäftsmodells: Er wandelt ein einmaliges Audit in eine laufende Betreuung mit planbaren Erlösen — und er ist der Grund, warum das Jahres-Audit kostenlos enthalten sein kann.
+Der Service-Level-Vertrag (SLV) ist der Kern des Geschäftsmodells: Er wandelt ein einmaliges Audit in eine laufende Betreuung mit planbaren Erlösen — und er ist der Grund, warum der Pauschalpreis der Prüfung im SLV rabattiert werden kann.
 
 ## 1. Zweck und Logik
 
@@ -15,7 +15,7 @@ Der Service-Level-Vertrag (SLV) ist der Kern des Geschäftsmodells: Er wandelt e
 
 **Enthalten:**
 
-- **Jahres-Audit** (Paket S und M: einmal jährlich; Paket L: halbjährlich oder jährlich) — Prüfung und Dokumentation nach der KBV-IT-Sicherheitsrichtlinie
+- **Jahres-Prüfung** (Paket S und M: einmal jährlich; Paket L: halbjährlich oder jährlich) — Prüfung und Dokumentation nach der KBV-IT-Sicherheitsrichtlinie, **im SLV rabattiert**
 - **Maßnahmenplan mit Ampelsystem** (Rot = kritischer Verstoß gegen eine Muss-Vorgabe, Gelb = Empfehlung, Grün = erfüllt)
 - **Laufende Überwachung** der vereinbarten Systeme (Verfügbarkeit, Updates, Sicherheitsmeldungen)
 - **Dokumentation:** Pflege des IT-Sicherheitsordners (Kapitel 03) und der Nachweise für das Qualitätsmanagement der Praxis
@@ -54,13 +54,13 @@ Die konkreten Zeiten werden je Paket abgestuft (Premium kürzer) und im Vertrag 
 
 | | Nicht-SLV | SLV |
 | --- | --- | --- |
-| Audit | Festpreis (Kapitel 08) | im Vertrag enthalten |
+| Prüfung | Pauschalpreis (Kapitel 08) | **rabattierter Pauschalpreis** |
 | Mängelverfolgung | Praxis selbst | Dienstleister |
 | Dokumentation | einmalige Übergabe | laufend gepflegt |
 | Ansprechpartner | nach Aufwand | benannter Ansprechpartner |
 | Add-ons | einzeln buchbar | vergünstigt oder enthalten |
 
-**Anrechnung als Einstieg:** Entscheidet sich eine Praxis innerhalb von 4 Wochen nach einem bezahlten Audit für den SLV, werden 50 % (oder 100 %) der Audit-Kosten auf die ersten Monatsraten gutgeschrieben (Kapitel 01).
+**Rabatt als Einstieg:** Mit dem SLV wird der Pauschalpreis der Prüfung rabattiert (Kapitel 01). Die Höhe wird je Paket festgelegt und nach dem Pilot kalkuliert.
 
 ## 6. Haftung und Nachweis
 
@@ -70,9 +70,10 @@ Die konkreten Zeiten werden je Paket abgestuft (Premium kürzer) und im Vertrag 
 
 ## 7. Checkliste für das Vertragswerk
 
-- [ ] Leistungsumfang inklusive der enthaltenen Audits je Paketgröße (S/M/L) definiert
+- [ ] Leistungsumfang inklusive der rabattierten Prüfungen je Paketgröße (S/M/L) definiert
 - [ ] Reaktionszeiten je Priorität und Paket vereinbart
 - [ ] Abgrenzung „Prüfung und Dokumentation" vs. „Behebung" ausdrücklich formuliert
+- [ ] Rabatthöhe je Paket festgelegt und im Vertrag ausgewiesen
 - [ ] Laufzeit, Kündigungsfrist und Preisanpassung geregelt
 - [ ] Add-ons und Folgeprojekte mit Preislogik hinterlegt
 - [ ] Risiko-Formular als Anlage beigefügt

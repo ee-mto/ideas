@@ -73,7 +73,7 @@ Ein Audit beantwortet für die Praxis zwei Fragen: *Erfüllen wir die Anforderun
 3. **Aktualisierter Netzplan** (A1 Nr. 12)
 4. **Aktualisierter IT-Sicherheitsordner** (Kapitel 03)
 5. **Prüf-Siegel/Zertifikat** des Dienstleisters mit Gültigkeit von einem Jahr
-6. **Bei Nicht-SLV-Kunden:** Angebot zur Anrechnung der Auditkosten bei SLV-Abschluss (Kapitel 01)
+6. **Hinweis auf den SLV-Rabatt** für die nächste Prüfung (Kapitel 01)
 
 ## 6. Checkliste für den Auditstandard
 

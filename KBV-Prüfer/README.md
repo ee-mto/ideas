@@ -7,7 +7,7 @@
 
 ## Worum es geht
 
-Der Ansatz mit dem kostenlosen Jahres-Audit im Service-Level-Vertrag (SLV) und dem gestaffelten Festpreis für Nicht-Vertragskunden ist ein starkes Fundament: Er belohnt Bestandskunden, schafft einen konkreten Anreiz für den Abschluss eines SLV und senkt die Einstiegshürde für Neukunden. Um daraus ein vollständiges Portfolio nach § 390 SGB V zu bauen, wird das Modell auf vier Ebenen erweitert.
+Der Ansatz mit dem im Service-Level-Vertrag (SLV) rabattierten Pauschalpreis der Prüfung und dem gestaffelten Festpreis für Nicht-Vertragskunden ist ein starkes Fundament: Er belohnt Bestandskunden, schafft einen konkreten Anreiz für den Abschluss eines SLV und senkt die Einstiegshürde für Neukunden. Um daraus ein vollständiges Portfolio nach § 390 SGB V zu bauen, wird das Modell auf vier Ebenen erweitert. Ein KBV-Zertifikat nach § 390 SGB V bildet den Nachweis (Kapitel 11).
 
 ## Inhaltsverzeichnis
 

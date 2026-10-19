@@ -4,22 +4,29 @@ Der Begriff „Audit" klingt für Ärzte oft nach lästiger Bürokratie. Positio
 
 ## Paketübersicht
 
-| Praxisgröße (laut KBV) | Kriterium (Datenverarbeitung) | Einmal-Audit (ohne SLV) | Im SLV enthalten |
+| Praxisgröße (laut KBV) | Kriterium (Datenverarbeitung) | Pauschalpreis der Prüfung | Mit SLV |
 | --- | --- | --- | --- |
-| **Paket S (Anlagen 1 + 5)** | bis 5 ständig mit Datenverarbeitung betraute Personen | Festpreis (z. B. 490 € – 690 €) | **Inklusive** (1× jährlich) |
-| **Paket M (Anlagen 1 + 2 + 5)** | 6 bis 20 Personen | Festpreis (z. B. 890 € – 1.290 €) | **Inklusive** (1× jährlich) |
-| **Paket L (Anlagen 1 + 2 + 3 + 5, ggf. + 4)** | über 20 Personen, Datenverarbeitung im erheblichen Umfang oder medizinische Großgeräte | Nach Aufwand / Tagessatz | **Inklusive** (halbjährlich/jährlich) |
+| **Paket S (Anlagen 1 + 5)** | bis 5 ständig mit Datenverarbeitung betraute Personen | Festpreis (z. B. 490 € – 690 €) | **rabattiert**, 1× jährlich |
+| **Paket M (Anlagen 1 + 2 + 5)** | 6 bis 20 Personen | Festpreis (z. B. 890 € – 1.290 €) | **rabattiert**, 1× jährlich |
+| **Paket L (Anlagen 1 + 2 + 3 + 5, ggf. + 4)** | über 20 Personen, Datenverarbeitung im erheblichen Umfang oder medizinische Großgeräte | nach Aufwand / Tagessatz | **rabattiert**, halbjährlich oder jährlich |
 
-## Der „Anrechnungs-Hebel" für Nicht-SLV-Kunden
+## Der SLV-Rabatt auf die Prüfung
 
-Wenn eine Praxis ohne SLV das Einmal-Audit bucht, bekommt sie am Ende einen **Maßnahmenplan mit Ampelsystem**:
+Die Prüfung in der Praxis hat einen **Pauschalpreis**. Mit einem Service-Level-Vertrag wird dieser Pauschalpreis **rabattiert** — die Praxis zahlt für dieselbe Leistung weniger, wir bekommen dafür planbare monatliche Erlöse und die laufende Betreuung.
 
-- **Rot** = kritischer Verstoß gegen eine KBV-Muss-Vorgabe
-- **Gelb** = Empfehlung
-- **Grün** = erfüllt
+| | Ohne SLV | Mit SLV |
+| --- | --- | --- |
+| Preis der Prüfung | voller Pauschalpreis | **rabattiert** |
+| Turnus | einmalig gebucht | fest im Vertrag (1× jährlich, bei Paket L halbjährlich oder jährlich) |
+| Nachverfolgung der Mängel | Praxis selbst | wir |
+| Dokumentation | einmalige Übergabe | laufend gepflegt |
 
-Angebot an die Praxis: *„Wenn Sie sich innerhalb von 4 Wochen nach dem Audit für unseren SLV entscheiden, schreiben wir Ihnen 50 % (oder 100 %) der Audit-Kosten auf die ersten Monatsraten gut."*
+Der Rabatt ist der Anreiz, nicht der Preis allein: Er belohnt die Praxis für die Bindung und macht den Abschluss des SLV zur günstigeren Variante, sobald ohnehin eine Prüfung fällig ist.
+
+> **Noch festzulegen:** die Rabatthöhe je Paket (denkbar sind Staffeln nach Paketgröße oder nach Vertragslaufzeit). Sie wird nach dem Pilot anhand der gemessenen Zeiten kalkuliert (Kapitel 08).
+
+Jede Prüfung — ob bezahlt oder rabattiert — endet mit demselben Ergebnis: einem **Maßnahmenplan mit Ampelsystem** (Rot = Verstoß gegen eine Muss-Vorgabe, Gelb = Empfehlung, Grün = erfüllt).
 
 ## Wichtig für die Kalkulation
 
-Im kostenlosen SLV-Audit ist nur die **Prüfung und Dokumentation** enthalten — nicht die kostenlose Behebung grober struktureller Mängel (wie der Neuaufbau des Netzwerks). Das Audit generiert also auch bei SLV-Kunden bezahlte Folgeprojekte.
+Auch im SLV ist nur die **Prüfung und Dokumentation** enthalten — nicht die Behebung grober struktureller Mängel (wie der Neuaufbau des Netzwerks). Die Prüfung generiert also auch bei SLV-Kunden bezahlte Folgeprojekte.

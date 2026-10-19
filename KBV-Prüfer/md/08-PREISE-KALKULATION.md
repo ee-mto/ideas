@@ -6,7 +6,7 @@
 
 | Baustein | Charakter | Größenordnung |
 | --- | --- | --- |
-| **Einmal-Audit** (Nicht-SLV) | einmalig je Prüfung | Paket S 490–690 €, Paket M 890–1.290 €, Paket L nach Aufwand/Tagessatz |
+| **Prüfung (Pauschalpreis)** | einmalig je Prüfung | Paket S 490–690 €, Paket M 890–1.290 €, Paket L nach Aufwand/Tagessatz — **mit SLV rabattiert** |
 | **SLV-Pauschale** | monatlich, laufend | kalkulieren nach Aufwand (Abschnitt 3) |
 | **Add-ons** | monatlich oder jährlich | Awareness-Briefing, Backup-Paket, EoL-Reporting, Netzwerk-Paket |
 | **Folgeprojekte** | nach Aufwand | Behebung von Mängeln, Netzwerkaufbau, Beschaffung |

@@ -1,9 +1,5 @@
 # Vertriebs- und Marketing-Hebel
 
-## Zahnärzte (KZBV) direkt mitnehmen
-
-Die IT-Sicherheitsrichtlinie wird von KBV und KZBV **gemeinsam** erlassen; für den zahnärztlichen Bereich ist sie seit Januar 2026 verbindlich. Ein KBV-Zertifikat ist laut KZBV **auch in der zahnärztlichen Versorgung anerkannt** — es gibt kein separates Zahnarzt-Zertifikat. Also gezielt Zahnarztpraxen und Kieferorthopäden ansprechen, ohne einen zweiten Nachweis zu brauchen.
-
 ## Steuerberater und Abrechnungsstellen als Multiplikatoren
 
 Viele Ärzte fragen bei Investitionen zuerst ihren spezialisierten Steuerberater oder ihre PVS-Betreuer. Positioniert euch dort als Partner für den reinen Infrastruktur- und Sicherheits-Part.
