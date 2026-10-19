@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praxis-Websites auf Jamstack-Basis — Präsentation</title>
+<style>
+:root{
+  --gold:#c9a227; --gold-soft:#e8cf7a; --ink:#f4f1ea; --muted:#9aa0a6;
+  --bg:#0b0b0d; --panel:#141419; --line:#2a2a31; --good:#7ac77a;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  padding:18px;
+}
+#stage{
+  position:relative;width:100%;max-width:1280px;aspect-ratio:16/9;
+  background:linear-gradient(160deg,#141419 0%,#0e0e11 60%,#131317 100%);
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  box-shadow:0 24px 70px rgba(0,0,0,.6);font-size:16px;
+}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;
+  padding:4.2em 5em;gap:.6em}
+.slide.active{display:flex}
+.kicker{font-size:1em;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700}
+h1{font-size:3.1em;line-height:1.15;margin:.25em 0 0;font-weight:700;letter-spacing:-.01em}
+h2{font-size:2.1em;line-height:1.2;margin:0 0 .5em;font-weight:700;letter-spacing:-.01em}
+h2 .num{color:var(--gold);margin-right:.5em}
+p,li{font-size:1.12em;line-height:1.55;color:#dcd9d2;margin:0}
+ul{margin:0;padding-left:1.4em}
+li{margin:.42em 0}
+.sub{color:var(--muted);font-size:1.15em;margin-top:.4em}
+.rule{width:4.5em;height:4px;background:var(--gold);border-radius:2px;margin:.9em 0 .2em}
+.cols{display:flex;gap:1.4em;margin-top:.4em}
+.card{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.1em 1.2em}
+.card h3{margin:0 0 .35em;font-size:1.15em;color:var(--gold);font-weight:650}
+.card p{font-size:1em;color:#c9c6bf}
+table{width:100%;border-collapse:collapse;font-size:1.02em;margin-top:.5em}
+th,td{border-bottom:1px solid var(--line);padding:.5em .7em;text-align:left;vertical-align:top}
+th{color:var(--gold);font-weight:650}
+tr:last-child td{border-bottom:none}
+.hl{color:var(--gold-soft);font-weight:650}
+.big{font-size:1.9em;font-weight:700;color:var(--gold)}
+.note{font-size:.95em;color:var(--muted);margin-top:.7em}
+#bar-wrap{width:100%;max-width:1280px;height:3px;background:#1d1d22;border-radius:2px;overflow:hidden}
+#bar{height:100%;width:8%;background:var(--gold);transition:width .25s ease}
+#ctrl{display:flex;align-items:center;gap:14px;font-size:14px;color:var(--muted)}
+button{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;
+  padding:8px 16px;font-size:14px;cursor:pointer}
+button:hover{border-color:var(--gold);color:var(--gold)}
+#hint{position:fixed;bottom:8px;right:12px;font-size:12px;color:#4c4c55}
+@media print{
+  @page{size:A4 landscape;margin:8mm}
+  html,body{background:#fff;color:#16181d;height:auto;display:block;padding:0}
+  #bar-wrap,#ctrl,#hint{display:none}
+  #stage{transform:none;max-width:none;width:100%;aspect-ratio:auto;border:none;box-shadow:none;
+    background:#fff;font-size:14px;border-radius:0}
+  .slide{display:flex;position:static;page-break-after:always;height:186mm;padding:0;
+    background:#fff;color:#16181d}
+  .slide:last-child{page-break-after:auto}
+  h1,h2{color:#16181d}
+  h2 .num,.kicker{color:#a8861d}
+  p,li,.card p{color:#3a3f47}
+  .card,.big,th,.hl{color:#16181d}
+  .card{background:#faf6ea;border-color:#e6e3da}
+  .card h3,th,.big,.hl{color:#8a6d12}
+  table{font-size:12px}
+  th,td{border-color:#e6e3da}
+  .note{color:#6b7280}
+}
+</style>
+</head>
+<body>
+
+<div id="stage">
+
+<section class="slide active">
+  <span class="kicker">engel&amp;engel gmbh</span>
+  <h1>Praxis-Websites auf Jamstack-Basis</h1>
+  <div class="rule"></div>
+  <p class="sub">Schnell, rechtssicher, deutsch gehostet — zentral gebaut und betreut.</p>
+  <p class="note">Vorlage für die Geschäftsführung · Oktober 2026</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">01</span>Ausgangslage</h2>
+  <ul>
+    <li>Praxis-Websites laufen überwiegend auf <strong>WordPress</strong>: Plugins, Updates, Sicherheitslücken.</li>
+    <li><strong>Langsam</strong> auf dem Smartphone — schlechtere Google-Platzierung bei lokalen Suchanfragen.</li>
+    <li><strong>Abmahnrisiko</strong> bei Impressum, Datenschutz, Barrierefreiheit und Werbeaussagen (HWG).</li>
+    <li>Bestehende Agenturverträge liefern Wartung ohne feste Reaktionszeiten.</li>
+  </ul>
+  <p class="note">Kurz: Die Praxen zahlen für ein System, das sie pflegen müssten — und niemand haftet für die Inhalte.</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">02</span>Die Idee</h2>
+  <div class="cols">
+    <div class="card"><h3>Statisch</h3><p>HTML/CSS/JS ohne Datenbank und ohne Redaktionssystem. Es gibt nichts, was gehackt oder gewartet werden müsste.</p></div>
+    <div class="card"><h3>Deutsch gehostet</h3><p>Rechenzentrum in Deutschland, DSGVO-konform, Vertrag zur Auftragsverarbeitung.</p></div>
+    <div class="card"><h3>Zentral gebaut</h3><p>Eine Pipeline baut die Seiten, ein Theme für alle Praxen, Änderungen an einer Stelle.</p></div>
+  </div>
+  <p class="note">Und: betreut von uns. Die Praxis meldet Änderungen, wir setzen sie um.</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">03</span>Technischer Aufbau</h2>
+  <table>
+    <tr><th>Ebene</th><th>Aufgabe</th><th>Änderungsfrequenz</th></tr>
+    <tr><td><span class="hl">Theme</span></td><td>Layout, Komponenten, Barrierefreiheit, SEO-Grundgerüst</td><td>selten — wirkt für alle Praxen</td></tr>
+    <tr><td><span class="hl">Praxis-Daten</span></td><td>Inhalte, Bilder, Sprechzeiten, Impressum, Kontaktdaten</td><td>regelmäßig, je Praxis</td></tr>
+    <tr><td><span class="hl">Auslieferung</span></td><td>fertiges HTML/CSS/JS, Proxy, TLS, Caching</td><td>bei jedem Commit, jederzeit reproduzierbar</td></tr>
+  </table>
+  <p class="note">Komponenten: Terra Cloud (deutsches Rechenzentrum) · Coolify · GitLab CI · Hugo.</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">04</span>Was die Praxis davon hat</h2>
+  <div class="cols">
+    <div class="card"><h3>Geschwindigkeit</h3><p>Ladezeit im Bereich einer Sekunde statt mehrerer Sekunden.</p></div>
+    <div class="card"><h3>Sicherheit</h3><p>Keine Plugins, kein Login, keine Datenbank — kaum Angriffsfläche.</p></div>
+    <div class="card"><h3>Rechtssicherheit</h3><p>Impressum, Datenschutz, Barrierefreiheitserklärung, HWG-konforme Texte.</p></div>
+    <div class="card"><h3>Betreuung</h3><p>Feste Ansprechpartner und zugesagte Reaktionszeiten.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2><span class="num">05</span>Zwei Betriebsmodelle</h2>
+  <table>
+    <tr><th></th><th>Modell A — Einzelpraxis</th><th>Modell B — Factory</th></tr>
+    <tr><td><span class="hl">Aufbau</span></td><td>statische Website auf deutschem Webhosting</td><td>zentrale Pipeline, ein Theme für alle</td></tr>
+    <tr><td><span class="hl">Neue Praxis</span></td><td>Template konfigurieren und hochladen</td><td>Repository anlegen, Pipeline läuft</td></tr>
+    <tr><td><span class="hl">Aufwand je Praxis</span></td><td>linear</td><td>wächst unterproportional</td></tr>
+    <tr><td><span class="hl">Risiko</span></td><td>verteilt: ein Ausfall trifft eine Praxis</td><td>konzentriert: ein Ausfall trifft alle</td></tr>
+  </table>
+  <p class="note">Empfehlung: <strong>Modell A ist der Standard</strong> — die Factory zahlt sich ab etwa 10–15 betreuten Praxen aus.</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">06</span>Pflege: bewusst ohne Redaktionssystem</h2>
+  <ul>
+    <li>Die Praxis <strong>meldet</strong> Änderungen formlos per Telefon oder E-Mail.</li>
+    <li>Wir <strong>setzen um</strong>, prüfen Sprechzeiten, Tonalität und Werberecht und stellen live.</li>
+    <li>Kein Zugang der Praxis zu Repository, Pipeline oder Hosting.</li>
+  </ul>
+  <div class="rule"></div>
+  <p class="note">Warum: keine Schulung, keine Login-Angriffsfläche, keine ungeprüften Veröffentlichungen. Preis dafür: feste Reaktionszeiten und ein Änderungskontingent — beides verkaufen wir mit.</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">07</span>Preismodell</h2>
+  <table>
+    <tr><th>Stufe</th><th>Leistung</th><th>Monatlich</th></tr>
+    <tr><td>Basis</td><td>Website, Hosting, Domain, SSL, Wartung, Änderungen im Kontingent</td><td class="big">49–69 €</td></tr>
+    <tr><td>Komfort</td><td>erweitertes Kontingent, priorisierte Umsetzung, kürzere Reaktionszeit</td><td class="big">79–99 €</td></tr>
+    <tr><td>Premium</td><td>Redaktionsservice, SEO-Betreuung, Reporting</td><td class="big">ab 129 €</td></tr>
+  </table>
+  <p class="note">Zusätzlich einmalige Setup-Gebühr (Onboarding, Texte, Bilder, Rechtstexte, Go-Live).</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">08</span>Wirtschaftlichkeit — Annahmen</h2>
+  <table>
+    <tr><th>Größe</th><th>Annahme</th></tr>
+    <tr><td>Einrichtung je Praxis</td><td>1,5–3 Personentage</td></tr>
+    <tr><td>Wartung je Praxis</td><td>30–60 Minuten pro Monat</td></tr>
+    <tr><td>Änderungen</td><td>1–2 pro Monat, 15–30 Minuten je Meldung</td></tr>
+    <tr><td>Hosting je Praxis (Modell A)</td><td>ab ca. 10 €/Monat</td></tr>
+  </table>
+  <p class="note">Alle Zahlen sind Annahmen und nach dem Pilot mit echten Werten nachzurechnen.</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">09</span>Wirtschaftlichkeit — Rechnung</h2>
+  <div class="cols">
+    <div class="card"><h3>Basis 49 €</h3><p>39 € nach Hosting, vor Arbeitszeit.<br>75 Minuten Aufwand je Monat.</p></div>
+    <div class="card"><h3>Break-even</h3><p class="big">≈ 31 €/h</p><p>Darunter trägt sich die Basisstufe nicht.</p></div>
+    <div class="card"><h3>Hebel</h3><p>Wartungszeit je Praxis von 60 auf 20 Minuten senken — verdoppelt den Deckungsbeitrag.</p></div>
+  </div>
+  <p class="note">Skaleneffekt: Theme- und Pipeline-Verbesserungen wirken für alle Praxen gleichzeitig.</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">10</span>Fahrplan</h2>
+  <table>
+    <tr><th>Phase</th><th>Ziel</th></tr>
+    <tr><td><span class="hl">Pilot</span></td><td>eine Praxis vollständig umsetzen, Prozess dokumentieren</td></tr>
+    <tr><td><span class="hl">3–10 Praxen</span></td><td>Wiederholbarkeit beweisen, Aufwand je Praxis senken</td></tr>
+    <tr><td><span class="hl">10–25 Praxen</span></td><td>Entscheidung für die Factory, zentrale Pipeline einführen</td></tr>
+    <tr><td><span class="hl">25–50+ Praxen</span></td><td>Betrieb industrialisieren: Monitoring, Reporting, Reaktionszeiten</td></tr>
+  </table>
+</section>
+
+<section class="slide">
+  <h2><span class="num">11</span>Was wir vorschlagen</h2>
+  <ul>
+    <li><strong>Pilotpraxis starten</strong> — Modell A, ohne neue Infrastruktur, kurzfristig lieferbar.</li>
+    <li><strong>Preisstufen wie skizziert einführen</strong> und nach dem Pilot mit echten Zahlen nachrechnen.</li>
+    <li><strong>Factory-Entscheidung bei etwa 10 Praxen</strong> — vorher lohnt der Umbau nicht.</li>
+    <li><strong>Betriebsprozess schriftlich fixieren:</strong> Reaktionszeiten, Kontingent, Störungsweg.</li>
+    <li><strong>Vergleichscheck als Vertriebseinstieg:</strong> kostenlose Prüfung bestehender Praxis-Websites.</li>
+  </ul>
+  <p class="note">Diskussion und Freigabe.</p>
+</section>
+
+</div>
+
+<div id="bar-wrap"><div id="bar"></div></div>
+<div id="ctrl">
+  <button id="prev">Zurück</button>
+  <span id="counter">1 / 12</span>
+  <button id="next">Weiter</button>
+  <button id="full">Vollbild</button>
+</div>
+<div id="hint">Pfeiltasten · Leertaste · F für Vollbild · Strg+P für PDF</div>
+
+<script>
+var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+var i = 0;
+function show(n){
+  if (n < 0) n = 0;
+  if (n > slides.length - 1) n = slides.length - 1;
+  i = n;
+  slides.forEach(function(s, k){ s.classList.toggle('active', k === i); });
+  document.getElementById('counter').textContent = (i + 1) + ' / ' + slides.length;
+  document.getElementById('bar').style.width = ((i + 1) / slides.length * 100) + '%';
+}
+function fit(){
+  var st = document.getElementById('stage');
+  st.style.fontSize = (st.clientWidth / 80) + 'px';
+}
+document.getElementById('prev').onclick = function(){ show(i - 1); };
+document.getElementById('next').onclick = function(){ show(i + 1); };
+document.getElementById('full').onclick = function(){
+  if (document.fullscreenElement) { document.exitFullscreen(); }
+  else { document.documentElement.requestFullscreen(); }
+};
+document.addEventListener('keydown', function(e){
+  var k = e.key;
+  if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || k === ' ') { e.preventDefault(); show(i + 1); }
+  else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp') { e.preventDefault(); show(i - 1); }
+  else if (k === 'Home') { show(0); }
+  else if (k === 'End') { show(slides.length - 1); }
+  else if (k === 'f' || k === 'F') { document.getElementById('full').click(); }
+});
+window.addEventListener('resize', fit);
+fit(); show(0);
+</script>
+</body>
+</html>

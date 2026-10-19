@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Management Summary — Praxis-Websites auf Jamstack-Basis — engel&amp;engel gmbh</title>
+<style>
+:root{
+  --gold:#c9a227; --gold-dark:#a8861d; --gold-soft:#faf6ea;
+  --ink:#16181d; --body:#3a3f47; --muted:#6b7280;
+  --line:#e6e3da; --card:#ffffff; --bg:#fbfaf7;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.65}
+.page{max-width:940px;margin:0 auto;background:var(--card);padding:52px 60px 44px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06),0 14px 36px rgba(0,0,0,.05)}
+.print-btn{position:fixed;top:22px;right:22px;z-index:50;background:var(--gold);color:#fff;
+  border:none;border-radius:8px;padding:12px 22px;font-size:15px;font-weight:600;cursor:pointer;
+  box-shadow:0 4px 14px rgba(201,162,39,.35)}
+.print-btn:hover{background:var(--gold-dark)}
+header.doc-head{border-bottom:3px solid var(--gold);padding-bottom:26px;margin-bottom:34px}
+header.doc-head .kicker{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold-dark);font-weight:700;margin-bottom:10px}
+h1{color:var(--ink);font-size:34px;line-height:1.25;margin:0 0 14px;font-weight:700}
+.doc-meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.doc-meta b{color:var(--ink);font-weight:600}
+h2.chapter{color:var(--ink);font-size:27px;margin:0 0 20px;font-weight:700;padding-left:16px;border-left:6px solid var(--gold);line-height:1.3}
+section h2{color:var(--gold-dark);font-size:19px;margin:32px 0 10px;font-weight:650;padding:0 0 6px 0;border-left:none;border-bottom:1px solid var(--line)}
+section h3{color:var(--ink);font-size:16px}
+h3{color:var(--ink);font-size:18px;margin:30px 0 10px;font-weight:650}
+h4{color:var(--gold-dark);font-size:15px;margin:22px 0 8px;font-weight:650}
+p{margin:0 0 14px}
+strong{color:var(--ink);font-weight:650}
+a{color:var(--gold-dark);text-decoration:none;border-bottom:1px dotted var(--gold)}
+a:hover{border-bottom-style:solid}
+.toc{background:var(--gold-soft);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin:0 0 40px}
+.toc h2{border:none;padding:0;font-size:15px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold-dark);margin:0 0 12px}
+.toc .group{margin:14px 0 4px;font-weight:650;color:var(--ink);font-size:14px}
+.toc ol{margin:0;padding-left:22px}
+.toc li{margin:6px 0}
+.lead-in{font-size:17px}
+section{margin:0 0 46px;scroll-margin-top:20px}
+.table-wrap{overflow-x:auto;margin:18px 0 22px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:520px}
+th,td{border:1px solid var(--line);padding:10px 13px;text-align:left;vertical-align:top}
+th{background:var(--gold);color:#fff;font-weight:600}
+tbody tr:nth-child(even){background:#fcfbf8}
+tbody tr:hover{background:var(--gold-soft)}
+pre{background:#1d2026;color:#f2f0e9;padding:18px 20px;border-radius:10px;overflow-x:auto;
+  font-size:13px;line-height:1.55;margin:18px 0 22px;
+  font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
+code{background:#f4f1e8;color:#8a6d12;padding:2px 6px;border-radius:5px;
+  font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;font-size:13.5px}
+pre code{background:transparent;color:inherit;padding:0;font-size:13px}
+blockquote{margin:20px 0;padding:16px 22px;background:var(--gold-soft);border-left:5px solid var(--gold);
+  border-radius:0 10px 10px 0;font-size:16px;color:var(--ink)}
+blockquote p:last-child{margin-bottom:0}
+ol,ul{margin:14px 0 18px;padding-left:26px}
+li{margin:8px 0}
+li.check{list-style:none;margin-left:-1.1em}
+hr{border:none;border-top:2px solid var(--line);margin:30px 0}
+footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;
+  color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between}
+@media (max-width:720px){
+  body{font-size:15px}
+  .page{padding:30px 20px 32px;box-shadow:none}
+  h1{font-size:26px}
+  h2{font-size:20px}
+  .print-btn{position:static;display:block;width:100%;margin:0 0 22px}
+  table{font-size:13px}
+}
+@page{size:A4;margin:18mm 15mm}
+@media print{
+  body{background:#fff;font-size:10.5pt;line-height:1.5}
+  .page{max-width:none;margin:0;padding:0;box-shadow:none}
+  .print-btn{display:none!important}
+  a{color:inherit;border:none}
+  .toc{page-break-after:always}
+  section{page-break-before:always}
+  section:first-of-type{page-break-before:avoid}
+  .table-wrap,pre,blockquote{page-break-inside:avoid}
+  h2,h3,h4{page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+<button class="print-btn" onclick="window.print()">Als PDF speichern</button>
+<div class="page">
+
+<header class="doc-head">
+  <span class="kicker">Vorlage Geschäftsführung</span>
+  <h1>Management Summary — Praxis-Websites auf Jamstack-Basis</h1>
+  <div class="doc-meta">
+    <span><b>Kunde:</b> engel&amp;engel gmbh</span>
+    <span><b>Stand:</b> Oktober 2026</span>
+    <span><b>Grundlage:</b> 17 Kapitel Konzept (Websites/md/)</span>
+  </div>
+</header>
+
+<blockquote>
+<p><strong>Vorlage für:</strong> Geschäftsführung engel&amp;engel gmbh
+<strong>Stand:</strong> Oktober 2026
+<strong>Grundlage:</strong> 17 Kapitel Konzept in <code>Websites/md/</code> — dieses Dokument ist die Kurzfassung für die Vorlage.</p>
+</blockquote>
+<h2>1. Worum es geht</h2>
+<p>Arztpraxen leiden unter schwerfälligen, wartungsintensiven WordPress-Systemen: Plugin-Schwachstellen, DSGVO- und HWG-Abmahnfallen, langsame Ladezeiten auf dem Smartphone. Wir setzen stattdessen auf <strong>statische Praxis-Websites</strong>: schnell, rechtssicher, in Deutschland gehostet, zentral gebaut und von uns betreut.</p>
+<h2>2. Ausgangslage</h2>
+<table>
+<thead>
+<tr>
+<th>Problem der Praxis</th>
+<th>Wirkung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WordPress mit Plugins und Updates</td>
+<td>laufende Wartung, Sicherheitslücken, Ausfälle</td>
+</tr>
+<tr>
+<td>Langsame Ladezeiten</td>
+<td>schlechtere Google-Platzierung, unbrauchbare Mobilansicht</td>
+</tr>
+<tr>
+<td>Impressum, Datenschutz, HWG, Barrierefreiheit</td>
+<td>Abmahnrisiko, unklare Verantwortung</td>
+</tr>
+<tr>
+<td>Agenturverträge</td>
+<td>lange Wartezeiten, hohe Rechnungen, keine festen Reaktionszeiten</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Unser Ansatz</h2>
+<p>Statische Website (HTML/CSS/JS) ohne Redaktionssystem und ohne Datenbank, zentral gebaut über eine Pipeline und aus deutschem Rechenzentrum ausgeliefert. <strong>Die Pflege liegt bei uns:</strong> Die Praxis meldet Änderungen formlos, wir setzen sie um, prüfen sie (Sprechzeiten, HWG, Rechtstexte) und stellen sie live. Die Praxis braucht keinen Zugang zu Technik und keine Einarbeitung.</p>
+<h2>4. Was wir damit verkaufen</h2>
+<ol>
+<li><strong>Geschwindigkeit</strong> — Ladezeiten im Bereich einer Sekunde statt mehrerer Sekunden; bessere lokale Sichtbarkeit.</li>
+<li><strong>Sicherheit</strong> — keine Plugins, kein Redaktionssystem, keine Datenbank: kaum Angriffsfläche.</li>
+<li><strong>Rechtssicherheit</strong> — Impressum mit Berufsangaben, Datenschutz, Barrierefreiheitserklärung und HWG-konforme Texte von Anfang an.</li>
+<li><strong>Betreuung</strong> — feste Ansprechpartner und zugesagte Reaktionszeiten statt Wartungsvertrag ohne Inhalt.</li>
+</ol>
+<h2>5. Zwei Betriebsmodelle</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Modell A — Einzelpraxis</strong></th>
+<th><strong>Modell B — Factory</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aufbau</td>
+<td>statische Website auf deutschem Webhosting</td>
+<td>zentrale Pipeline, ein Theme für alle Praxen</td>
+</tr>
+<tr>
+<td>Neue Praxis</td>
+<td>Template konfigurieren, hochladen</td>
+<td>Repository anlegen, Pipeline läuft</td>
+</tr>
+<tr>
+<td>Aufwand je Praxis</td>
+<td>linear</td>
+<td>wächst unterproportional</td>
+</tr>
+<tr>
+<td>Risiko</td>
+<td>verteilt (ein Ausfall trifft eine Praxis)</td>
+<td>konzentriert (ein Ausfall trifft alle)</td>
+</tr>
+<tr>
+<td>Empfehlung</td>
+<td><strong>Standard heute</strong></td>
+<td><strong>ab etwa 10–15 betreuten Praxen</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>6. Wirtschaftlichkeit</h2>
+<blockquote>
+<p><strong>Alle Zahlen sind Annahmen</strong> und vor dem Verkauf mit echten Werten (Hosting, interner Stundensatz, Aufwände) zu ersetzen.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Größe</th>
+<th>Annahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Einrichtung je Praxis</td>
+<td>1,5–3 Personentage</td>
+</tr>
+<tr>
+<td>Wartung je Praxis</td>
+<td>30–60 Minuten pro Monat</td>
+</tr>
+<tr>
+<td>Änderungen</td>
+<td>1–2 Meldungen pro Monat, 15–30 Minuten je Meldung</td>
+</tr>
+<tr>
+<td>Hosting je Praxis (Modell A)</td>
+<td>ab ca. 10 €/Monat</td>
+</tr>
+<tr>
+<td>Infrastruktur Modell B</td>
+<td>ein VPS plus Runner für alle Praxen</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preisstufen:</strong> einmalige Setup-Gebühr (deckt den Einrichtungsaufwand) plus Monatspauschale — <strong>49 € (Basis), 89 € (Komfort), ab 129 € (Premium)</strong> inklusive Hosting, Domain, SSL und Betreuung.</p>
+<p><strong>Deckungsbeitrag Basis (49 €/Monat):</strong> 49 € minus ca. 10 € Hosting = <strong>39 € vor Arbeitszeit</strong>. Bei 45 Minuten Wartung plus rund 1,5 Änderungen (75 Minuten gesamt) liegt der <strong>Break-even bei etwa 31 € internem Stundensatz</strong>. Daraus folgt: Die 49-€-Stufe trägt sich nur, wenn die Wartungsroutine wirklich schlank bleibt — oder der Preis steigt.</p>
+<p><strong>Skaleneffekt:</strong> Weil Theme-Änderungen und Pipeline-Optimierungen für alle Praxen gleichzeitig wirken, sinkt der Betreuungsaufwand je Praxis. Der eigentliche Hebel ist nicht das Hosting, sondern die Wartungszeit: von 60 auf 20 Minuten je Praxis verdoppelt sich der Deckungsbeitrag, ohne dass ein Kunde mehr zahlt.</p>
+<h2>7. Fahrplan</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Ziel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pilot</strong></td>
+<td>eine reale Praxis vollständig umsetzen, Prozess dokumentieren</td>
+</tr>
+<tr>
+<td><strong>3–10 Praxen</strong></td>
+<td>Wiederholbarkeit beweisen, Aufwand je Praxis senken</td>
+</tr>
+<tr>
+<td><strong>10–25 Praxen</strong></td>
+<td>Entscheidung für die Factory, zentrale Pipeline einführen</td>
+</tr>
+<tr>
+<td><strong>25–50+ Praxen</strong></td>
+<td>Betrieb industrialisieren: Monitoring, Reporting, klare Reaktionszeiten</td>
+</tr>
+</tbody>
+</table>
+<h2>8. Was wir vorschlagen</h2>
+<ol>
+<li><strong>Pilotpraxis starten</strong> — mit Modell A, ohne neue Infrastruktur, kurzfristig lieferbar.</li>
+<li><strong>Preisstufen wie skizziert einführen</strong> und die Zahlen nach dem Pilot mit echten Werten nachrechnen.</li>
+<li><strong>Factory-Entscheidung bei etwa 10 Praxen</strong> — vorher lohnt der Umbau nicht.</li>
+<li><strong>Betriebsprozess schriftlich fixieren:</strong> Reaktionszeiten, Änderungskontingent, Störungsweg.</li>
+<li><strong>Vergleichscheck als Vertriebseinstieg</strong> — kostenlose Prüfung bestehender Praxis-Websites auf Ladezeit, Recht und Sichtbarkeit.</li>
+</ol>
+<h2>9. Nächste Schritte</h2>
+<ul>
+<li>Pilotpraxis auswählen und Daten aufnehmen</li>
+<li>Angebotsunterlage mit den Preisstufen erstellen</li>
+<li>Entscheidung zu Modell A/B dokumentieren</li>
+<li>Betriebs- und Wartungsprozess festhalten</li>
+</ul>
+
+<footer class="doc-foot">
+  <span><strong>engel&amp;engel gmbh</strong> — Praxis-Websites auf Jamstack-Basis</span>
+  <span>Als PDF: Button oben rechts bzw. Strg+P → „Als PDF speichern“</span>
+</footer>
+
+</div>
+</body>
+</html>

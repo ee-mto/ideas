@@ -143,6 +143,40 @@ HTML_HEAD = """<!DOCTYPE html>
   <h2>Inhalt</h2>
 """
 
+SUMMARY_TEMPLATE = """<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title} — engel&amp;engel gmbh</title>
+<style>{css}</style>
+</head>
+<body>
+<button class="print-btn" onclick="window.print()">Als PDF speichern</button>
+<div class="page">
+
+<header class="doc-head">
+  <span class="kicker">Vorlage Geschäftsführung</span>
+  <h1>{title}</h1>
+  <div class="doc-meta">
+    <span><b>Kunde:</b> engel&amp;engel gmbh</span>
+    <span><b>Stand:</b> Oktober 2026</span>
+    <span><b>Grundlage:</b> 17 Kapitel Konzept (Websites/md/)</span>
+  </div>
+</header>
+
+{content}
+
+<footer class="doc-foot">
+  <span><strong>engel&amp;engel gmbh</strong> — Praxis-Websites auf Jamstack-Basis</span>
+  <span>Als PDF: Button oben rechts bzw. Strg+P → „Als PDF speichern“</span>
+</footer>
+
+</div>
+</body>
+</html>
+"""
+
 HTML_FOOT = """
 <footer class="doc-foot">
   <span><strong>engel&amp;engel gmbh</strong> — Praxis-Websites auf Jamstack-Basis</span>
@@ -194,6 +228,22 @@ def main():
     with open(out, "w", encoding="utf-8") as fh:
         fh.write("\n".join(parts))
     print("geschrieben:", out, os.path.getsize(out), "Bytes")
+
+    # Kurzfassung als eigenständiges Dokument
+    src = os.path.join(md_dir, "00-MANAGEMENT-SUMMARY.md")
+    if os.path.exists(src):
+        with open(src, encoding="utf-8") as fh:
+            text = fh.read()
+        lines = text.split("\n")
+        title = lines[0][2:].strip() if lines and lines[0].startswith("# ") else "Management Summary"
+        text = "\n".join(lines[1:])
+        html = markdown.markdown(text, extensions=["tables", "fenced_code", "attr_list", "sane_lists"])
+        html = html.replace("<li>[ ] ", '<li class="check">☐ ')
+        html = html.replace("<li>[x] ", '<li class="check">☑ ')
+        out2 = os.path.join(out_dir, "summary.html")
+        with open(out2, "w", encoding="utf-8") as fh:
+            fh.write(SUMMARY_TEMPLATE.format(css=CSS, title=title, content=html))
+        print("geschrieben:", out2, os.path.getsize(out2), "Bytes")
 
 
 if __name__ == "__main__":

@@ -10,6 +10,13 @@ Der gewählte Ansatz trifft den Nerv des Marktes: Arztpraxen leiden unter schwer
 
 Das Konzept steht neben dem heute praktizierten Betriebsmodell (statische Website je Praxis auf deutschem Webhosting, Pflege im Managed Service). Kapitel 11 führt beide Modelle zusammen und macht die Entscheidung explizit.
 
+## Für die Vorlage beim Kunden
+
+| Dokument | Markdown | HTML |
+| --- | --- | --- |
+| **Management Summary** (Kurzfassung für die Geschäftsführung) | [00-MANAGEMENT-SUMMARY.md](md/00-MANAGEMENT-SUMMARY.md) | [ansehen](html/summary.html) |
+| **Präsentationsdeck** (12 Folien zum Durchklicken) | – | [öffnen](html/deck.html) |
+
 ## Inhaltsverzeichnis
 
 ### I. Grundlagen
@@ -57,4 +64,4 @@ Das Konzept steht neben dem heute praktizierten Betriebsmodell (statische Websit
 | --- | --- |
 | [`md/`](md/) | Quelltexte — ein Dokument je Kapitel |
 | [`html/`](html/index.html) | `index.html` — Gesamtdokument für Browser und PDF-Export |
-| [`tools/`](tools/) | `convert_to_html.py` — erzeugt das HTML aus den Markdown-Quellen |
+| [`tools/`](tools/) | `convert_to_html.py` — erzeugt `html/index.html` und `html/summary.html` aus den Markdown-Quellen |
