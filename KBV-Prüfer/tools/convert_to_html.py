@@ -6,11 +6,26 @@ import re
 import markdown
 
 CHAPTERS = [
-    ("Portfolio-Ausbau", [
+    ("I. Modell & Markt", [
         ("k01", "01-AUDIT-MODELL.md"),
+        ("k09", "09-ZIELKUNDEN-MARKT.md"),
+        ("k12", "12-ROADMAP.md"),
+    ]),
+    ("II. Recht & Prozess", [
+        ("k05", "05-RECHTLICHER-RAHMEN.md"),
+        ("k06", "06-AUDIT-PROZESS.md"),
+        ("k11", "11-ROLLEN-UND-ZERTIFIZIERUNG.md"),
+    ]),
+    ("III. Leistungen & Vertrag", [
         ("k02", "02-MANAGED-SERVICES.md"),
         ("k03", "03-AUDIT-READY-PAKET.md"),
+        ("k07", "07-SLV-KONSTRUKT.md"),
+        ("k10", "10-ADD-ONS-IM-DETAIL.md"),
+    ]),
+    ("IV. Wirtschaft & Vertrieb", [
         ("k04", "04-VERTRIEB-MARKETING.md"),
+        ("k08", "08-PREISE-KALKULATION.md"),
+        ("k13", "13-VERTRIEB-MATERIAL.md"),
     ]),
 ]
 
@@ -200,7 +215,7 @@ def main():
         toc.append("  </ol>")
 
     parts.append("\n".join(toc))
-    parts.append('  <p style="font-size:14px;color:#6b7280">Markdown-Quellen: <code>../md/01-AUDIT-MODELL.md</code> bis <code>../md/04-VERTRIEB-MARKETING.md</code></p>')
+    parts.append('  <p style="font-size:14px;color:#6b7280">Markdown-Quellen: <code>../md/</code> — 13 Kapitel</p>')
     parts.append("</nav>")
     parts.extend(bodies)
     parts.append(HTML_FOOT)

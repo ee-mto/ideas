@@ -6,9 +6,9 @@ Der Begriff „Audit" klingt für Ärzte oft nach lästiger Bürokratie. Positio
 
 | Praxisgröße (laut KBV) | Kriterium (Datenverarbeitung) | Einmal-Audit (ohne SLV) | Im SLV enthalten |
 | --- | --- | --- | --- |
-| **Paket S (Anlage 1)** | 1 bis 5 Mitarbeitende | Festpreis (z. B. 490 € – 690 €) | **Inklusive** (1× jährlich) |
-| **Paket M (Anlage 1 + 2)** | 6 bis 20 Mitarbeitende | Festpreis (z. B. 890 € – 1.290 €) | **Inklusive** (1× jährlich) |
-| **Paket L (Anlage 1–3 / 4)** | Ab 21 Mitarbeitende / Großgeräte (CT/MRT) | Nach Aufwand / Tagessatz | **Inklusive** (halbjährlich/jährlich) |
+| **Paket S (Anlagen 1 + 5)** | bis 5 ständig mit Datenverarbeitung betraute Personen | Festpreis (z. B. 490 € – 690 €) | **Inklusive** (1× jährlich) |
+| **Paket M (Anlagen 1 + 2 + 5)** | 6 bis 20 Personen | Festpreis (z. B. 890 € – 1.290 €) | **Inklusive** (1× jährlich) |
+| **Paket L (Anlagen 1 + 2 + 3 + 5, ggf. + 4)** | über 20 Personen, Datenverarbeitung im erheblichen Umfang oder medizinische Großgeräte | Nach Aufwand / Tagessatz | **Inklusive** (halbjährlich/jährlich) |
 
 ## Der „Anrechnungs-Hebel" für Nicht-SLV-Kunden
 
