@@ -42,7 +42,7 @@ Ziel sind **grüne Core Web Vitals**: LCP ≤ 2,5 s, INP ≤ 200 ms, CLS ≤ 0,1
 - [ ] Cache-Header gesetzt, Assets versioniert
 - [ ] Fonts lokal mit `swap`, kein externes CSS/JS
 
-## 6. Im Factory-Modell
+## 6. Im neuen Stack
 
 - Die Performance-Budgets sind **Teil der Pipeline**: Ein Build, der die Grenzen reißt (z. B. unkomprimierte Bilder im Praxis-Repo), wird nicht ausgeliefert – Bildoptimierung läuft als Build-Schritt.
 - Das zentrale Theme wird einmal optimiert; alle Praxen profitieren, ohne dass jemand einzelne Seiten nachbessern muss.

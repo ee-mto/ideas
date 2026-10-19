@@ -123,7 +123,7 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
   </ol>
   <div class="group">III. Umsetzung & Betrieb</div>
   <ol>
-    <li><a href="#k11">Tech-Stack-Entscheidung</a></li>
+    <li><a href="#k11">Tech-Stack</a></li>
     <li><a href="#k12">Umsetzungsprozess</a></li>
     <li><a href="#k13">QA & Go-Live</a></li>
     <li><a href="#k14">Betrieb & Wartung</a></li>
@@ -281,7 +281,7 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
 </tbody>
 </table>
 <h2>Einordnung</h2>
-<p>Diese Architektur ist die <strong>Skalierungsvariante</strong> des bestehenden Betriebs (statische Website je Praxis). Für eine einzelne Praxis ist der klassische Weg über ein Webhosting-Paket robuster und günstiger; die Factory zahlt sich ab einer relevanten Kundenzahl aus. Die Abwägung steht in Kapitel 11.</p>
+<p>Die Architektur ist bewusst schlank: ein Theme, ein Repository je Praxis, eine Pipeline, eine Auslieferungsebene. Der Aufwand liegt bei Daten und Freigabe — nicht bei Technik. Die Bausteine beschreibt Kapitel 11, den Betrieb Kapitel 14.</p>
 </section>
 <section id="k02">
 <h2 class="chapter">Automatisierte Factory-Pipeline</h2>
@@ -721,7 +721,7 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
 - [ ] axe/Lighthouse ohne kritische Fehler
 - [ ] Tab-Navigation und Fokus auf allen Seiten, Kontraste geprüft
 - [ ] Zoom 200 % ohne Inhaltsverlust</p>
-<h2>8. Im Factory-Modell</h2>
+<h2>8. Im neuen Stack</h2>
 <ul>
 <li>Rechtstexte sind <strong>Praxis-Daten</strong>: Impressum, Datenschutz und Barrierefreiheitserklärung liegen im Praxis-Repository und werden beim Onboarding strukturiert erfasst (Kammer, KV, Approbationsland, Ansprechpartner).</li>
 <li>Das zentrale Theme liefert die Muster und die Barrierefreiheits-Basis; Änderungen daran wirken über den Runner in alle Praxen.</li>
@@ -891,7 +891,7 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
 - [ ] Portale neutral verlinkt, keine Daten ladenden Widgets
 - [ ] Antwort-Richtlinie für negative Bewertungen abgestimmt
 - [ ] GBP-/Jameda-Daten konsistent mit der Website</p>
-<h2>8. Im Factory-Modell</h2>
+<h2>8. Im neuen Stack</h2>
 <ul>
 <li>Inhalte liegen im <strong>Praxis-Repository</strong> (<code>/content</code>), Bilder als optimierte Assets daneben – dadurch bleibt das Theme für alle Praxen identisch.</li>
 <li>Der <strong>Bild-Workflow</strong> ist Teil des Onboardings: Bedarf klären, Einwilligungen einholen, konvertieren, Alt-Texte und Dimensionen hinterlegen.</li>
@@ -962,7 +962,7 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
 <li class="check">☐ Testbuchung end-to-end durchgeführt und wieder storniert</li>
 <li class="check">☐ Telefonnummer weiterhin prominent (Fallback ohne Internet)</li>
 </ul>
-<h2>6. Im Factory-Modell</h2>
+<h2>6. Im neuen Stack</h2>
 <ul>
 <li>Der Buchungslink ist ein <strong>Feld in den Praxis-Daten</strong> (<code>bookingUrl</code>) – eine Änderung des Anbieters ist damit ein Datenupdate, kein Template-Eingriff.</li>
 <li>Die Entscheidung für einen Anbieter fällt im Onboarding (Kapitel 12) und wird in der Praxisdatei dokumentiert.</li>
@@ -1036,7 +1036,7 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
 <li class="check">☐ Jede Seite mit unique title/description/H1 und canonical</li>
 <li class="check">☐ KI-Crawler in <code>robots.txt</code> erlaubt</li>
 </ul>
-<h2>7. Im Factory-Modell</h2>
+<h2>7. Im neuen Stack</h2>
 <ul>
 <li>Title, Description, H1 und JSON-LD werden <strong>aus den Praxis-Daten generiert</strong> (Generator in der Pipeline) – keine handgepflegten Meta-Tags je Seite.</li>
 <li>Der Generator zieht Ort, Fachbereich, Koordinaten und Sprechzeiten aus <code>config</code>/Content und erzeugt <code>sitemap.xml</code> und <code>robots.txt</code> mit der echten Domain.</li>
@@ -1105,7 +1105,7 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
 <li class="check">☐ Cache-Header gesetzt, Assets versioniert</li>
 <li class="check">☐ Fonts lokal mit <code>swap</code>, kein externes CSS/JS</li>
 </ul>
-<h2>6. Im Factory-Modell</h2>
+<h2>6. Im neuen Stack</h2>
 <ul>
 <li>Die Performance-Budgets sind <strong>Teil der Pipeline</strong>: Ein Build, der die Grenzen reißt (z. B. unkomprimierte Bilder im Praxis-Repo), wird nicht ausgeliefert – Bildoptimierung läuft als Build-Schritt.</li>
 <li>Das zentrale Theme wird einmal optimiert; alle Praxen profitieren, ohne dass jemand einzelne Seiten nachbessern muss.</li>
@@ -1232,7 +1232,7 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
 <li class="check">☐ Repo-Scan auf Secrets (<code>grep -rEi "api[_-]?key|token|password" .</code>) ohne Treffer</li>
 <li class="check">☐ Verzeichnislisting aus, Formular-Handler nicht öffentlich debugbar</li>
 </ul>
-<h2>6. Im Factory-Modell</h2>
+<h2>6. Im neuen Stack</h2>
 <p>Bei einer zentralen Build- und Deployment-Pipeline verschiebt sich die Angriffsfläche von der Website zur <strong>Pipeline</strong>:</p>
 <ul>
 <li><strong>CI/CD-Secrets</strong> (Deploy-Zugänge, Webhook-Tokens) liegen ausschließlich in den CI-Variablen, nie im Repository oder im Theme</li>
@@ -1243,90 +1243,74 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
 </ul>
 </section>
 <section id="k11">
-<h2 class="chapter">Tech-Stack-Entscheidung</h2>
-<p>Dieses Kapitel führt die beiden Modelle zusammen, die im Projekt bisher nebeneinander stehen – und macht die Entscheidung explizit statt implizit.</p>
-<h2>1. Ausgangslage: zwei Modelle</h2>
-<p><strong>Modell A – Etablierter Betrieb (heute im Einsatz)</strong>
-Statische Website je Praxis: HTML/CSS mit Designsystem-Variablen, React 18 (lokal, SRI) für Routing und Interaktion, esbuild als Build, PHP 8.4 ausschließlich für den Formularversand, gehostet auf STRATO (deutsches Rechenzentrum, SSH/SFTP, <code>.htaccess</code>, SSL inklusive). Inhalte werden im Managed Service gepflegt, die Praxis liefert Änderungen per Mail.</p>
-<p><strong>Modell B – Factory (Idee aus dem Konzept)</strong>
-Zentrale Build- und Delivery-Ebene auf Terra Cloud + Coolify + GitLab, Hugo als Static Site Generator, ein Theme als Submodule, ein Repository je Praxis, Auslieferung über Nginx/Caddy-Container. Die redaktionelle Pflege liegt in beiden Modellen zentral bei engel&amp;engel.</p>
-<h2>2. Direktvergleich</h2>
+<h2 class="chapter">Tech-Stack</h2>
+<p>Die Umsetzung besteht aus drei Bausteinen: <strong>GitLab</strong>, <strong>einem neuen VPS</strong> und <strong>Coolify</strong>. Es gibt keinen zweiten Weg und keine Modellvariante — jede Praxis läuft auf dieser Basis.</p>
+<h2>1. Die drei Bausteine</h2>
 <table>
 <thead>
 <tr>
-<th>Dimension</th>
-<th>Modell A (STRATO, statisch, React)</th>
-<th>Modell B (Terra Cloud, Hugo-Factory)</th>
+<th>Baustein</th>
+<th>Rolle</th>
+<th>Warum</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Hosting</td>
-<td>Webhosting-Tarif je Praxis, deutsches RZ</td>
-<td>eigener VPS + Container, deutsches RZ (Wortmann AG)</td>
+<td><strong>GitLab</strong></td>
+<td>Repositories und CI/CD-Pipeline</td>
+<td>Theme und Praxis-Daten sind versioniert, Builds reproduzierbar, Änderungen nachvollziehbar und rückholbar</td>
 </tr>
 <tr>
-<td>Auslieferung</td>
-<td>Apache, statische Dateien, <code>.htaccess</code></td>
-<td>Nginx/Caddy hinter Coolify-Proxy, Traefik-Routing</td>
+<td><strong>Neuer VPS</strong> (Terra Cloud, deutsches Rechenzentrum)</td>
+<td>Rechenleistung für Build und Auslieferung</td>
+<td>DSGVO-/BDSG-konform; der Serverstandort Deutschland ist ein Verkaufsargument</td>
 </tr>
 <tr>
-<td>Build</td>
-<td>esbuild lokal, Seiten-Generator in Node</td>
-<td>Hugo im GitLab Runner, Theme als Submodule</td>
-</tr>
-<tr>
-<td>Inhaltsmodell</td>
-<td>Daten in <code>config.js</code>, Pflege zentral</td>
-<td>Content je Praxis-Repo, Pflege zentral</td>
-</tr>
-<tr>
-<td>Redaktion</td>
-<td>engel&amp;engel – die Praxis meldet Änderungen</td>
-<td>engel&amp;engel – die Praxis meldet Änderungen</td>
-</tr>
-<tr>
-<td>Neue Praxis anlegen</td>
-<td>Template kopieren, konfigurieren, hochladen</td>
-<td>Repo anlegen, Theme binden, Pipeline läuft</td>
-</tr>
-<tr>
-<td>Skalierung auf 50+ Praxen</td>
-<td>linearer Aufwand je Praxis (Upload, Pflege)</td>
-<td>Aufwand wächst unterproportional, zentrales Theme</td>
-</tr>
-<tr>
-<td>Betriebsrisiko</td>
-<td>verteilt: ein Ausfall trifft eine Praxis</td>
-<td>konzentriert: ein Ausfall trifft alle Praxen</td>
-</tr>
-<tr>
-<td>Know-how</td>
-<td>HTML/CSS/JS/Node, STRATO-Panel</td>
-<td>zusätzlich Hugo, GitLab CI, Docker, Coolify</td>
-</tr>
-<tr>
-<td>Kostenstruktur</td>
-<td>je Praxis ein Hosting-Tarif</td>
-<td>ein VPS + Runner, Kosten skalieren langsamer als die Kundenzahl</td>
-</tr>
-<tr>
-<td>Updates am Design</td>
-<td>je Praxis einzeln ausrollen</td>
-<td>zentral im Theme, wirkt in alle Praxen</td>
+<td><strong>Coolify</strong></td>
+<td>Deployment, Reverse-Proxy, TLS</td>
+<td>orchestriert die Container, verwaltet Wildcard- und Custom-Domains, stellt Let's-Encrypt-Zertifikate aus, deployt per Webhook</td>
 </tr>
 </tbody>
 </table>
-<h2>3. Entscheidungsregeln</h2>
-<ol>
-<li><strong>Einzelpraxis, seltene Änderungen, Managed Service</strong> → Modell A. Weniger bewegliche Teile, kein Server zu betreiben, sofort lieferbar.</li>
-<li><strong>Praxis mit häufig wechselnden Inhalten</strong> (Urlaub, News, Team) → das Modell ändert sich dadurch nicht, es braucht nur einen belastbaren Änderungsprozess mit kurzer Reaktionszeit (Kapitel 03).</li>
-<li><strong>Ab etwa 10–15 betreuten Praxen</strong> kippt der Aufwand: Der manuelle Rollout von Änderungen wird zum Engpass, die Factory zahlt sich aus.</li>
-<li><strong>Kunden mit eigener IT-Erwartung</strong> (MVZ, größere Gemeinschaftspraxen) erwarten klare Ansprechpartner, Berichte und Reaktionszeiten – keine Selbstbedienung im Redaktionssystem.</li>
-<li><strong>Kein Mischbetrieb ohne Grund:</strong> Wer beides parallel betreibt, pflegt zwei Toolchains. Die Entscheidung sollte pro Kunde fallen und dokumentiert werden – nicht pro Laune.</li>
-</ol>
-<h2>4. Warum kein Redaktionssystem</h2>
-<p>Die Pflege läuft <strong>zentral über engel&amp;engel</strong>. Die Praxis meldet Änderungen, wir setzen sie um. Damit entfällt die Redaktionsoberfläche vollständig.</p>
+<h2>2. Was wo läuft</h2>
+<table>
+<thead>
+<tr>
+<th>Ort</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitLab</td>
+<td>Theme-Repository, ein Repository je Praxis, CI-Pipeline</td>
+</tr>
+<tr>
+<td>VPS</td>
+<td>GitLab Runner (Build), Coolify, Container für die Auslieferung (Caddy/Traefik)</td>
+</tr>
+<tr>
+<td>Auslieferung</td>
+<td>statisches HTML/CSS/JS — kein PHP, keine Datenbank, kein Redaktionssystem</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Ablauf einer Änderung</h2>
+<pre><code class="language-text">Commit (Theme oder Praxis-Daten)
+        |
+        v
+Pipeline: Hugo-Build + Prüfungen (Links, HTML, Barrierefreiheit, Budgets)
+        |
+        v
+Artefakt (fertige statische Seiten)
+        |
+        v
+Coolify-Webhook -&gt; Container aktualisieren -&gt; live
+</code></pre>
+<h2>4. Hugo als Generator</h2>
+<p>Hugo erzeugt aus Theme und Praxis-Daten die fertigen Seiten — in Millisekunden und ohne Laufzeitumgebung auf dem Webserver. Das Theme wird als Git-Submodule oder Hugo-Modul in fester Version je Praxis gebunden, damit ein Update eine bewusste Entscheidung bleibt (Kapitel 02).</p>
+<h2>5. Warum kein Redaktionssystem</h2>
+<p>Die Pflege läuft <strong>zentral über engel&amp;engel</strong>. Die Praxis meldet Änderungen, wir setzen sie um — damit entfällt eine Redaktionsoberfläche vollständig.</p>
 <table>
 <thead>
 <tr>
@@ -1368,21 +1352,28 @@ Zentrale Build- und Delivery-Ebene auf Terra Cloud + Coolify + GitLab, Hugo als 
 </tr>
 </tbody>
 </table>
-<p><strong>Der Nachteil wird bewusst getragen:</strong> Änderungen kosten die Praxis eine Meldung und uns Arbeitszeit – deshalb braucht das Modell ein definiertes Kontingent und klare Reaktionszeiten. Im Gegenzug bleibt die Verantwortung für Rechtssicherheit und Qualität an einer Stelle.</p>
-<p><strong>Was die Praxis trotzdem kann:</strong> jederzeit Änderungen melden – per Telefon oder formloser E-Mail, ohne Formulare, ohne Login, mit Eingangsbestätigung.</p>
-<h2>5. Konsequenzen und offene Entscheidungen</h2>
+<p><strong>Der Nachteil wird bewusst getragen:</strong> Änderungen kosten die Praxis eine Meldung und uns Arbeitszeit — deshalb braucht das Modell ein definiertes Kontingent und klare Reaktionszeiten. Im Gegenzug bleibt die Verantwortung für Rechtssicherheit und Qualität an einer Stelle.</p>
+<p><strong>Was die Praxis trotzdem kann:</strong> jederzeit Änderungen melden — per Telefon oder formloser E-Mail, ohne Formulare, ohne Login, mit Eingangsbestätigung.</p>
+<h2>6. Anforderungen an den VPS</h2>
 <ul>
-<li><strong>Theme-Wechsel ist die eigentliche Investition.</strong> Modell B bedeutet, das bestehende Template als Hugo-Theme neu aufzubauen (oder Hugo nur als Build-Werkzeug für die vorhandenen HTML-Templates zu nutzen). Das ist ein eigenes Arbeitspaket.</li>
-<li><strong>Ausfallkonzentration</strong> muss beantwortet werden: Was passiert, wenn der VPS oder die Pipeline steht? Antwort: statische Artefakte werden zusätzlich bei einem zweiten Ziel (oder als Archiv) vorgehalten und im Notfall manuell ausgeliefert.</li>
-<li><strong>Backup und Wiederherstellung</strong> brauchen ein Konzept (Praxis-Repos, Theme, Secrets, Build-Artefakte).</li>
-<li><strong>Der Vorteil von Modell A bleibt:</strong> Für eine einzelne Praxis ist es das robusteste und günstigste Modell – die Factory ist eine Skalierungsentscheidung, keine Qualitätsentscheidung.</li>
+<li><strong>Build ist CPU-lastig, Auslieferung ist leicht:</strong> die Dimensionierung richtet sich nach der Zahl der Praxen und der Häufigkeit von Theme-Builds, nicht nach dem Traffic.</li>
+<li><strong>Speicher:</strong> Praxis-Repositories und Build-Artefakte sind klein; Backups brauchen mehr Platz als die Daten selbst.</li>
+<li><strong>Getrennte Umgebungen:</strong> Vorschau/Staging und Produktion getrennt halten, Vorschauen zugriffsgeschützt und nicht indexierbar.</li>
+<li><strong>Reserve einplanen:</strong> Wachstum entsteht durch Praxen, nicht durch Lastspitzen.</li>
 </ul>
-<p><strong>Offene Punkte für eine Entscheidung:</strong></p>
+<h2>7. Konsequenzen</h2>
+<ul>
+<li><strong>Ein System zu betreiben:</strong> VPS, Coolify, Runner und Container brauchen Updates, Monitoring und Backups (Kapitel 14).</li>
+<li><strong>Ausfallkonzentration:</strong> fällt der VPS aus, sind alle Praxen offline — dafür braucht es einen dokumentierten Notfallplan (Kapitel 14).</li>
+<li><strong>Know-how:</strong> Hugo, GitLab CI, Docker und Coolify müssen im Haus beherrscht werden.</li>
+<li><strong>Trennung bleibt:</strong> Theme, Praxis-Daten und Auslieferung sind getrennte Ebenen (Kapitel 01) — eine Theme-Änderung wirkt zentral, ohne die Praxis-Daten zu berühren.</li>
+</ul>
+<h2>8. Offene Punkte</h2>
 <ol>
-<li>Ab welcher Kundenzahl wird die Factory verbindlich?</li>
-<li>Wird das bestehende Template nach Hugo portiert oder als Build-Input beibehalten?</li>
-<li>Wer betreibt die Pipeline (engel&amp;engel selbst, mit welcher Ausfallsicherheit)?</li>
-<li>Welche Reaktionszeiten und Änderungskontingente werden je Paket zugesagt?</li>
+<li>VPS-Größe und Anbieter final festlegen (Terra Cloud) und mit echten Preisen kalkulieren.</li>
+<li>Das bestehende Praxistemplate als Hugo-Theme umsetzen (eigenes Arbeitspaket).</li>
+<li>Redundanz und Notfallkonzept festlegen: Wie werden die statischen Seiten ausgeliefert, wenn VPS oder Coolify ausfallen?</li>
+<li>Backup- und Wiederherstellungskonzept für Repositories, Theme und Secrets dokumentieren.</li>
 </ol>
 </section>
 <section id="k12">
@@ -1459,7 +1450,7 @@ Zentrale Build- und Delivery-Ebene auf Terra Cloud + Coolify + GitLab, Hugo als 
 </ul>
 <h2>5. Schritt 2 – Konfiguration</h2>
 <ol>
-<li>Praxis-Daten zentral eintragen (in Modell A <code>config.js</code>, in Modell B <code>/content</code> + <code>config</code>)</li>
+<li>Praxis-Daten zentral im Praxis-Repository eintragen (<code>/content</code> + <code>config</code>)</li>
 <li>Farben setzen und <strong>Kontraste prüfen</strong> (Markenfarbe, dunkle Variante für Text)</li>
 <li>Seiten-Generator konfigurieren: Name, Domain, Adresse, Telefon, Titles/Descriptions</li>
 <li>Formular-Empfänger und Domain setzen</li>
@@ -1531,7 +1522,7 @@ Zentrale Build- und Delivery-Ebene auf Terra Cloud + Coolify + GitLab, Hugo als 
 <li class="check">☐ Freigabe der Praxis dokumentiert</li>
 <li class="check">☐ Go-Live- und Wartungs-Checklisten abgearbeitet</li>
 </ul>
-<h2>11. Im Factory-Modell</h2>
+<h2>11. Im neuen Stack</h2>
 <ul>
 <li>Aus „Template kopieren und konfigurieren" wird „Repository anlegen und Theme binden"; die Datenerfassung (Schritt 1) bleibt unverändert und wird als strukturiertes Onboarding-Formular geführt.</li>
 <li>Die Freigaberunde bleibt ein <strong>menschlicher</strong> Schritt. Ohne dokumentierte Freigabe kein Go-Live.</li>
@@ -1591,7 +1582,7 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 <li class="check">☐ Uptime-Monitor ohne Alarme</li>
 <li class="check">☐ Abhängigkeiten und Build-Tools auf Sicherheitsupdates geprüft</li>
 </ul>
-<h2>6. Im Factory-Modell</h2>
+<h2>6. Im neuen Stack</h2>
 <p>Die Prüfungen wandern in die Pipeline und werden damit für jede Praxis reproduzierbar:</p>
 <table>
 <thead>
@@ -1631,64 +1622,35 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 </section>
 <section id="k14">
 <h2 class="chapter">Betrieb & Wartung</h2>
-<h2>1. Hosting: zwei Wege</h2>
+<p>Betrieben wird <strong>ein System</strong>: der VPS mit Coolify, GitLab Runner und den Auslieferungs-Containern. Alle Praxen laufen darüber — es gibt keine Einzelinstallationen mehr.</p>
+<h2>1. Was betrieben wird</h2>
 <table>
 <thead>
 <tr>
-<th>Kriterium</th>
-<th>STRATO-Webhosting (Modell A)</th>
-<th>Terra Cloud + Coolify (Modell B)</th>
+<th>Baustein</th>
+<th>Betriebsaufgabe</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Betriebsaufwand</td>
-<td>keiner – Webhosting-Tarif, Panel</td>
-<td>eigener Server: Updates, Monitoring, Backups</td>
+<td><strong>VPS</strong> (Terra Cloud)</td>
+<td>Systemupdates, Ressourcen, Monitoring, Backup, Zugänge</td>
 </tr>
 <tr>
-<td>Auslieferung</td>
-<td>Apache, <code>.htaccess</code>, PHP 8.4</td>
-<td>Nginx/Caddy-Container hinter Coolify-Proxy</td>
+<td><strong>Coolify</strong></td>
+<td>Version, Container, Domains, TLS-Zertifikate, Deployments</td>
 </tr>
 <tr>
-<td>SSL</td>
-<td>automatisch über STRATO</td>
-<td>Let's Encrypt über Coolify</td>
+<td><strong>GitLab + Runner</strong></td>
+<td>Runner-Image, Secrets, Pipeline-Status, Repository-Backups</td>
 </tr>
 <tr>
-<td>Deployment</td>
-<td>SFTP/rsync je Praxis</td>
-<td>Git-Push, Webhook, Pipeline</td>
-</tr>
-<tr>
-<td>Skalierung</td>
-<td>ein Tarif je Praxis</td>
-<td>eine Infrastruktur für viele Praxen</td>
-</tr>
-<tr>
-<td>Ausfallrisiko</td>
-<td>verteilt (je Praxis)</td>
-<td>konzentriert (alle Praxen)</td>
-</tr>
-<tr>
-<td>DSGVO</td>
-<td>deutsches Rechenzentrum, AV-Vertrag</td>
-<td>deutsches Rechenzentrum (Wortmann AG), AV-Vertrag</td>
-</tr>
-<tr>
-<td>Kosten</td>
-<td>ab ca. 10 €/Monat je Praxis</td>
-<td>ein VPS + Runner für alle Praxen</td>
-</tr>
-<tr>
-<td>Passend für</td>
-<td>Einzelpraxen, Managed Service</td>
-<td>viele Praxen, zentrale Pflege</td>
+<td><strong>Auslieferung</strong> (Caddy/Traefik)</td>
+<td>Cache, Security-Header, Ausfallsicherheit</td>
 </tr>
 </tbody>
 </table>
-<h2>2. Deployment-Workflow (Modell A)</h2>
+<h2>2. Deployment-Workflow</h2>
 <table>
 <thead>
 <tr>
@@ -1699,30 +1661,29 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 <tbody>
 <tr>
 <td>Sprechzeiten, Aktuelles</td>
-<td>Datenquelle anpassen (in <code>config.js</code>/Content) → nur geänderte Dateien hochladen</td>
+<td>Praxis meldet → Praxis-Repository anpassen → Commit → Pipeline baut → Coolify deployt</td>
 </tr>
 <tr>
-<td>Design</td>
-<td><code>styles.css</code> anpassen → Upload, Cache-Busting (<code>?v=</code>) erhöhen</td>
+<td>Design/Theme</td>
+<td>Theme-Repository anpassen → Staging-Build über alle Praxen → Freigabe → Ausrollen</td>
 </tr>
 <tr>
-<td>Interaktion/JS</td>
-<td>Quelle editieren → Build (<code>npm run build</code>) → kompiliertes Bundle hochladen</td>
+<td>Neue Praxis</td>
+<td>Repository anlegen, Theme binden, Domain in Coolify hinterlegen, DNS umstellen, Pipeline</td>
 </tr>
 <tr>
-<td>Geplant</td>
-<td>GitLab CI/CD: Push auf <code>main</code> → rsync/lftp auf das Hosting (Zugangsdaten in CI-Variablen)</td>
+<td>Notfall</td>
+<td>Coolify auf das vorherige Deployment zurückstellen oder Commit reverten</td>
 </tr>
 </tbody>
 </table>
-<p>Wichtig beim Upload: <code>.htaccess</code>, Formular-Handler, <code>assets/</code>, <code>robots.txt</code> und <code>sitemap.xml</code> mitnehmen – auch versteckte Dateien.</p>
 <h2>3. Monitoring</h2>
 <ul>
-<li><strong>Verfügbarkeit:</strong> externer Monitor auf die Startseite jeder Praxis, Alarm bei Ausfall (Uptime-Monitor oder Zabbix)</li>
-<li><strong>SSL-Ablauf:</strong> Warnung einrichten, auch wenn die Verlängerung automatisch läuft</li>
-<li><strong>Formular:</strong> monatlicher Testversand (das Formular ist der einzige dynamische Teil)</li>
+<li><strong>Verfügbarkeit je Praxis:</strong> externer Monitor auf die Startseite jeder Praxis, Alarm bei Ausfall</li>
+<li><strong>Infrastruktur:</strong> Pipeline-Status, Runner-Auslastung, Speicherplatz, Container-Zustand, Coolify-Version</li>
+<li><strong>TLS:</strong> Ablaufüberwachung für alle Domains, auch bei automatischer Erneuerung</li>
+<li><strong>Formular:</strong> monatlicher Testversand je Praxis (der einzige dynamische Teil)</li>
 <li><strong>Core Web Vitals:</strong> Search-Console-Bericht nach dem Go-Live beobachten</li>
-<li><strong>Im Factory-Modell zusätzlich:</strong> Pipeline-Status, Runner-Auslastung, Speicherplatz der Praxis-Repositories</li>
 </ul>
 <h2>4. Backup und Wiederherstellung</h2>
 <table>
@@ -1734,35 +1695,36 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 </thead>
 <tbody>
 <tr>
-<td>Website-Dateien</td>
-<td>Hosting-Backup (Tarif-Funktion) + Kopie im Repository</td>
+<td>Theme und Praxis-Repositories</td>
+<td>GitLab-Backup plus Spiegel-Repository</td>
 </tr>
 <tr>
-<td>Praxis-Daten und Inhalte</td>
-<td>Git-Historie je Praxis – vollständig versioniert</td>
+<td>Coolify-Konfiguration</td>
+<td>Coolify-Backup (Konfiguration und Datenbank)</td>
 </tr>
 <tr>
-<td>Theme und Konfiguration</td>
-<td>zentrales Repository</td>
+<td>Secrets</td>
+<td>Passwort-Manager, zusätzlich verschlüsseltes Backup</td>
 </tr>
 <tr>
-<td>Zugangsdaten</td>
-<td>Passwort-Manager (nie im Repo)</td>
+<td>Build-Artefakte</td>
+<td>jederzeit reproduzierbar aus Commit plus Theme-Version</td>
 </tr>
 <tr>
-<td>Datenbanken</td>
-<td>nur relevant, wenn eine Praxis echte Anwendungsdaten hat – Standard ist: keine</td>
+<td>VPS</td>
+<td>Snapshot/Backup des Anbieters</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Wiederherstellung üben:</strong> Ein Restore aus dem Repository plus Deployment muss dokumentiert und mindestens einmal durchgespielt sein.</p>
+<p><strong>Wiederherstellung üben:</strong> Ein Restore aus Repository plus Coolify-Deployment wird dokumentiert und mindestens einmal durchgespielt.</p>
 <h2>5. Wartungsroutine (monatlich)</h2>
 <ul>
 <li class="check">☐ Formularversand je Praxis testen</li>
 <li class="check">☐ Sprechzeiten, Urlaub, Aktuelles aktuell?</li>
 <li class="check">☐ SSL gültig, Security-Header unverändert</li>
 <li class="check">☐ Verfügbarkeitsmonitor ohne Alarme</li>
-<li class="check">☐ Abhängigkeiten, Build-Tools und (im Factory-Modell) Container-Images aktualisiert</li>
+<li class="check">☐ VPS-Updates, Coolify- und Container-Images aktualisiert</li>
+<li class="check">☐ Pipeline-Status und Runner aktuell, keine fehlgeschlagenen Deployments</li>
 <li class="check">☐ Backups vorhanden und lesbar</li>
 </ul>
 <h2>6. Störungen und Notfälle</h2>
@@ -1775,36 +1737,41 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 </thead>
 <tbody>
 <tr>
-<td>Seite nicht erreichbar</td>
-<td>Hosting-Status prüfen, DNS prüfen, letzte Änderung zurückrollen</td>
+<td>VPS oder Coolify nicht erreichbar</td>
+<td>Notfall-Auslieferung aus statischem Archiv, Anbieterstatus prüfen, Kunden informieren</td>
 </tr>
 <tr>
-<td>Formular sendet nicht</td>
-<td>Ersatzweg kommunizieren (Telefon/E-Mail prominent), Handler prüfen</td>
+<td>Pipeline bricht ab</td>
+<td>letzte gute Version bleibt live, Fehler beheben, erneut deployen</td>
 </tr>
 <tr>
-<td>Falsche Inhalte live</td>
-<td>Rollback auf den letzten Commit, Korrektur, erneut deployen</td>
+<td>Fehlerhafte Inhalte live</td>
+<td>Rollback auf den letzten Commit</td>
+</tr>
+<tr>
+<td>Domain oder Zertifikat</td>
+<td>DNS- und Coolify-Konfiguration prüfen</td>
 </tr>
 <tr>
 <td>Kompromittierung vermutet</td>
-<td>Seite offline nehmen, Zugänge rotieren, Ursache klären, dann wieder online</td>
+<td>Container stoppen, Zugänge rotieren, Ursache klären, dann wieder online</td>
 </tr>
 </tbody>
 </table>
 <p>Grundsatz: <strong>Rollback vor Ursachenforschung.</strong> Die Seite muss zuerst wieder korrekt stehen.</p>
 <h2>7. Checkliste</h2>
 <ul>
-<li class="check">☐ Domain und SSL live, HTTP→HTTPS 301 geprüft</li>
-<li class="check">☐ Alle Dateien inklusive versteckter Dateien deployed</li>
-<li class="check">☐ Formular sendet an das Praxis-Postfach</li>
+<li class="check">☐ Domains und TLS live, HTTP→HTTPS 301 geprüft</li>
+<li class="check">☐ Alle Praxen über die Pipeline deploybar</li>
+<li class="check">☐ Formular sendet je Praxis an das richtige Postfach</li>
 <li class="check">☐ Search Console, Bing und Google Business Profile verknüpft</li>
 <li class="check">☐ Backup aktiv, Monitoring und SSL-Warnung eingerichtet</li>
+<li class="check">☐ Notfallplan (Auslieferung ohne VPS) dokumentiert und einmal getestet</li>
 </ul>
 </section>
 <section id="k15">
 <h2 class="chapter">Roadmap</h2>
-<p>Von der ersten Pilotpraxis zur betreuten Website-Flotte.</p>
+<p>Vom Aufbau der Infrastruktur zur betreuten Website-Flotte.</p>
 <h2>1. Phasen</h2>
 <table>
 <thead>
@@ -1817,14 +1784,14 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 </thead>
 <tbody>
 <tr>
-<td><strong>0. Vorbereitung</strong></td>
-<td>Entscheidung A/B (Kapitel 11), Angebots- und Preisstruktur, Onboarding-Unterlagen</td>
+<td><strong>0. Aufbau</strong></td>
+<td>VPS aufsetzen, Coolify und GitLab Runner einrichten, Theme als Hugo-Theme umsetzen, Angebot und Preisstruktur, Onboarding-Unterlagen</td>
 <td>Kalkulation (Kapitel 16), Mustertexte, Checklisten</td>
-<td>ein verkaufsfähiges Angebot inkl. Preisstufen</td>
+<td>Infrastruktur steht, eine Test-Praxis ist deploybar</td>
 </tr>
 <tr>
 <td><strong>1. Pilot (1 Praxis)</strong></td>
-<td>eine reale Praxis vollständig umsetzen – mit dem bestehenden Modell A</td>
+<td>eine reale Praxis vollständig über den neuen Stack umsetzen</td>
 <td>Pilotkunde mit Freigabebereitschaft</td>
 <td>live, Freigaben dokumentiert, Wartungsroutine läuft 30 Tage</td>
 </tr>
@@ -1836,14 +1803,14 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 </tr>
 <tr>
 <td><strong>3. Automatisierung (10–25 Praxen)</strong></td>
-<td>Factory-Elemente einführen: zentrale Pipeline, Theme, automatische Prüfungen</td>
-<td>Entscheidung für Modell B, Theme-Portierung</td>
-<td>Rollout von Designänderungen in Stunden statt Tagen</td>
+<td>Prüfungen, Rollout und Monitoring automatisieren</td>
+<td>stabile Pipeline, Theme-Versionierung</td>
+<td>Designänderungen in Stunden statt Tagen ausgerollt</td>
 </tr>
 <tr>
 <td><strong>4. Skalierung (25–50+ Praxen)</strong></td>
-<td>Betrieb industrialisieren: Monitoring, Reporting, klare SLAs</td>
-<td>Betriebskonzept, Ausfallsicherheit, Personal</td>
+<td>Betrieb industrialisieren: Monitoring, Reporting, klare Reaktionszeiten, Ausfallsicherheit</td>
+<td>Betriebskonzept, Redundanz, Personal</td>
 <td>Betreuungsaufwand je Praxis sinkt weiter</td>
 </tr>
 </tbody>
@@ -1858,20 +1825,20 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 </thead>
 <tbody>
 <tr>
+<td>Infrastruktur steht</td>
+<td>Reicht die VPS-Größe für die ersten Praxen?</td>
+</tr>
+<tr>
 <td>Pilot live</td>
 <td>Passt der Änderungsprozess im Alltag (Reaktionszeit, Kontingent)?</td>
 </tr>
 <tr>
 <td>10 Praxen betreut</td>
-<td>Wechsel auf Factory-Architektur oder weiter mit Einzelhosting?</td>
-</tr>
-<tr>
-<td>Theme portiert</td>
-<td>Bleibt das Design zentral pflegbar?</td>
+<td>Wird ein zweiter VPS oder eine zweite Auslieferungsebene für Redundanz gebraucht?</td>
 </tr>
 <tr>
 <td>25 Praxen</td>
-<td>Einstieg in Automatisierung von Monitoring und Reporting?</td>
+<td>Einstieg in automatisierte Reports und Self-Service-Statusseiten?</td>
 </tr>
 <tr>
 <td>50 Praxen</td>
@@ -1882,29 +1849,30 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 <h2>3. Offene Fragen</h2>
 <ol>
 <li>Welche Reaktionszeiten und Änderungskontingente gelten je Paket?</li>
-<li>Wie wird die Ausfallsicherheit der zentralen Ebene sichergestellt (Redundanz, Zweitauslieferung)?</li>
-<li>Welche Reaktionszeiten werden vertraglich zugesagt (Wartung, Störung, Änderungen)?</li>
-<li>Bleibt der Hosting-Standort je Praxis frei wählbar oder wird er vereinheitlicht?</li>
-<li>Wie werden Praxen übernommen, die bereits eine Website haben (Migration, Redirects, Domainumzug)?</li>
+<li>Wie wird die Ausfallsicherheit der zentralen Ebene sichergestellt (Redundanz, zweite Auslieferung)?</li>
+<li>Wie werden Praxen übernommen, die bereits eine Website haben (Migration, Redirects, Domain- und Mail-Umzug)?</li>
+<li>Wie wird das Theme versioniert und wie werden Theme-Releases freigegeben?</li>
 </ol>
 <h2>4. Abhängigkeiten</h2>
 <ul>
-<li><strong>Rechtstexte und HWG-Prüfung</strong> sind der häufigste Zeitfresser im Projekt – Unterlagen dafür müssen in Phase 0 fertig sein.</li>
+<li><strong>Rechtstexte und HWG-Prüfung</strong> sind der häufigste Zeitfresser — die Unterlagen dafür müssen in Phase 0 fertig sein.</li>
 <li><strong>Foto-Termine</strong> bei der Praxis takten den Zeitplan; ohne Bilder kein Go-Live.</li>
-<li><strong>Der Domainumzug</strong> einer bestehenden WordPress-Seite braucht ein Redirect-Konzept, sonst gehen Rankings verloren.</li>
+<li><strong>Der Domainumzug</strong> einer bestehenden Website braucht ein Redirect-Konzept, sonst gehen Rankings verloren.</li>
+<li><strong>Die Theme-Portierung</strong> ist Voraussetzung für jede weitere Praxis — sie ist das erste Arbeitspaket.</li>
 </ul>
 <h2>5. Nächste Schritte</h2>
 <ol>
+<li>VPS bei Terra Cloud bestellen und aufsetzen, Coolify installieren, GitLab Runner registrieren</li>
+<li>Theme als Hugo-Theme umsetzen und eine Test-Praxis deployen</li>
 <li>Pilotpraxis auswählen und Daten aufnehmen (Kapitel 12, Schritt 1)</li>
 <li>Angebot mit Preisstufen aus Kapitel 16 finalisieren</li>
-<li>Entscheidung zu Kapitel 11 dokumentieren (Modell A oder B, mit Begründung)</li>
 <li>Wartungs- und Störungsprozess (Kapitel 14) schriftlich fixieren</li>
 </ol>
 </section>
 <section id="k16">
 <h2 class="chapter">Kosten & Kalkulation</h2>
 <blockquote>
-<p><strong>Hinweis:</strong> Die Zahlen in diesem Kapitel sind <strong>Annahmen und Rechenbeispiele</strong>, keine Angebote. Vor dem Verkauf werden sie mit echten Preisen (Hosting, Infrastruktur, Arbeitszeit) gefüllt.</p>
+<p><strong>Hinweis:</strong> Die Zahlen in diesem Kapitel sind <strong>Annahmen und Rechenbeispiele</strong>, keine Angebote. Vor dem Verkauf werden sie mit echten Preisen (VPS, Backup, Arbeitszeit) gefüllt.</p>
 </blockquote>
 <h2>1. Kostenblöcke</h2>
 <table>
@@ -1918,13 +1886,13 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 <tbody>
 <tr>
 <td><strong>Infrastruktur</strong></td>
-<td>Webhosting je Praxis (Modell A) <strong>oder</strong> VPS + Runner (Modell B), Domain, SSL, Backup</td>
-<td>monatlich, fix</td>
+<td>ein VPS (Terra Cloud), Backup/Snapshots, Domains, SSL (inklusive)</td>
+<td>monatlich, fix — <strong>unabhängig von der Zahl der Praxen</strong></td>
 </tr>
 <tr>
 <td><strong>Einrichtung</strong></td>
-<td>Datenerfassung, Konfiguration, Inhalte, Bilder, Rechtstexte, QA, Go-Live</td>
-<td>einmalig, Arbeitszeit</td>
+<td>Datenaufnahme, Inhalte, Bilder, Rechtstexte, QA, Go-Live</td>
+<td>einmalig je Praxis, Arbeitszeit</td>
 </tr>
 <tr>
 <td><strong>Betrieb</strong></td>
@@ -1938,11 +1906,12 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 </tr>
 <tr>
 <td><strong>Werkzeuge</strong></td>
-<td>Design-/Bildbearbeitung, Monitoring, Passwort-Manager</td>
+<td>Bildbearbeitung, Monitoring, Passwort-Manager</td>
 <td>monatlich, fix (geteilt)</td>
 </tr>
 </tbody>
 </table>
+<p>Weil es <strong>kein Hosting je Praxis</strong> mehr gibt, sind die Infrastrukturkosten fix: mehr Praxen verteilen dieselben Kosten auf mehr Kunden.</p>
 <h2>2. Annahmen für das Rechenbeispiel</h2>
 <table>
 <thead>
@@ -1953,6 +1922,14 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 </thead>
 <tbody>
 <tr>
+<td>VPS (Terra Cloud) inkl. Backup</td>
+<td>Größenordnung 20–60 €/Monat — mit echtem Angebot zu ersetzen</td>
+</tr>
+<tr>
+<td>Domains je Praxis</td>
+<td>ca. 10–15 €/Jahr (in der Pauschale enthalten)</td>
+</tr>
+<tr>
 <td>Einrichtungsaufwand je Praxis</td>
 <td>1,5–3 Personentage (ohne Fototermin)</td>
 </tr>
@@ -1962,23 +1939,11 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 </tr>
 <tr>
 <td>Änderungsaufwand</td>
-<td>15–30 Minuten pro Meldung</td>
-</tr>
-<tr>
-<td>Hosting je Praxis (Modell A)</td>
-<td>ab ca. 10 €/Monat</td>
-</tr>
-<tr>
-<td>Infrastruktur (Modell B)</td>
-<td>ein VPS + Runner für alle Praxen, mit echten Angeboten zu kalkulieren</td>
-</tr>
-<tr>
-<td>Domain</td>
-<td>ca. 10–15 €/Jahr (oft inklusive)</td>
+<td>15–30 Minuten pro Meldung, 1–2 Meldungen pro Monat</td>
 </tr>
 </tbody>
 </table>
-<h2>3. Rechenbeispiel je Praxis (Modell A, Managed Service)</h2>
+<h2>3. Rechenbeispiel (Basisstufe 49 €/Monat)</h2>
 <table>
 <thead>
 <tr>
@@ -1988,24 +1953,28 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 </thead>
 <tbody>
 <tr>
-<td>Hosting-Tarif</td>
-<td>ca. 10 €/Monat</td>
+<td>Monatspauschale</td>
+<td>49 €</td>
 </tr>
 <tr>
-<td>Wartung (45 Min/Monat, interner Stundensatz)</td>
-<td>abhängig vom Satz</td>
+<td>Anteil Infrastruktur (Annahme: 40 €/Monat auf 10 Praxen)</td>
+<td>ca. 4 €</td>
 </tr>
 <tr>
-<td>Kleinänderungen (Annahme 1–2 pro Monat)</td>
-<td>abhängig vom Satz</td>
+<td><strong>Deckungsbeitrag vor Arbeitszeit</strong></td>
+<td><strong>ca. 45 €</strong></td>
 </tr>
 <tr>
-<td><strong>Deckungsbeitrag</strong></td>
-<td>Monatspauschale minus Infrastruktur minus Arbeitszeit</td>
+<td>Arbeitszeit je Praxis</td>
+<td>75 Minuten (45 Min Wartung + rund 1,5 Änderungen)</td>
+</tr>
+<tr>
+<td><strong>Break-even-Stundensatz</strong></td>
+<td><strong>ca. 36 €/h</strong></td>
 </tr>
 </tbody>
 </table>
-<p>Bei einer Pauschale von 49 €/Monat bleiben nach Abzug von ca. 10 € Hosting rund 39 € vor Arbeitszeit. Das ist die zentrale Kennzahl: <strong>Die Pauschale muss den tatsächlichen Betreuungsaufwand decken</strong> – deshalb ist die Wartungsroutine (Kapitel 14) so kurz wie möglich zu halten.</p>
+<p><strong>Lesart:</strong> Die Basisstufe trägt sich, solange der interne Aufwand bei etwa 75 Minuten pro Praxis und Monat bleibt und der interne Stundensatz unter der Break-even-Grenze liegt. Steigt der Aufwand, muss der Preis steigen oder die Routine schlanker werden.</p>
 <h2>4. Preisstufen</h2>
 <table>
 <thead>
@@ -2028,7 +1997,7 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 </tr>
 <tr>
 <td><strong>Premium</strong></td>
-<td>zusätzlich Redaktionsservice, SEO-Betreuung, Reporting, kürzere Reaktionszeit</td>
+<td>zusätzlich Redaktionsservice, SEO-Betreuung, Reporting</td>
 <td>ab 129 €/Monat</td>
 </tr>
 </tbody>
@@ -2036,9 +2005,9 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 <p>Dazu eine <strong>einmalige Setup-Gebühr</strong> (Onboarding, Texte, Bilder, Rechtstexte, Go-Live), die den Einrichtungsaufwand aus Abschnitt 2 abbildet.</p>
 <h2>5. Skaleneffekte</h2>
 <ul>
-<li><strong>Modell A skaliert linear:</strong> jede Praxis bringt eigenen Hosting-Aufwand und eigene Wartungszeit mit.</li>
-<li><strong>Modell B skaliert unterproportional:</strong> Theme-Änderungen und Pipeline-Optimierungen wirken für alle Praxen gleichzeitig. Fixkosten (VPS, Runner) verteilen sich auf immer mehr Kunden.</li>
-<li><strong>Der eigentliche Hebel ist die Wartungszeit</strong>, nicht das Hosting: Wenn die Routine je Praxis von 60 auf 20 Minuten sinkt, verdoppelt sich der Deckungsbeitrag, ohne dass ein Kunde mehr zahlt.</li>
+<li><strong>Fixkosten bleiben fix:</strong> der VPS kostet dasselbe bei 5 und bei 50 Praxen (bis die Dimensionierung wächst).</li>
+<li><strong>Theme-Änderungen wirken für alle:</strong> eine Anpassung, ein Build, alle Praxen profitieren.</li>
+<li><strong>Der eigentliche Hebel ist die Wartungszeit:</strong> sinkt sie von 60 auf 20 Minuten je Praxis, verdoppelt sich der Deckungsbeitrag, ohne dass ein Kunde mehr zahlt.</li>
 </ul>
 <h2>6. Risiken</h2>
 <table>
@@ -2053,7 +2022,7 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 <tr>
 <td>Baukasten-Anbieter (ab wenigen Euro/Monat)</td>
 <td>Preisdruck nach unten</td>
-<td>Nutzen argumentieren: Rechtssicherheit, Betreuung, Sichtbarkeit – nicht „nur eine Website"</td>
+<td>Nutzen argumentieren: Rechtssicherheit, Betreuung, Sichtbarkeit — nicht „nur eine Website"</td>
 </tr>
 <tr>
 <td>Preisverfall durch KI-Websites</td>
@@ -2066,9 +2035,9 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 <td>Änderungskontingent vertraglich definieren, Mehrbedarf bepreisen</td>
 </tr>
 <tr>
-<td>Klumpenrisiko (Modell B)</td>
-<td>ein Ausfall trifft alle Praxen</td>
-<td>Redundanz, zweites Auslieferungsziel, dokumentierter Notfallplan</td>
+<td>Ausfall des VPS</td>
+<td>alle Praxen offline</td>
+<td>Redundanz, Notfall-Auslieferung, dokumentierter Plan (Kapitel 14)</td>
 </tr>
 </tbody>
 </table>
@@ -2088,7 +2057,7 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 <tr>
 <td><strong>Einzelpraxis Hausarzt</strong></td>
 <td>seltene Änderungen, wenig IT-Affinität, Preisfokus</td>
-<td>ideal für Managed Service (Modell A)</td>
+<td>ideal für den Managed Service</td>
 </tr>
 <tr>
 <td><strong>Fachpraxis</strong> (Orthopädie, Dermatologie, Gynäkologie)</td>

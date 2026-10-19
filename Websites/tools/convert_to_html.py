@@ -21,7 +21,7 @@ CHAPTERS = [
         ("k10", "10-SICHERHEIT.md"),
     ]),
     ("III. Umsetzung & Betrieb", [
-        ("k11", "11-TECH-STACK-ENTSCHEIDUNG.md"),
+        ("k11", "11-TECH-STACK.md"),
         ("k12", "12-UMSETZUNGSPROZESS.md"),
         ("k13", "13-QA-UND-GO-LIVE.md"),
         ("k14", "14-BETRIEB-UND-WARTUNG.md"),

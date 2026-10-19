@@ -113,7 +113,7 @@ Seit 28.06.2025 gilt das BFSG auch für Praxis-Websites. Maßgeblich ist EN 301 
 - [ ] Tab-Navigation und Fokus auf allen Seiten, Kontraste geprüft
 - [ ] Zoom 200 % ohne Inhaltsverlust
 
-## 8. Im Factory-Modell
+## 8. Im neuen Stack
 
 - Rechtstexte sind **Praxis-Daten**: Impressum, Datenschutz und Barrierefreiheitserklärung liegen im Praxis-Repository und werden beim Onboarding strukturiert erfasst (Kammer, KV, Approbationsland, Ansprechpartner).
 - Das zentrale Theme liefert die Muster und die Barrierefreiheits-Basis; Änderungen daran wirken über den Runner in alle Praxen.

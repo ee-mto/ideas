@@ -129,15 +129,13 @@ button:hover{border-color:var(--gold);color:var(--gold)}
 </section>
 
 <section class="slide">
-  <h2><span class="num">05</span>Zwei Betriebsmodelle</h2>
-  <table>
-    <tr><th></th><th>Modell A — Einzelpraxis</th><th>Modell B — Factory</th></tr>
-    <tr><td><span class="hl">Aufbau</span></td><td>statische Website auf deutschem Webhosting</td><td>zentrale Pipeline, ein Theme für alle</td></tr>
-    <tr><td><span class="hl">Neue Praxis</span></td><td>Template konfigurieren und hochladen</td><td>Repository anlegen, Pipeline läuft</td></tr>
-    <tr><td><span class="hl">Aufwand je Praxis</span></td><td>linear</td><td>wächst unterproportional</td></tr>
-    <tr><td><span class="hl">Risiko</span></td><td>verteilt: ein Ausfall trifft eine Praxis</td><td>konzentriert: ein Ausfall trifft alle</td></tr>
-  </table>
-  <p class="note">Empfehlung: <strong>Modell A ist der Standard</strong> — die Factory zahlt sich ab etwa 10–15 betreuten Praxen aus.</p>
+  <h2><span class="num">05</span>Die Umsetzung</h2>
+  <div class="cols">
+    <div class="card"><h3>GitLab</h3><p>Repositories und Pipeline: Theme und Praxis-Daten versioniert, Builds reproduzierbar, Änderungen rückholbar.</p></div>
+    <div class="card"><h3>Neuer VPS</h3><p>Terra Cloud, deutsches Rechenzentrum: Rechenleistung für Build und Auslieferung, DSGVO-konform.</p></div>
+    <div class="card"><h3>Coolify</h3><p>Deployment, Domains und SSL-Zertifikate — deployt automatisch aus der Pipeline.</p></div>
+  </div>
+  <p class="note">Eine Praxis ist ein Repository plus Domain auf einer gemeinsamen, zentral betriebenen Plattform — kein eigenes Hosting-Paket mehr.</p>
 </section>
 
 <section class="slide">
@@ -169,7 +167,7 @@ button:hover{border-color:var(--gold);color:var(--gold)}
     <tr><td>Einrichtung je Praxis</td><td>1,5–3 Personentage</td></tr>
     <tr><td>Wartung je Praxis</td><td>30–60 Minuten pro Monat</td></tr>
     <tr><td>Änderungen</td><td>1–2 pro Monat, 15–30 Minuten je Meldung</td></tr>
-    <tr><td>Hosting je Praxis (Modell A)</td><td>ab ca. 10 €/Monat</td></tr>
+    <tr><td>VPS (Terra Cloud) inkl. Backup</td><td>Größenordnung 20–60 €/Monat</td></tr>
   </table>
   <p class="note">Alle Zahlen sind Annahmen und nach dem Pilot mit echten Werten nachzurechnen.</p>
 </section>
@@ -177,11 +175,11 @@ button:hover{border-color:var(--gold);color:var(--gold)}
 <section class="slide">
   <h2><span class="num">09</span>Wirtschaftlichkeit — Rechnung</h2>
   <div class="cols">
-    <div class="card"><h3>Basis 49 €</h3><p>39 € nach Hosting, vor Arbeitszeit.<br>75 Minuten Aufwand je Monat.</p></div>
-    <div class="card"><h3>Break-even</h3><p class="big">≈ 31 €/h</p><p>Darunter trägt sich die Basisstufe nicht.</p></div>
+    <div class="card"><h3>Basis 49 €</h3><p>ca. 45 € nach Infrastrukturanteil, vor Arbeitszeit.<br>75 Minuten Aufwand je Monat.</p></div>
+    <div class="card"><h3>Break-even</h3><p class="big">≈ 36 €/h</p><p>Darunter trägt sich die Basisstufe nicht.</p></div>
     <div class="card"><h3>Hebel</h3><p>Wartungszeit je Praxis von 60 auf 20 Minuten senken — verdoppelt den Deckungsbeitrag.</p></div>
   </div>
-  <p class="note">Skaleneffekt: Theme- und Pipeline-Verbesserungen wirken für alle Praxen gleichzeitig.</p>
+  <p class="note">Skaleneffekt: Die Infrastruktur kostet unabhängig von der Zahl der Praxen dasselbe — Theme- und Pipeline-Verbesserungen wirken für alle gleichzeitig.</p>
 </section>
 
 <section class="slide">
@@ -198,11 +196,11 @@ button:hover{border-color:var(--gold);color:var(--gold)}
 <section class="slide">
   <h2><span class="num">11</span>Was wir vorschlagen</h2>
   <ul>
-    <li><strong>Pilotpraxis starten</strong> — Modell A, ohne neue Infrastruktur, kurzfristig lieferbar.</li>
+    <li><strong>Infrastruktur aufsetzen:</strong> VPS (Terra Cloud), Coolify, GitLab Runner.</li>
+    <li><strong>Theme als Hugo-Theme umsetzen</strong> — Voraussetzung für jede weitere Praxis.</li>
+    <li><strong>Pilotpraxis starten</strong> und den Ablauf dokumentieren.</li>
     <li><strong>Preisstufen wie skizziert einführen</strong> und nach dem Pilot mit echten Zahlen nachrechnen.</li>
-    <li><strong>Factory-Entscheidung bei etwa 10 Praxen</strong> — vorher lohnt der Umbau nicht.</li>
-    <li><strong>Betriebsprozess schriftlich fixieren:</strong> Reaktionszeiten, Kontingent, Störungsweg.</li>
-    <li><strong>Vergleichscheck als Vertriebseinstieg:</strong> kostenlose Prüfung bestehender Praxis-Websites.</li>
+    <li><strong>Betriebsprozess fixieren</strong> und den Vergleichscheck als Vertriebseinstieg nutzen.</li>
   </ul>
   <p class="note">Diskussion und Freigabe.</p>
 </section>

@@ -53,7 +53,7 @@ curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 - [ ] Uptime-Monitor ohne Alarme
 - [ ] Abhängigkeiten und Build-Tools auf Sicherheitsupdates geprüft
 
-## 6. Im Factory-Modell
+## 6. Im neuen Stack
 
 Die Prüfungen wandern in die Pipeline und werden damit für jede Praxis reproduzierbar:
 

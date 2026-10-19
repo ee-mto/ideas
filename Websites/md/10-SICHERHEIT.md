@@ -57,7 +57,7 @@ Prüfbefehl: `curl -sI https://www.domain.de | grep -iE "strict-transport|x-fram
 - [ ] Repo-Scan auf Secrets (`grep -rEi "api[_-]?key|token|password" .`) ohne Treffer
 - [ ] Verzeichnislisting aus, Formular-Handler nicht öffentlich debugbar
 
-## 6. Im Factory-Modell
+## 6. Im neuen Stack
 
 Bei einer zentralen Build- und Deployment-Pipeline verschiebt sich die Angriffsfläche von der Website zur **Pipeline**:
 

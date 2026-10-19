@@ -28,15 +28,15 @@ Statische Website (HTML/CSS/JS) ohne Redaktionssystem und ohne Datenbank, zentra
 3. **Rechtssicherheit** — Impressum mit Berufsangaben, Datenschutz, Barrierefreiheitserklärung und HWG-konforme Texte von Anfang an.
 4. **Betreuung** — feste Ansprechpartner und zugesagte Reaktionszeiten statt Wartungsvertrag ohne Inhalt.
 
-## 5. Zwei Betriebsmodelle
+## 5. Die Umsetzung
 
-| | **Modell A — Einzelpraxis** | **Modell B — Factory** |
-| --- | --- | --- |
-| Aufbau | statische Website auf deutschem Webhosting | zentrale Pipeline, ein Theme für alle Praxen |
-| Neue Praxis | Template konfigurieren, hochladen | Repository anlegen, Pipeline läuft |
-| Aufwand je Praxis | linear | wächst unterproportional |
-| Risiko | verteilt (ein Ausfall trifft eine Praxis) | konzentriert (ein Ausfall trifft alle) |
-| Empfehlung | **Standard heute** | **ab etwa 10–15 betreuten Praxen** |
+| Baustein | Rolle |
+| --- | --- |
+| **GitLab** | Repositories und Pipeline: Theme und Praxis-Daten versioniert, Builds reproduzierbar, Änderungen rückholbar |
+| **Neuer VPS** (Terra Cloud, deutsches Rechenzentrum) | Rechenleistung für Build und Auslieferung, DSGVO-konform |
+| **Coolify** | Deployment, Domains, SSL-Zertifikate, Container |
+
+Eine Praxis ist damit kein eigenes Hosting-Paket mehr, sondern ein Repository plus Domain auf einer gemeinsamen, zentral betriebenen Plattform.
 
 ## 6. Wirtschaftlichkeit
 
@@ -47,14 +47,14 @@ Statische Website (HTML/CSS/JS) ohne Redaktionssystem und ohne Datenbank, zentra
 | Einrichtung je Praxis | 1,5–3 Personentage |
 | Wartung je Praxis | 30–60 Minuten pro Monat |
 | Änderungen | 1–2 Meldungen pro Monat, 15–30 Minuten je Meldung |
-| Hosting je Praxis (Modell A) | ab ca. 10 €/Monat |
-| Infrastruktur Modell B | ein VPS plus Runner für alle Praxen |
+| VPS (Terra Cloud) inkl. Backup | Größenordnung 20–60 €/Monat — mit echtem Angebot zu ersetzen |
+| Domains je Praxis | ca. 10–15 €/Jahr (in der Pauschale enthalten) |
 
 **Preisstufen:** einmalige Setup-Gebühr (deckt den Einrichtungsaufwand) plus Monatspauschale — **49 € (Basis), 89 € (Komfort), ab 129 € (Premium)** inklusive Hosting, Domain, SSL und Betreuung.
 
-**Deckungsbeitrag Basis (49 €/Monat):** 49 € minus ca. 10 € Hosting = **39 € vor Arbeitszeit**. Bei 45 Minuten Wartung plus rund 1,5 Änderungen (75 Minuten gesamt) liegt der **Break-even bei etwa 31 € internem Stundensatz**. Daraus folgt: Die 49-€-Stufe trägt sich nur, wenn die Wartungsroutine wirklich schlank bleibt — oder der Preis steigt.
+**Deckungsbeitrag Basis (49 €/Monat):** 49 € minus rund 4 € Infrastrukturanteil (Annahme: 40 €/Monat VPS, verteilt auf 10 Praxen) = **ca. 45 € vor Arbeitszeit**. Bei 45 Minuten Wartung plus rund 1,5 Änderungen (75 Minuten gesamt) liegt der **Break-even bei etwa 36 € internem Stundensatz**. Die Basisstufe trägt sich also, solange die Wartungsroutine schlank bleibt — oder der Preis steigt.
 
-**Skaleneffekt:** Weil Theme-Änderungen und Pipeline-Optimierungen für alle Praxen gleichzeitig wirken, sinkt der Betreuungsaufwand je Praxis. Der eigentliche Hebel ist nicht das Hosting, sondern die Wartungszeit: von 60 auf 20 Minuten je Praxis verdoppelt sich der Deckungsbeitrag, ohne dass ein Kunde mehr zahlt.
+**Skaleneffekt:** Die Infrastruktur kostet unabhängig von der Zahl der Praxen dasselbe; Theme-Änderungen und Pipeline-Optimierungen wirken für alle Praxen gleichzeitig. Der eigentliche Hebel ist die Wartungszeit: von 60 auf 20 Minuten je Praxis verdoppelt sich der Deckungsbeitrag, ohne dass ein Kunde mehr zahlt.
 
 ## 7. Fahrplan
 
@@ -67,15 +67,17 @@ Statische Website (HTML/CSS/JS) ohne Redaktionssystem und ohne Datenbank, zentra
 
 ## 8. Was wir vorschlagen
 
-1. **Pilotpraxis starten** — mit Modell A, ohne neue Infrastruktur, kurzfristig lieferbar.
-2. **Preisstufen wie skizziert einführen** und die Zahlen nach dem Pilot mit echten Werten nachrechnen.
-3. **Factory-Entscheidung bei etwa 10 Praxen** — vorher lohnt der Umbau nicht.
-4. **Betriebsprozess schriftlich fixieren:** Reaktionszeiten, Änderungskontingent, Störungsweg.
-5. **Vergleichscheck als Vertriebseinstieg** — kostenlose Prüfung bestehender Praxis-Websites auf Ladezeit, Recht und Sichtbarkeit.
+1. **Infrastruktur aufsetzen:** VPS bei Terra Cloud, Coolify, GitLab Runner — einmaliger Aufwand, danach trägt sie alle Praxen.
+2. **Theme als Hugo-Theme umsetzen** — Voraussetzung für jede weitere Praxis.
+3. **Pilotpraxis starten** und den Ablauf vollständig dokumentieren.
+4. **Preisstufen wie skizziert einführen** und die Zahlen nach dem Pilot mit echten Werten nachrechnen.
+5. **Betriebsprozess schriftlich fixieren:** Reaktionszeiten, Änderungskontingent, Störungsweg.
+6. **Vergleichscheck als Vertriebseinstieg** — kostenlose Prüfung bestehender Praxis-Websites auf Ladezeit, Recht und Sichtbarkeit.
 
 ## 9. Nächste Schritte
 
+- VPS aufsetzen, Coolify installieren, GitLab Runner registrieren
+- Theme als Hugo-Theme umsetzen und eine Test-Praxis deployen
 - Pilotpraxis auswählen und Daten aufnehmen
 - Angebotsunterlage mit den Preisstufen erstellen
-- Entscheidung zu Modell A/B dokumentieren
 - Betriebs- und Wartungsprozess festhalten

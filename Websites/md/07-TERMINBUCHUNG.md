@@ -39,7 +39,7 @@
 - [ ] Testbuchung end-to-end durchgeführt und wieder storniert
 - [ ] Telefonnummer weiterhin prominent (Fallback ohne Internet)
 
-## 6. Im Factory-Modell
+## 6. Im neuen Stack
 
 - Der Buchungslink ist ein **Feld in den Praxis-Daten** (`bookingUrl`) – eine Änderung des Anbieters ist damit ein Datenupdate, kein Template-Eingriff.
 - Die Entscheidung für einen Anbieter fällt im Onboarding (Kapitel 12) und wird in der Praxisdatei dokumentiert.

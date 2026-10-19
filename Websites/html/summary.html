@@ -143,43 +143,30 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
 <li><strong>Rechtssicherheit</strong> — Impressum mit Berufsangaben, Datenschutz, Barrierefreiheitserklärung und HWG-konforme Texte von Anfang an.</li>
 <li><strong>Betreuung</strong> — feste Ansprechpartner und zugesagte Reaktionszeiten statt Wartungsvertrag ohne Inhalt.</li>
 </ol>
-<h2>5. Zwei Betriebsmodelle</h2>
+<h2>5. Die Umsetzung</h2>
 <table>
 <thead>
 <tr>
-<th></th>
-<th><strong>Modell A — Einzelpraxis</strong></th>
-<th><strong>Modell B — Factory</strong></th>
+<th>Baustein</th>
+<th>Rolle</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Aufbau</td>
-<td>statische Website auf deutschem Webhosting</td>
-<td>zentrale Pipeline, ein Theme für alle Praxen</td>
+<td><strong>GitLab</strong></td>
+<td>Repositories und Pipeline: Theme und Praxis-Daten versioniert, Builds reproduzierbar, Änderungen rückholbar</td>
 </tr>
 <tr>
-<td>Neue Praxis</td>
-<td>Template konfigurieren, hochladen</td>
-<td>Repository anlegen, Pipeline läuft</td>
+<td><strong>Neuer VPS</strong> (Terra Cloud, deutsches Rechenzentrum)</td>
+<td>Rechenleistung für Build und Auslieferung, DSGVO-konform</td>
 </tr>
 <tr>
-<td>Aufwand je Praxis</td>
-<td>linear</td>
-<td>wächst unterproportional</td>
-</tr>
-<tr>
-<td>Risiko</td>
-<td>verteilt (ein Ausfall trifft eine Praxis)</td>
-<td>konzentriert (ein Ausfall trifft alle)</td>
-</tr>
-<tr>
-<td>Empfehlung</td>
-<td><strong>Standard heute</strong></td>
-<td><strong>ab etwa 10–15 betreuten Praxen</strong></td>
+<td><strong>Coolify</strong></td>
+<td>Deployment, Domains, SSL-Zertifikate, Container</td>
 </tr>
 </tbody>
 </table>
+<p>Eine Praxis ist damit kein eigenes Hosting-Paket mehr, sondern ein Repository plus Domain auf einer gemeinsamen, zentral betriebenen Plattform.</p>
 <h2>6. Wirtschaftlichkeit</h2>
 <blockquote>
 <p><strong>Alle Zahlen sind Annahmen</strong> und vor dem Verkauf mit echten Werten (Hosting, interner Stundensatz, Aufwände) zu ersetzen.</p>
@@ -205,18 +192,18 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
 <td>1–2 Meldungen pro Monat, 15–30 Minuten je Meldung</td>
 </tr>
 <tr>
-<td>Hosting je Praxis (Modell A)</td>
-<td>ab ca. 10 €/Monat</td>
+<td>VPS (Terra Cloud) inkl. Backup</td>
+<td>Größenordnung 20–60 €/Monat — mit echtem Angebot zu ersetzen</td>
 </tr>
 <tr>
-<td>Infrastruktur Modell B</td>
-<td>ein VPS plus Runner für alle Praxen</td>
+<td>Domains je Praxis</td>
+<td>ca. 10–15 €/Jahr (in der Pauschale enthalten)</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Preisstufen:</strong> einmalige Setup-Gebühr (deckt den Einrichtungsaufwand) plus Monatspauschale — <strong>49 € (Basis), 89 € (Komfort), ab 129 € (Premium)</strong> inklusive Hosting, Domain, SSL und Betreuung.</p>
-<p><strong>Deckungsbeitrag Basis (49 €/Monat):</strong> 49 € minus ca. 10 € Hosting = <strong>39 € vor Arbeitszeit</strong>. Bei 45 Minuten Wartung plus rund 1,5 Änderungen (75 Minuten gesamt) liegt der <strong>Break-even bei etwa 31 € internem Stundensatz</strong>. Daraus folgt: Die 49-€-Stufe trägt sich nur, wenn die Wartungsroutine wirklich schlank bleibt — oder der Preis steigt.</p>
-<p><strong>Skaleneffekt:</strong> Weil Theme-Änderungen und Pipeline-Optimierungen für alle Praxen gleichzeitig wirken, sinkt der Betreuungsaufwand je Praxis. Der eigentliche Hebel ist nicht das Hosting, sondern die Wartungszeit: von 60 auf 20 Minuten je Praxis verdoppelt sich der Deckungsbeitrag, ohne dass ein Kunde mehr zahlt.</p>
+<p><strong>Deckungsbeitrag Basis (49 €/Monat):</strong> 49 € minus rund 4 € Infrastrukturanteil (Annahme: 40 €/Monat VPS, verteilt auf 10 Praxen) = <strong>ca. 45 € vor Arbeitszeit</strong>. Bei 45 Minuten Wartung plus rund 1,5 Änderungen (75 Minuten gesamt) liegt der <strong>Break-even bei etwa 36 € internem Stundensatz</strong>. Die Basisstufe trägt sich also, solange die Wartungsroutine schlank bleibt — oder der Preis steigt.</p>
+<p><strong>Skaleneffekt:</strong> Die Infrastruktur kostet unabhängig von der Zahl der Praxen dasselbe; Theme-Änderungen und Pipeline-Optimierungen wirken für alle Praxen gleichzeitig. Der eigentliche Hebel ist die Wartungszeit: von 60 auf 20 Minuten je Praxis verdoppelt sich der Deckungsbeitrag, ohne dass ein Kunde mehr zahlt.</p>
 <h2>7. Fahrplan</h2>
 <table>
 <thead>
@@ -246,17 +233,19 @@ footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line
 </table>
 <h2>8. Was wir vorschlagen</h2>
 <ol>
-<li><strong>Pilotpraxis starten</strong> — mit Modell A, ohne neue Infrastruktur, kurzfristig lieferbar.</li>
+<li><strong>Infrastruktur aufsetzen:</strong> VPS bei Terra Cloud, Coolify, GitLab Runner — einmaliger Aufwand, danach trägt sie alle Praxen.</li>
+<li><strong>Theme als Hugo-Theme umsetzen</strong> — Voraussetzung für jede weitere Praxis.</li>
+<li><strong>Pilotpraxis starten</strong> und den Ablauf vollständig dokumentieren.</li>
 <li><strong>Preisstufen wie skizziert einführen</strong> und die Zahlen nach dem Pilot mit echten Werten nachrechnen.</li>
-<li><strong>Factory-Entscheidung bei etwa 10 Praxen</strong> — vorher lohnt der Umbau nicht.</li>
 <li><strong>Betriebsprozess schriftlich fixieren:</strong> Reaktionszeiten, Änderungskontingent, Störungsweg.</li>
 <li><strong>Vergleichscheck als Vertriebseinstieg</strong> — kostenlose Prüfung bestehender Praxis-Websites auf Ladezeit, Recht und Sichtbarkeit.</li>
 </ol>
 <h2>9. Nächste Schritte</h2>
 <ul>
+<li>VPS aufsetzen, Coolify installieren, GitLab Runner registrieren</li>
+<li>Theme als Hugo-Theme umsetzen und eine Test-Praxis deployen</li>
 <li>Pilotpraxis auswählen und Daten aufnehmen</li>
 <li>Angebotsunterlage mit den Preisstufen erstellen</li>
-<li>Entscheidung zu Modell A/B dokumentieren</li>
 <li>Betriebs- und Wartungsprozess festhalten</li>
 </ul>
 

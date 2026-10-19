@@ -49,7 +49,7 @@ Validierung über den **Rich Results Test** von Google.
 - [ ] Jede Seite mit unique title/description/H1 und canonical
 - [ ] KI-Crawler in `robots.txt` erlaubt
 
-## 7. Im Factory-Modell
+## 7. Im neuen Stack
 
 - Title, Description, H1 und JSON-LD werden **aus den Praxis-Daten generiert** (Generator in der Pipeline) – keine handgepflegten Meta-Tags je Seite.
 - Der Generator zieht Ort, Fachbereich, Koordinaten und Sprechzeiten aus `config`/Content und erzeugt `sitemap.xml` und `robots.txt` mit der echten Domain.

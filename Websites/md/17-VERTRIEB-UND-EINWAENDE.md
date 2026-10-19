@@ -4,7 +4,7 @@
 
 | Profil | Merkmale | Eignung |
 | --- | --- | --- |
-| **Einzelpraxis Hausarzt** | seltene Änderungen, wenig IT-Affinität, Preisfokus | ideal für Managed Service (Modell A) |
+| **Einzelpraxis Hausarzt** | seltene Änderungen, wenig IT-Affinität, Preisfokus | ideal für den Managed Service |
 | **Fachpraxis** (Orthopädie, Dermatologie, Gynäkologie) | mehr Selbstzahler-Leistungen, höherer Anspruch an Außendarstellung | gute Marge, oft Interesse an Schwerpunktseiten |
 | **Gemeinschaftspraxis / MVZ** | mehrere Ärzte, eigene Verwaltung, höhere Budgets | mehr Abstimmung, klare Ansprechpartner und Reaktionszeiten gefragt |
 | **Neugründung / Praxisübernahme** | Website ist Pflicht, Entscheidung fällt schnell | kurze Verkaufszyklen, klarer Bedarf |

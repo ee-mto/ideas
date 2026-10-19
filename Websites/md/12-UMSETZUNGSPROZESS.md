@@ -42,7 +42,7 @@ Der Fahrplan von der Anfrage bis zur betreuten Praxis-Website.
 
 ## 5. Schritt 2 – Konfiguration
 
-1. Praxis-Daten zentral eintragen (in Modell A `config.js`, in Modell B `/content` + `config`)
+1. Praxis-Daten zentral im Praxis-Repository eintragen (`/content` + `config`)
 2. Farben setzen und **Kontraste prüfen** (Markenfarbe, dunkle Variante für Text)
 3. Seiten-Generator konfigurieren: Name, Domain, Adresse, Telefon, Titles/Descriptions
 4. Formular-Empfänger und Domain setzen
@@ -95,7 +95,7 @@ projekte/<praxis>/
 - [ ] Freigabe der Praxis dokumentiert
 - [ ] Go-Live- und Wartungs-Checklisten abgearbeitet
 
-## 11. Im Factory-Modell
+## 11. Im neuen Stack
 
 - Aus „Template kopieren und konfigurieren" wird „Repository anlegen und Theme binden"; die Datenerfassung (Schritt 1) bleibt unverändert und wird als strukturiertes Onboarding-Formular geführt.
 - Die Freigaberunde bleibt ein **menschlicher** Schritt. Ohne dokumentierte Freigabe kein Go-Live.

@@ -105,7 +105,7 @@ Baukasten je Schwerpunktseite:
 - [ ] Antwort-Richtlinie für negative Bewertungen abgestimmt
 - [ ] GBP-/Jameda-Daten konsistent mit der Website
 
-## 8. Im Factory-Modell
+## 8. Im neuen Stack
 
 - Inhalte liegen im **Praxis-Repository** (`/content`), Bilder als optimierte Assets daneben – dadurch bleibt das Theme für alle Praxen identisch.
 - Der **Bild-Workflow** ist Teil des Onboardings: Bedarf klären, Einwilligungen einholen, konvertieren, Alt-Texte und Dimensionen hinterlegen.

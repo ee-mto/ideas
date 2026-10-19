@@ -45,4 +45,4 @@ Daraus folgt: Ein Theme-Update wird **einmal** gebaut und an alle Praxen ausgero
 
 ## Einordnung
 
-Diese Architektur ist die **Skalierungsvariante** des bestehenden Betriebs (statische Website je Praxis). Für eine einzelne Praxis ist der klassische Weg über ein Webhosting-Paket robuster und günstiger; die Factory zahlt sich ab einer relevanten Kundenzahl aus. Die Abwägung steht in Kapitel 11.
+Die Architektur ist bewusst schlank: ein Theme, ein Repository je Praxis, eine Pipeline, eine Auslieferungsebene. Der Aufwand liegt bei Daten und Freigabe — nicht bei Technik. Die Bausteine beschreibt Kapitel 11, den Betrieb Kapitel 14.

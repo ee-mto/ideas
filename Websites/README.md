@@ -8,7 +8,7 @@
 
 Der gewählte Ansatz trifft den Nerv des Marktes: Arztpraxen leiden unter schwerfälligen, wartungsintensiven WordPress-Systemen, Plugin-Schwachstellen, DSGVO-Abmahnfallen und langsamen Ladezeiten. Ein Jamstack-Setup auf Basis von **Terra Cloud + Coolify + GitLab + Hugo** löst diese Probleme architektonisch an der Wurzel.
 
-Das Konzept steht neben dem heute praktizierten Betriebsmodell (statische Website je Praxis auf deutschem Webhosting, Pflege im Managed Service). Kapitel 11 führt beide Modelle zusammen und macht die Entscheidung explizit.
+**Die Umsetzung:** GitLab (Repositories und Pipeline), ein neuer VPS im deutschen Rechenzentrum und Coolify (Deployment, Proxy, TLS). Ein Weg für alle Praxen — Kapitel 11 beschreibt den Stack.
 
 ## Für die Vorlage beim Kunden
 
@@ -43,7 +43,7 @@ Das Konzept steht neben dem heute praktizierten Betriebsmodell (statische Websit
 
 | # | Kapitel | Markdown | HTML |
 | --- | --- | --- | --- |
-| 11 | Tech-Stack-Entscheidung | [11-TECH-STACK-ENTSCHEIDUNG.md](md/11-TECH-STACK-ENTSCHEIDUNG.md) | [ansehen](html/index.html#k11) |
+| 11 | Tech-Stack | [11-TECH-STACK.md](md/11-TECH-STACK.md) | [ansehen](html/index.html#k11) |
 | 12 | Umsetzungsprozess | [12-UMSETZUNGSPROZESS.md](md/12-UMSETZUNGSPROZESS.md) | [ansehen](html/index.html#k12) |
 | 13 | QA & Go-Live | [13-QA-UND-GO-LIVE.md](md/13-QA-UND-GO-LIVE.md) | [ansehen](html/index.html#k13) |
 | 14 | Betrieb & Wartung | [14-BETRIEB-UND-WARTUNG.md](md/14-BETRIEB-UND-WARTUNG.md) | [ansehen](html/index.html#k14) |
