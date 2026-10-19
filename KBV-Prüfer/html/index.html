@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KBV-Prüfer — engel&amp;engel gmbh</title>
+<style>
+:root{
+  --gold:#c9a227; --gold-dark:#a8861d; --gold-soft:#faf6ea;
+  --ink:#16181d; --body:#3a3f47; --muted:#6b7280;
+  --line:#e6e3da; --card:#ffffff; --bg:#fbfaf7;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.65}
+.page{max-width:940px;margin:0 auto;background:var(--card);padding:52px 60px 44px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06),0 14px 36px rgba(0,0,0,.05)}
+.print-btn{position:fixed;top:22px;right:22px;z-index:50;background:var(--gold);color:#fff;
+  border:none;border-radius:8px;padding:12px 22px;font-size:15px;font-weight:600;cursor:pointer;
+  box-shadow:0 4px 14px rgba(201,162,39,.35)}
+.print-btn:hover{background:var(--gold-dark)}
+header.doc-head{border-bottom:3px solid var(--gold);padding-bottom:26px;margin-bottom:34px}
+header.doc-head .kicker{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold-dark);font-weight:700;margin-bottom:10px}
+h1{color:var(--ink);font-size:34px;line-height:1.25;margin:0 0 14px;font-weight:700}
+.doc-meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.doc-meta b{color:var(--ink);font-weight:600}
+h2.chapter{color:var(--ink);font-size:27px;margin:0 0 20px;font-weight:700;padding-left:16px;border-left:6px solid var(--gold);line-height:1.3}
+section h2{color:var(--gold-dark);font-size:19px;margin:32px 0 10px;font-weight:650;padding:0 0 6px 0;border-left:none;border-bottom:1px solid var(--line)}
+section h3{color:var(--ink);font-size:16px}
+h3{color:var(--ink);font-size:18px;margin:30px 0 10px;font-weight:650}
+h4{color:var(--gold-dark);font-size:15px;margin:22px 0 8px;font-weight:650}
+p{margin:0 0 14px}
+strong{color:var(--ink);font-weight:650}
+a{color:var(--gold-dark);text-decoration:none;border-bottom:1px dotted var(--gold)}
+a:hover{border-bottom-style:solid}
+.toc{background:var(--gold-soft);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin:0 0 40px}
+.toc h2{border:none;padding:0;font-size:15px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold-dark);margin:0 0 12px}
+.toc .group{margin:14px 0 4px;font-weight:650;color:var(--ink);font-size:14px}
+.toc ol{margin:0;padding-left:22px}
+.toc li{margin:6px 0}
+.lead-in{font-size:17px}
+section{margin:0 0 46px;scroll-margin-top:20px}
+.table-wrap{overflow-x:auto;margin:18px 0 22px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:520px}
+th,td{border:1px solid var(--line);padding:10px 13px;text-align:left;vertical-align:top}
+th{background:var(--gold);color:#fff;font-weight:600}
+tbody tr:nth-child(even){background:#fcfbf8}
+tbody tr:hover{background:var(--gold-soft)}
+pre{background:#1d2026;color:#f2f0e9;padding:18px 20px;border-radius:10px;overflow-x:auto;
+  font-size:13px;line-height:1.55;margin:18px 0 22px;
+  font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
+code{background:#f4f1e8;color:#8a6d12;padding:2px 6px;border-radius:5px;
+  font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;font-size:13.5px}
+pre code{background:transparent;color:inherit;padding:0;font-size:13px}
+blockquote{margin:20px 0;padding:16px 22px;background:var(--gold-soft);border-left:5px solid var(--gold);
+  border-radius:0 10px 10px 0;font-size:16px;color:var(--ink)}
+blockquote p:last-child{margin-bottom:0}
+ol,ul{margin:14px 0 18px;padding-left:26px}
+li{margin:8px 0}
+li.check{list-style:none;margin-left:-1.1em}
+hr{border:none;border-top:2px solid var(--line);margin:30px 0}
+footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;
+  color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between}
+@media (max-width:720px){
+  body{font-size:15px}
+  .page{padding:30px 20px 32px;box-shadow:none}
+  h1{font-size:26px}
+  h2{font-size:20px}
+  .print-btn{position:static;display:block;width:100%;margin:0 0 22px}
+  table{font-size:13px}
+}
+@page{size:A4;margin:18mm 15mm}
+@media print{
+  body{background:#fff;font-size:10.5pt;line-height:1.5}
+  .page{max-width:none;margin:0;padding:0;box-shadow:none}
+  .print-btn{display:none!important}
+  a{color:inherit;border:none}
+  .toc{page-break-after:always}
+  section{page-break-before:always}
+  section:first-of-type{page-break-before:avoid}
+  .table-wrap,pre,blockquote{page-break-inside:avoid}
+  h2,h3,h4{page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+<button class="print-btn" onclick="window.print()">Als PDF speichern</button>
+<div class="page">
+
+<header class="doc-head">
+  <span class="kicker">Konzept</span>
+  <h1>KBV-Prüfer — Portfolio nach § 390 SGB V</h1>
+  <div class="doc-meta">
+    <span><b>Thema:</b> IT-Sicherheits-Audit für Arztpraxen</span>
+    <span><b>Kunde:</b> engel&amp;engel gmbh</span>
+    <span><b>Stand:</b> Oktober 2026</span>
+  </div>
+</header>
+
+<p class="lead-in">Der Ansatz mit dem kostenlosen Jahres-Audit im Service-Level-Vertrag (SLV) und dem gestaffelten Festpreis für Nicht-Vertragskunden ist ein starkes Fundament. Um daraus ein vollständiges Portfolio nach <strong>§ 390 SGB V</strong> zu bauen, wird das Modell auf vier Ebenen erweitert.</p>
+
+<nav class="toc">
+  <h2>Inhalt</h2>
+
+  <div class="group">Portfolio-Ausbau</div>
+  <ol>
+    <li><a href="#k01">Das Audit-Modell schärfen (Psychologie & Upselling)</a></li>
+    <li><a href="#k02">Neue Managed Services aus der Richtlinie</a></li>
+    <li><a href="#k03">Das „Audit-Ready"-Sorglos-Paket</a></li>
+    <li><a href="#k04">Vertriebs- und Marketing-Hebel</a></li>
+  </ol>
+  <p style="font-size:14px;color:#6b7280">Markdown-Quellen: <code>../md/01-AUDIT-MODELL.md</code> bis <code>../md/04-VERTRIEB-MARKETING.md</code></p>
+</nav>
+<section id="k01">
+<h2 class="chapter">Das Audit-Modell schärfen (Psychologie & Upselling)</h2>
+<p>Der Begriff „Audit" klingt für Ärzte oft nach lästiger Bürokratie. Positioniert es als <strong>„KBV-Haftungsschutz-Check"</strong> und baut eine klare Brücke zum SLV.</p>
+<h2>Paketübersicht</h2>
+<table>
+<thead>
+<tr>
+<th>Praxisgröße (laut KBV)</th>
+<th>Kriterium (Datenverarbeitung)</th>
+<th>Einmal-Audit (ohne SLV)</th>
+<th>Im SLV enthalten</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Paket S (Anlage 1)</strong></td>
+<td>1 bis 5 Mitarbeitende</td>
+<td>Festpreis (z. B. 490 € – 690 €)</td>
+<td><strong>Inklusive</strong> (1× jährlich)</td>
+</tr>
+<tr>
+<td><strong>Paket M (Anlage 1 + 2)</strong></td>
+<td>6 bis 20 Mitarbeitende</td>
+<td>Festpreis (z. B. 890 € – 1.290 €)</td>
+<td><strong>Inklusive</strong> (1× jährlich)</td>
+</tr>
+<tr>
+<td><strong>Paket L (Anlage 1–3 / 4)</strong></td>
+<td>Ab 21 Mitarbeitende / Großgeräte (CT/MRT)</td>
+<td>Nach Aufwand / Tagessatz</td>
+<td><strong>Inklusive</strong> (halbjährlich/jährlich)</td>
+</tr>
+</tbody>
+</table>
+<h2>Der „Anrechnungs-Hebel" für Nicht-SLV-Kunden</h2>
+<p>Wenn eine Praxis ohne SLV das Einmal-Audit bucht, bekommt sie am Ende einen <strong>Maßnahmenplan mit Ampelsystem</strong>:</p>
+<ul>
+<li><strong>Rot</strong> = kritischer Verstoß gegen eine KBV-Muss-Vorgabe</li>
+<li><strong>Gelb</strong> = Empfehlung</li>
+<li><strong>Grün</strong> = erfüllt</li>
+</ul>
+<p>Angebot an die Praxis: <em>„Wenn Sie sich innerhalb von 4 Wochen nach dem Audit für unseren SLV entscheiden, schreiben wir Ihnen 50 % (oder 100 %) der Audit-Kosten auf die ersten Monatsraten gut."</em></p>
+<h2>Wichtig für die Kalkulation</h2>
+<p>Im kostenlosen SLV-Audit ist nur die <strong>Prüfung und Dokumentation</strong> enthalten — nicht die kostenlose Behebung grober struktureller Mängel (wie der Neuaufbau des Netzwerks). Das Audit generiert also auch bei SLV-Kunden bezahlte Folgeprojekte.</p>
+</section>
+<section id="k02">
+<h2 class="chapter">Neue Managed Services aus der Richtlinie</h2>
+<p>Die aktualisierte KBV-Richtlinie fordert laufende Prozesse, die eine Praxis alleine kaum leisten kann. Daraus lassen sich eigenständige Module (Add-ons zum SLV) schnüren.</p>
+<h2>Security-Awareness &amp; Phishing-Schulung as a Service</h2>
+<p>Praxen sind verpflichtet, ihr Personal regelmäßig nachweisbar zu sensibilisieren (Umgang mit Spam/Phishing, Passwortsicherheit, On-/Offboarding). Angebot: einmal im Jahr ein <strong>30-minütiges Online-Briefing (oder Video-Modul)</strong> für MFAs und Ärzte — inklusive Teilnahmezertifikat für den QM-Ordner der Praxis.</p>
+<h2>Managed Backup mit dokumentiertem Restore-Test</h2>
+<p>Die Richtlinie verlangt nicht nur Backups, sondern die regelmäßige Prüfung der Wiederherstellbarkeit. Verkauft wird kein reines „Cloud/NAS-Backup", sondern ein <strong>„KBV-konformes Backup inkl. quartalsweisem Restore-Prüfprotokoll"</strong>.</p>
+<h2>Automatisiertes Bestands- &amp; EoL-Reporting</h2>
+<p>Die Richtlinie fordert eine Übersicht aller IT-Systeme sowie das Aussortieren von Systemen ohne Sicherheitsupdates (End-of-Life). Über bestehende Monitoring- oder Inventarisierungs-Skripte lässt sich einmal im Quartal automatisch ein <strong>PDF-Bericht</strong> generieren, der zeigt, welche Hardware und Software aus dem Support läuft.</p>
+<h2>Managed Firewall &amp; VLAN-Segmentierung</h2>
+<p>Viele Praxen hängen noch an einer einfachen FritzBox, in der Praxis-PCs, TI-Konnektor, Sonographie-Geräte und das Handy der MFA im selben Netz funken. Festes <strong>„Praxis-Netzwerk-Paket"</strong>: Managed Firewall plus Managed Switches mit strikter VLAN-Trennung für Praxisverwaltungssystem, TI, Medizingeräte und Gäste.</p>
+</section>
+<section id="k03">
+<h2 class="chapter">Das „Audit-Ready"-Sorglos-Paket</h2>
+<p>Ärzte hassen Papierkram, müssen aber bei Prüfungen oder im Schadensfall nachweisen, dass sie die Richtlinie eingehalten haben. Verkauft (oder integriert in den Premium-SLV) einen <strong>lebenden IT-Sicherheitsordner</strong> (digital oder physisch), der bei jedem Jahres-Audit aktualisiert wird:</p>
+<ol>
+<li><strong>Aktueller Netzwerkplan</strong> (inkl. TI-Komponenten und Schnittstellen)</li>
+<li><strong>Praxiseigene IT-Sicherheitsrichtlinie &amp; Notfallplan</strong> — Was tun bei Ransomware oder Konnektor-Ausfall? Wer ist wann zu kontaktieren?</li>
+<li><strong>Muster-Checklisten für Personal</strong> — Einweisung neuer Mitarbeitender, Rechteentzug bei Austritt, Begleitung externer Techniker</li>
+<li><strong>Offizielles Prüf-Siegel / Zertifikat von euch</strong> — nach erfolgreichem Audit ein einjähriges Zertifikat: <em>„IT-Sicherheit geprüft durch zertifizierten Dienstleister gemäß § 390 SGB V"</em>. Das legt der Arzt in sein QM-Handbuch.</li>
+</ol>
+</section>
+<section id="k04">
+<h2 class="chapter">Vertriebs- und Marketing-Hebel</h2>
+<h2>Zahnärzte (KZBV) direkt mitnehmen</h2>
+<p>Die Kassenzahnärztliche Bundesvereinigung (KZBV) hat eine nahezu identische IT-Sicherheitsrichtlinie. Das KBV-Zertifikat gilt auch dort als vollwertiger Qualitätsnachweis — also gezielt Zahnarztpraxen und Kieferorthopäden ansprechen.</p>
+<h2>Steuerberater und Abrechnungsstellen als Multiplikatoren</h2>
+<p>Viele Ärzte fragen bei Investitionen zuerst ihren spezialisierten Steuerberater oder ihre PVS-Betreuer. Positioniert euch dort als Partner für den reinen Infrastruktur- und Sicherheits-Part.</p>
+<h2>Das „Risiko-Formular" als Verkaufsbeschleuniger</h2>
+<p>Wenn beim Audit kritische Mängel gefunden werden (z. B. fehlende Firewall, geteilte Windows-Logins am Empfang) und der Arzt die Behebung aus Kostengründen ablehnt, wird ihm ein sachliches Formular zur Unterschrift vorgelegt: <em>„Hiermit bestätige ich, dass ich vom zertifizierten Dienstleister auf die Abweichung zu Anlage X der KBV-Richtlinie hingewiesen wurde und das Haftungsrisiko selbst trage."</em> Erfahrungsgemäß unterschreibt das kaum ein Arzt gerne — die meisten geben stattdessen das Budget für die Behebung frei.</p>
+</section>
+
+<footer class="doc-foot">
+  <span><strong>engel&amp;engel gmbh</strong> — KBV-Prüfer</span>
+  <span>Als PDF: Button oben rechts bzw. Strg+P → „Als PDF speichern“</span>
+</footer>
+
+</div>
+</body>
+</html>
