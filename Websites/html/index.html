@@ -3,77 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Praxis-Websites auf Jamstack-Basis — engel&engel gmbh</title>
+<title>Praxis-Websites auf Jamstack-Basis — engel&amp;engel gmbh</title>
 <style>
 :root{
-  --gold:#c9a227;
-  --gold-dark:#a8861d;
-  --gold-soft:#faf6ea;
-  --ink:#16181d;
-  --body:#3a3f47;
-  --muted:#6b7280;
-  --line:#e6e3da;
-  --card:#ffffff;
-  --bg:#fbfaf7;
+  --gold:#c9a227; --gold-dark:#a8861d; --gold-soft:#faf6ea;
+  --ink:#16181d; --body:#3a3f47; --muted:#6b7280;
+  --line:#e6e3da; --card:#ffffff; --bg:#fbfaf7;
 }
 *{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--body);
+body{margin:0;background:var(--bg);color:var(--body);
   font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-  font-size:16px;
-  line-height:1.65;
-}
-.page{
-  max-width:940px;
-  margin:0 auto;
-  background:var(--card);
-  padding:52px 60px 44px;
-  box-shadow:0 1px 3px rgba(0,0,0,.06),0 14px 36px rgba(0,0,0,.05);
-}
-.print-btn{
-  position:fixed;top:22px;right:22px;z-index:50;
-  background:var(--gold);color:#fff;border:none;border-radius:8px;
-  padding:12px 22px;font-size:15px;font-weight:600;cursor:pointer;
-  box-shadow:0 4px 14px rgba(201,162,39,.35);
-  transition:background .2s ease,transform .2s ease;
-}
-.print-btn:hover{background:var(--gold-dark);transform:translateY(-1px)}
-header.doc-head{
-  border-bottom:3px solid var(--gold);
-  padding-bottom:26px;
-  margin-bottom:34px;
-}
-header.doc-head .kicker{
-  display:inline-block;
-  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--gold-dark);font-weight:700;margin-bottom:10px;
-}
-h1{color:var(--ink);font-size:34px;line-height:1.25;margin:0 0 14px;font-weight:700;letter-spacing:-.01em}
+  font-size:16px;line-height:1.65}
+.page{max-width:940px;margin:0 auto;background:var(--card);padding:52px 60px 44px;
+  box-shadow:0 1px 3px rgba(0,0,0,.06),0 14px 36px rgba(0,0,0,.05)}
+.print-btn{position:fixed;top:22px;right:22px;z-index:50;background:var(--gold);color:#fff;
+  border:none;border-radius:8px;padding:12px 22px;font-size:15px;font-weight:600;cursor:pointer;
+  box-shadow:0 4px 14px rgba(201,162,39,.35)}
+.print-btn:hover{background:var(--gold-dark)}
+header.doc-head{border-bottom:3px solid var(--gold);padding-bottom:26px;margin-bottom:34px}
+header.doc-head .kicker{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold-dark);font-weight:700;margin-bottom:10px}
+h1{color:var(--ink);font-size:34px;line-height:1.25;margin:0 0 14px;font-weight:700}
 .doc-meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
 .doc-meta b{color:var(--ink);font-weight:600}
-h2{
-  color:var(--ink);font-size:24px;margin:0 0 18px;font-weight:700;letter-spacing:-.01em;
-  padding-left:14px;border-left:5px solid var(--gold);
-}
+h2.chapter{color:var(--ink);font-size:27px;margin:0 0 20px;font-weight:700;padding-left:16px;border-left:6px solid var(--gold);line-height:1.3}
+section h2{color:var(--gold-dark);font-size:19px;margin:32px 0 10px;font-weight:650;padding:0 0 6px 0;border-left:none;border-bottom:1px solid var(--line)}
+section h3{color:var(--ink);font-size:16px}
 h3{color:var(--ink);font-size:18px;margin:30px 0 10px;font-weight:650}
+h4{color:var(--gold-dark);font-size:15px;margin:22px 0 8px;font-weight:650}
 p{margin:0 0 14px}
 strong{color:var(--ink);font-weight:650}
 a{color:var(--gold-dark);text-decoration:none;border-bottom:1px dotted var(--gold)}
 a:hover{border-bottom-style:solid}
-.toc{
-  background:var(--gold-soft);
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:22px 26px;
-  margin:0 0 40px;
-}
-.toc h2{border:none;padding:0;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:12px}
+.toc{background:var(--gold-soft);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin:0 0 40px}
+.toc h2{border:none;padding:0;font-size:15px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold-dark);margin:0 0 12px}
+.toc .group{margin:14px 0 4px;font-weight:650;color:var(--ink);font-size:14px}
 .toc ol{margin:0;padding-left:22px}
-.toc li{margin:7px 0}
-.toc .lead{font-size:14px;color:var(--muted);margin:12px 0 0}
-.lead-in{font-size:17px;color:var(--body)}
+.toc li{margin:6px 0}
+.lead-in{font-size:17px}
 section{margin:0 0 46px;scroll-margin-top:20px}
 .table-wrap{overflow-x:auto;margin:18px 0 22px}
 table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:520px}
@@ -81,27 +49,21 @@ th,td{border:1px solid var(--line);padding:10px 13px;text-align:left;vertical-al
 th{background:var(--gold);color:#fff;font-weight:600}
 tbody tr:nth-child(even){background:#fcfbf8}
 tbody tr:hover{background:var(--gold-soft)}
-pre{
-  background:#1d2026;color:#f2f0e9;padding:18px 20px;border-radius:10px;
-  overflow-x:auto;font-size:13px;line-height:1.55;margin:18px 0 22px;
-  font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;
-}
-code{
-  background:#f4f1e8;color:#8a6d12;padding:2px 6px;border-radius:5px;
-  font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;font-size:13.5px;
-}
+pre{background:#1d2026;color:#f2f0e9;padding:18px 20px;border-radius:10px;overflow-x:auto;
+  font-size:13px;line-height:1.55;margin:18px 0 22px;
+  font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
+code{background:#f4f1e8;color:#8a6d12;padding:2px 6px;border-radius:5px;
+  font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;font-size:13.5px}
 pre code{background:transparent;color:inherit;padding:0;font-size:13px}
-blockquote{
-  margin:20px 0;padding:16px 22px;background:var(--gold-soft);
-  border-left:5px solid var(--gold);border-radius:0 10px 10px 0;
-  font-size:17px;color:var(--ink);
-}
+blockquote{margin:20px 0;padding:16px 22px;background:var(--gold-soft);border-left:5px solid var(--gold);
+  border-radius:0 10px 10px 0;font-size:16px;color:var(--ink)}
+blockquote p:last-child{margin-bottom:0}
 ol,ul{margin:14px 0 18px;padding-left:26px}
 li{margin:8px 0}
-footer.doc-foot{
-  margin-top:52px;padding-top:20px;border-top:1px solid var(--line);
-  font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between;
-}
+li.check{list-style:none;margin-left:-1.1em}
+hr{border:none;border-top:2px solid var(--line);margin:30px 0}
+footer.doc-foot{margin-top:52px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;
+  color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between}
 @media (max-width:720px){
   body{font-size:15px}
   .page{padding:30px 20px 32px;box-shadow:none}
@@ -120,7 +82,7 @@ footer.doc-foot{
   section{page-break-before:always}
   section:first-of-type{page-break-before:avoid}
   .table-wrap,pre,blockquote{page-break-inside:avoid}
-  h2,h3{page-break-after:avoid}
+  h2,h3,h4{page-break-after:avoid}
 }
 </style>
 </head>
@@ -142,38 +104,189 @@ footer.doc-foot{
 
 <nav class="toc">
   <h2>Inhalt</h2>
+
+  <div class="group">I. Grundlagen</div>
   <ol>
-    <li><a href="#architektur">Technische Architektur &amp; Rollenverteilung</a></li>
-    <li><a href="#factory-pipeline">Automatisierte Factory-Pipeline</a></li>
-    <li><a href="#praxis-huerden">Die praxis-spezifischen Hürden (und deren Lösung)</a></li>
-    <li><a href="#go-to-market">Go-to-Market &amp; Strategie für „Engel &amp; Engel“</a></li>
+    <li><a href="#k01">Technische Architektur & Rollenverteilung</a></li>
+    <li><a href="#k02">Automatisierte Factory-Pipeline</a></li>
+    <li><a href="#k03">Die praxis-spezifischen Hürden (und deren Lösung)</a></li>
+    <li><a href="#k04">Go-to-Market & Strategie für „Engel & Engel"</a></li>
   </ol>
-  <p class="lead">Markdown-Quellen: <code>../md/01-ARCHITEKTUR.md</code> bis <code>../md/04-GO-TO-MARKET.md</code></p>
+  <div class="group">II. Fachkonzept</div>
+  <ol>
+    <li><a href="#k05">Recht & Compliance</a></li>
+    <li><a href="#k06">Inhalte & Medien</a></li>
+    <li><a href="#k07">Online-Terminbuchung</a></li>
+    <li><a href="#k08">SEO – lokale Suche & strukturierte Daten</a></li>
+    <li><a href="#k09">Performance</a></li>
+    <li><a href="#k10">Sicherheit</a></li>
+  </ol>
+  <div class="group">III. Umsetzung & Betrieb</div>
+  <ol>
+    <li><a href="#k11">Tech-Stack-Entscheidung</a></li>
+    <li><a href="#k12">Umsetzungsprozess</a></li>
+    <li><a href="#k13">QA & Go-Live</a></li>
+    <li><a href="#k14">Betrieb & Wartung</a></li>
+  </ol>
+  <div class="group">IV. Strategie</div>
+  <ol>
+    <li><a href="#k15">Roadmap</a></li>
+    <li><a href="#k16">Kosten & Kalkulation</a></li>
+    <li><a href="#k17">Vertrieb & Einwände</a></li>
+  </ol>
+  <p style="font-size:14px;color:#6b7280">Markdown-Quellen: <code>../md/01-ARCHITEKTUR.md</code> bis <code>../md/17-VERTRIEB-UND-EINWAENDE.md</code></p>
 </nav>
-
-<section id="architektur">
-  <h2>1. Technische Architektur &amp; Rollenverteilung</h2>
-  <p>Damit das System horizontal skaliert, ohne dass der Wartungsaufwand linear mit der Kundenanzahl wächst, sollten Build-Infrastruktur und Web-Auslieferung strikt getrennt werden.</p>
-  <div class="table-wrap">
-  <table>
-    <thead>
-      <tr><th>Komponente</th><th>Rolle &amp; Aufgabe</th><th>Warum dieser Stack?</th></tr>
-    </thead>
-    <tbody>
-      <tr><td><strong>Terra Cloud (VPS)</strong></td><td>Deutsches Rechenzentrum (Wortmann AG), Hosting der Management- und Delivery-Ebene</td><td>Erfüllt strikte DSGVO-/BDSG-Auflagen für Mediziner; Serverstandort Deutschland ist ein wichtiges Verkaufsargument.</td></tr>
-      <tr><td><strong>Coolify (v4)</strong></td><td>Zentrale Deployment- &amp; Reverse-Proxy-Plattform (Traefik/Caddy)</td><td>Verwaltet automatisch Wildcard- und Custom-Domains, stellt Let&rsquo;s-Encrypt-SSL-Zertifikate aus und orchestriert Docker-Container per Webhook.</td></tr>
-      <tr><td><strong>GitLab (Self-Hosted / CI/CD)</strong></td><td>Zentrales Repository- &amp; Pipeline-Management</td><td>Trennt Template-Code von Praxis-Daten; baut Seiten in Sekunden per GitLab Runner via Hugo CLI.</td></tr>
-      <tr><td><strong>Hugo Engine</strong></td><td>Static Site Generator (SSG)</td><td>Kompiliert eine Praxis-Website in unter 100 ms; kein PHP, keine SQL-Datenbank zur Laufzeit, praktisch immun gegen Angriffe.</td></tr>
-      <tr><td><strong>Web-Auslieferung</strong></td><td>Nginx-/Caddy-Container (oder GitLab Pages)</td><td>Liefert reine statische Assets (HTML/CSS/JS) extrem performant mit Core-Web-Vitals-Scores nahe 100 aus.</td></tr>
-    </tbody>
-  </table>
-  </div>
+<section id="k01">
+<h2 class="chapter">Technische Architektur & Rollenverteilung</h2>
+<p>Damit das System horizontal skaliert, ohne dass der Wartungsaufwand linear mit der Kundenanzahl wächst, sollten Build-Infrastruktur und Web-Auslieferung strikt getrennt werden.</p>
+<table>
+<thead>
+<tr>
+<th>Komponente</th>
+<th>Rolle &amp; Aufgabe</th>
+<th>Warum dieser Stack?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Terra Cloud (VPS)</strong></td>
+<td>Deutsches Rechenzentrum (Wortmann AG), Hosting der Management- und Delivery-Ebene</td>
+<td>Erfüllt strikte DSGVO-/BDSG-Auflagen für Mediziner; Serverstandort Deutschland ist ein wichtiges Verkaufsargument.</td>
+</tr>
+<tr>
+<td><strong>Coolify (v4)</strong></td>
+<td>Zentrale Deployment- &amp; Reverse-Proxy-Plattform (Traefik/Caddy)</td>
+<td>Verwaltet automatisch Wildcard- und Custom-Domains, stellt Let's-Encrypt-SSL-Zertifikate aus und orchestriert Docker-Container per Webhook.</td>
+</tr>
+<tr>
+<td><strong>GitLab (Self-Hosted / CI/CD)</strong></td>
+<td>Zentrales Repository- &amp; Pipeline-Management</td>
+<td>Trennt Template-Code von Praxis-Daten; baut Seiten in Sekunden per GitLab Runner via Hugo CLI.</td>
+</tr>
+<tr>
+<td><strong>Hugo Engine</strong></td>
+<td>Static Site Generator (SSG)</td>
+<td>Kompiliert eine Praxis-Website in unter 100 ms; kein PHP, keine SQL-Datenbank zur Laufzeit, praktisch immun gegen Angriffe.</td>
+</tr>
+<tr>
+<td><strong>Web-Auslieferung</strong></td>
+<td>Nginx-/Caddy-Container (oder GitLab Pages)</td>
+<td>Liefert reine statische Assets (HTML/CSS/JS) extrem performant mit Core-Web-Vitals-Scores nahe 100 aus.</td>
+</tr>
+</tbody>
+</table>
+<h2>Ebenen-Trennung</h2>
+<p>Die Architektur besteht aus drei klar getrennten Ebenen. Diese Trennung ist der Kern der Skalierbarkeit: Änderungen in einer Ebene wirken nicht unkontrolliert in die anderen.</p>
+<table>
+<thead>
+<tr>
+<th>Ebene</th>
+<th>Aufgabe</th>
+<th>Lebensdauer</th>
+<th>Änderungsfrequenz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Template-/Theme-Ebene</strong></td>
+<td>Layout, Komponenten, Barrierefreiheit, SEO-Grundgerüst</td>
+<td>Jahre</td>
+<td>selten, zentral für alle Praxen</td>
+</tr>
+<tr>
+<td><strong>2. Praxis-Ebene</strong></td>
+<td>Inhalte, Bilder, Öffnungszeiten, Impressum, Kontaktdaten</td>
+<td>dauerhaft je Praxis</td>
+<td>regelmäßig (Praxis oder Dienstleister)</td>
+</tr>
+<tr>
+<td><strong>3. Delivery-Ebene</strong></td>
+<td>gebautes HTML/CSS/JS, Proxy, TLS, Caching</td>
+<td>flüchtig, reproduzierbar</td>
+<td>bei jedem Commit</td>
+</tr>
+</tbody>
+</table>
+<p>Daraus folgt: Ein Theme-Update wird <strong>einmal</strong> gebaut und an alle Praxen ausgerollt; eine Inhaltsänderung berührt nur die Praxis-Ebene; die Delivery-Ebene ist jederzeit aus dem Repository reproduzierbar – sie enthält keinen Zustand, den man verlieren könnte.</p>
+<h2>Rollen und Verantwortlichkeiten</h2>
+<table>
+<thead>
+<tr>
+<th>Aufgabe</th>
+<th>Verantwortlich</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Theme/Design-System pflegen</td>
+<td>engel&amp;engel (zentral)</td>
+</tr>
+<tr>
+<td>Pipeline, Runner, Proxy, TLS betreiben</td>
+<td>engel&amp;engel</td>
+</tr>
+<tr>
+<td>Inhalte liefern und verifizieren</td>
+<td>Praxis</td>
+</tr>
+<tr>
+<td>Inhalte einpflegen</td>
+<td>engel&amp;engel (Managed Service) – die Praxis meldet Änderungen</td>
+</tr>
+<tr>
+<td>Rechtstexte verantworten</td>
+<td>Praxis (technische Umsetzung: engel&amp;engel)</td>
+</tr>
+<tr>
+<td>Monitoring und Störungsbehebung</td>
+<td>engel&amp;engel</td>
+</tr>
+</tbody>
+</table>
+<h2>Fehlerfälle und Verhalten</h2>
+<table>
+<thead>
+<tr>
+<th>Fall</th>
+<th>Auswirkung</th>
+<th>Verhalten</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Build schlägt fehl</td>
+<td>Praxis-Repo bleibt unverändert</td>
+<td>letzter erfolgreicher Build bleibt live, Pipeline meldet den Fehler</td>
+</tr>
+<tr>
+<td>Theme-Update fehlerhaft</td>
+<td>potenziell alle Praxen betroffen</td>
+<td>Ausrollen nur mit Staging-Durchlauf, Rollback auf die vorherige Theme-Version</td>
+</tr>
+<tr>
+<td>Proxy/Container-Ausfall</td>
+<td>alle Praxen offline</td>
+<td>zweites Auslieferungsziel oder statisches Archiv, dokumentierter Notfallplan</td>
+</tr>
+<tr>
+<td>Praxis-Repo beschädigt</td>
+<td>eine Praxis betroffen</td>
+<td>Wiederherstellung aus der Git-Historie</td>
+</tr>
+<tr>
+<td>Zertifikat abgelaufen</td>
+<td>Warnungen im Browser</td>
+<td>automatische Erneuerung plus Ablauf-Überwachung</td>
+</tr>
+</tbody>
+</table>
+<h2>Einordnung</h2>
+<p>Diese Architektur ist die <strong>Skalierungsvariante</strong> des bestehenden Betriebs (statische Website je Praxis). Für eine einzelne Praxis ist der klassische Weg über ein Webhosting-Paket robuster und günstiger; die Factory zahlt sich ab einer relevanten Kundenzahl aus. Die Abwägung steht in Kapitel 11.</p>
 </section>
-
-<section id="factory-pipeline">
-  <h2>2. Automatisierte Factory-Pipeline</h2>
-  <p>Um hunderte Praxen ohne manuellen Aufwand zu provisionieren, empfiehlt sich eine Template- &amp; Daten-Entkopplung:</p>
-<pre><code>[Arztdaten / CMS]
+<section id="k02">
+<h2 class="chapter">Automatisierte Factory-Pipeline</h2>
+<p>Um hunderte Praxen ohne manuellen Aufwand zu provisionieren, empfiehlt sich eine Template- &amp; Daten-Entkopplung:</p>
+<pre><code class="language-text">[Arztdaten / Onboarding]
        |
        v
 [GitLab Repo: praxis-mueller] --(Webhook)--&gt; [GitLab Runner]
@@ -182,49 +295,1959 @@ footer.doc-foot{
                                             [Docker Artifact / HTML]
                                                     |
                                                     v
-                                            [Coolify API / Webhook] --&gt; [Caddy/Traefik Proxy] --&gt; [Live Website]</code></pre>
-  <ol>
-    <li><strong>Theme als Git-Submodule / Hugo Module:</strong> Ein zentrales, hochgradig barrierefreies Praxistemplate (inkl. Fachrichtungen wie Allgemeinmedizin, Zahnarzt, Orthopädie). Änderungen am Theme fließen per Runner-Update automatisch in alle Praxen ein.</li>
-    <li><strong>Praxis-spezifisches Repository:</strong> Enthält ausschließlich Textdaten, Bilder, Öffnungszeiten, Impressum und Kontaktdaten (<code>/content</code> und <code>config.yaml</code> / JSON).</li>
-    <li><strong>Automatischer Build:</strong> Ändert die Praxis ihre Sprechzeiten, stößt ein Commit die CI-Pipeline an. Der Runner rendert das HTML und übergibt die fertigen Artefakte via Coolify-Webhook an den ausliefernden Webserver.</li>
-  </ol>
+                                            [Coolify API / Webhook] --&gt; [Caddy/Traefik Proxy] --&gt; [Live Website]
+</code></pre>
+<h2>Bausteine</h2>
+<ol>
+<li><strong>Theme als Git-Submodule / Hugo Module:</strong> Ein zentrales, hochgradig barrierefreies Praxistemplate (inkl. Fachrichtungen wie Allgemeinmedizin, Zahnarzt, Orthopädie). Änderungen am Theme fließen per Runner-Update automatisch in alle Praxen ein.</li>
+<li><strong>Praxis-spezifisches Repository:</strong> Enthält ausschließlich Textdaten, Bilder, Öffnungszeiten, Impressum und Kontaktdaten (<code>/content</code> und <code>config.yaml</code> / JSON).</li>
+<li><strong>Automatischer Build:</strong> Ändert die Praxis ihre Sprechzeiten, stößt ein Commit die CI-Pipeline an. Der Runner rendert das HTML und übergibt die fertigen Artefakte via Coolify-Webhook an den ausliefernden Webserver.</li>
+</ol>
+<h2>Provisionierung einer neuen Praxis</h2>
+<table>
+<thead>
+<tr>
+<th>Schritt</th>
+<th>Aktion</th>
+<th>Ergebnis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Repository aus dem Praxis-Template erzeugen</td>
+<td>leeres Daten-Repo mit Ordnerstruktur</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Theme als Submodule/Modul in fester Version binden</td>
+<td>reproduzierbarer Build-Stand</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Praxis-Daten und Inhalte einpflegen (Onboarding-Formular)</td>
+<td>Content vollständig</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Domain im Proxy hinterlegen, DNS umstellen</td>
+<td>Routing und TLS</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Pipeline laufen lassen, Vorschau prüfen</td>
+<td>Test-Website</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Freigabe der Praxis einholen</td>
+<td>dokumentiertes OK</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Produktiv-Domain scharf schalten</td>
+<td>live</td>
+</tr>
+</tbody>
+</table>
+<p>Der Aufwand liegt damit bei <strong>Daten und Freigabe</strong>, nicht bei Technik – das ist der eigentliche Skalierungsgewinn.</p>
+<h2>Versionierung und Rollback</h2>
+<ul>
+<li>Das Theme wird in <strong>fester Version</strong> je Praxis gebunden. Ein Update ist eine bewusste Änderung (Versionsnummer anheben), kein automatisches Mitziehen.</li>
+<li>Jede Änderung an Inhalten ist ein Commit und damit rückholbar; ein Rollback ist ein Revert plus erneuter Build.</li>
+<li>Builds sind reproduzierbar: derselbe Commit plus dieselbe Theme-Version ergibt dasselbe Ergebnis.</li>
+<li>Vor dem Ausrollen eines Theme-Updates läuft ein Staging-Build über alle Praxen; erst danach wird produktiv deployt.</li>
+</ul>
+<h2>Fehlerfälle</h2>
+<table>
+<thead>
+<tr>
+<th>Fall</th>
+<th>Ursache</th>
+<th>Gegenmaßnahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Build bricht ab</td>
+<td>fehlerhafte Inhalte, ungültige Konfiguration</td>
+<td>letzte gute Version bleibt live, Fehlermeldung an den Verantwortlichen</td>
+</tr>
+<tr>
+<td>Webhook erreicht den Proxy nicht</td>
+<td>Netzwerk, abgelaufenes Token</td>
+<td>erneuter Trigger, Alarm bei fehlgeschlagenem Deploy</td>
+</tr>
+<tr>
+<td>Theme-Update bricht einzelne Praxen</td>
+<td>Sonderfall in den Praxis-Daten</td>
+<td>Staging-Durchlauf, Rollback auf vorherige Theme-Version</td>
+</tr>
+<tr>
+<td>Vorschau öffentlich erreichbar</td>
+<td>vergessener Zugriffsschutz</td>
+<td>Vorschau immer mit Zugriffsschutz und <code>noindex</code></td>
+</tr>
+<tr>
+<td>Bilder fehlen oder sind zu groß</td>
+<td>fehlender Build-Schritt</td>
+<td>Bildoptimierung als Pflichtschritt im Build (Kapitel 09)</td>
+</tr>
+</tbody>
+</table>
+<h2>Rollen</h2>
+<table>
+<thead>
+<tr>
+<th>Rolle</th>
+<th>Verantwortung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Theme-Verantwortlicher</td>
+<td>Design-System, Komponenten, Freigabe von Theme-Releases</td>
+</tr>
+<tr>
+<td>Pipeline-Verantwortlicher</td>
+<td>Runner, Secrets, Proxy, Monitoring</td>
+</tr>
+<tr>
+<td>Redakteur</td>
+<td>engel&amp;engel – die Praxis meldet Änderungen (Kapitel 03)</td>
+</tr>
+<tr>
+<td>Freigeber</td>
+<td>dokumentierte Freigabe vor dem Go-Live und vor Theme-Releases</td>
+</tr>
+</tbody>
+</table>
 </section>
-
-<section id="praxis-huerden">
-  <h2>3. Die praxis-spezifischen Hürden (und deren Lösung)</h2>
-  <p>Arztpraxen haben spezifische Anforderungen, die reines Static Hosting erweitern muss.</p>
-
-  <h3>Inhaltspflege ohne Git-Kenntnisse</h3>
-  <p>Ärzte oder MFA (Medizinische Fachangestellte) können kein Git bedienen.</p>
-  <blockquote><strong>Lösung:</strong> Ein Git-basiertes Headless-CMS wie <strong>Decap CMS</strong> (ehemals Netlify CMS) oder <strong>Keystatic</strong> einbinden. Die Praxis editiert Öffnungszeiten in einer einfachen Web-Maske; das CMS committet automatisch in das GitLab-Repo und triggert den Hugo-Build.</blockquote>
-
-  <h3>Online-Terminvergabe</h3>
-  <p>Praxen nutzen Systeme wie Doctolib, jameda, samedi oder CGM.</p>
-  <blockquote><strong>Lösung:</strong> DSGVO-konforme Einbindung per Consent-Management (z. B. Two-Click-Lösung / lokaler Banner) oder direkter Deep-Link zum jeweiligen Buchungsportal.</blockquote>
-
-  <h3>Rechtssicherheit &amp; Notdienst-Hinweise</h3>
-  <ul>
-    <li>Lokale Auslieferung von Schriftarten (kein ungeschütztes Google-Fonts-CDN).</li>
-    <li>Dynamische Notdienst-Boxen über kleine clientseitige Vanilla-JS-Snippets gegen die Schnittstellen der Kassenärztlichen Vereinigung (KV).</li>
-  </ul>
+<section id="k03">
+<h2 class="chapter">Die praxis-spezifischen Hürden (und deren Lösung)</h2>
+<p>Arztpraxen haben spezifische Anforderungen, die reines Static Hosting erweitern muss.</p>
+<h2>Inhaltspflege ohne Git-Kenntnisse</h2>
+<p>Ärzte oder MFA (Medizinische Fachangestellte) können kein Git bedienen.</p>
+<p><strong>Lösung: kein Redaktionssystem.</strong> Die Pflege läuft zentral über engel&amp;engel: Die Praxis meldet Änderungen formlos (Telefon oder E-Mail), wir setzen sie im Praxis-Repository um, prüfen sie und deployen. Die Praxis braucht keinen Zugang zu Git, Pipeline oder Server und muss nichts lernen.</p>
+<p>Das ist eine bewusste Entscheidung. Eine Redaktionsoberfläche wäre ein zusätzliches System, das gepflegt, abgesichert und geschult werden müsste – und sie würde die inhaltliche Kontrolle (HWG, Sprechzeiten, Rechtstexte) aus der Hand geben.</p>
+<h3>Änderungsprozess</h3>
+<table>
+<thead>
+<tr>
+<th>Schritt</th>
+<th>Wer</th>
+<th>Ergebnis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Änderung melden (Telefon, E-Mail)</td>
+<td>Praxis</td>
+<td>Anforderung liegt vor</td>
+</tr>
+<tr>
+<td>Eingangsbestätigung mit Termin</td>
+<td>engel&amp;engel</td>
+<td>Praxis weiß, wann es live ist</td>
+</tr>
+<tr>
+<td>Umsetzung im Praxis-Repository</td>
+<td>engel&amp;engel</td>
+<td>Commit, Build, Deploy</td>
+</tr>
+<tr>
+<td>Kontrolle (HWG, Sprechzeiten, Tonalität)</td>
+<td>engel&amp;engel</td>
+<td>geprüfter Stand</td>
+</tr>
+<tr>
+<td>Rückmeldung an die Praxis</td>
+<td>engel&amp;engel</td>
+<td>Änderung bestätigt</td>
+</tr>
+<tr>
+<td>Rollback bei Fehlern</td>
+<td>engel&amp;engel</td>
+<td>vorheriger Stand live</td>
+</tr>
+</tbody>
+</table>
+<h3>Regeln für den Änderungsprozess</h3>
+<ul>
+<li><strong>Feste Reaktionszeiten</strong> je Paket zusagen (z. B. Standard zwei Werktage; Urlaubsvertretung und dringende Fälle am selben Tag).</li>
+<li><strong>Änderungskontingent</strong> je Monat definieren, Mehrbedarf bepreisen (Kapitel 16).</li>
+<li><strong>Urlaub und Schließtage haben Vorrang</strong> – sie sind der häufigste Anlass und verhindern Fehlanrufe bei der Praxis.</li>
+<li><strong>Kein Zugang der Praxis</strong> zu Repository, Pipeline oder Hosting; Zugangsdaten liegen ausschließlich bei engel&amp;engel im Passwort-Manager.</li>
+<li><strong>Nachvollziehbarkeit:</strong> jede Änderung ist ein Commit mit Datum und Grund – bei Rückfragen belegbar.</li>
+</ul>
+<h2>Online-Terminvergabe</h2>
+<p>Praxen nutzen Systeme wie Doctolib, jameda, samedi oder CGM.</p>
+<p><strong>Lösung:</strong> DSGVO-konforme Einbindung per Consent-Management (z. B. Two-Click-Lösung / lokaler Banner) oder direkter Deep-Link zum jeweiligen Buchungsportal. Details in Kapitel 07.</p>
+<h2>Rechtssicherheit &amp; Notdienst-Hinweise</h2>
+<ul>
+<li>Lokale Auslieferung von Schriftarten (kein ungeschütztes Google-Fonts-CDN).</li>
+<li>Dynamische Notdienst-Boxen über kleine clientseitige Vanilla-JS-Snippets gegen die Schnittstellen der Kassenärztlichen Vereinigung (KV).</li>
+</ul>
+<blockquote>
+<p>Hinweis: Notdienst- und Bereitschaftsdaten niemals aus fremden Quellen übernehmen. Sie werden von der Praxis bestätigt oder aus einer offiziellen KV-Quelle bezogen und mit Stand-Datum geführt.</p>
+</blockquote>
+<h2>Weitere Hürden im Betrieb</h2>
+<table>
+<thead>
+<tr>
+<th>Hürde</th>
+<th>Lösung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bestehende WordPress-Seite mit Rankings</td>
+<td>Redirect-Konzept (301) vor dem Domainumzug, alte URLs auf neue Inhalte abbilden</td>
+</tr>
+<tr>
+<td>Praxis-Mailadresse liegt beim alten Hoster</td>
+<td>Mail-Handling beim Umzug getrennt planen (MX-Einträge), Website-Umzug nie mit Mail-Umzug vermischen</td>
+</tr>
+<tr>
+<td>Bilder in Druckqualität</td>
+<td>Build-Schritt zur Bildoptimierung (Kapitel 09), Einwilligungen vorher einholen</td>
+</tr>
+<tr>
+<td>Änderungswünsche per Telefon</td>
+<td>fester Änderungsprozess mit Eingangsbestätigung (Kapitel 12)</td>
+</tr>
+<tr>
+<td>Praxis wechselt den Buchungsanbieter</td>
+<td>Buchungslink ist ein Datenfeld, kein Template-Eingriff (Kapitel 07)</td>
+</tr>
+</tbody>
+</table>
 </section>
+<section id="k04">
+<h2 class="chapter">Go-to-Market & Strategie für „Engel & Engel"</h2>
+<h2>Positionierung</h2>
+<blockquote>
+<p>„Die unhackbar schnelle Praxis-Website – rechtssicher in Deutschland gehostet."</p>
+</blockquote>
+<p>WordPress-Praxen leiden häufig unter Wartungsverträgen, die nur Sicherheitsupdates einspielen. Positionieren Sie das Hugo-Setup als wartungsfreie Festung (kein WordPress-Patching mehr nötig).</p>
+<h2>Vertriebsargumente gegenüber Praxisinhabern</h2>
+<ol>
+<li><strong>DSGVO &amp; Vertrauen:</strong> Datenhaltung bei Terra Cloud im deutschen Rechenzentrum.</li>
+<li><strong>Top-Google-Ranking:</strong> Perfekte Ladezeiten bringen messbare SEO-Vorteile bei lokalen Suchanfragen („Hautarzt Alfeld").</li>
+<li><strong>Ausfallsicherheit:</strong> Statische Seiten kennen keine Datenbank-Timeouts oder PHP-Crashes.</li>
+</ol>
+<p>Ergänzend: Rechtssicherheit von Anfang an (Impressum mit Berufsangaben, Barrierefreiheitserklärung, HWG-konforme Texte) – genau die Punkte, an denen Praxis-Websites abgemahnt werden.</p>
+<h2>Zielkunden und Kaufauslöser</h2>
+<ul>
+<li><strong>Einzelpraxen</strong> mit seltenen Änderungen: Managed Service, geringer Preis, hohe Sicherheit.</li>
+<li><strong>Fachpraxen</strong> mit Selbstzahler-Leistungen: Schwerpunktseiten, höherer Anspruch an Außendarstellung.</li>
+<li><strong>Gemeinschaftspraxen und MVZ:</strong> mehrere Ansprechpartner, mehr Abstimmung, höhere Budgets.</li>
+<li><strong>Praxisübernahmen und Neugründungen:</strong> kurzer Entscheidungsweg, Website ist Pflichtausstattung.</li>
+<li><strong>Praxen mit veralteter WordPress-Seite:</strong> stärkstes Verkaufsargument (Ladezeit, Wartung, DSGVO).</li>
+</ul>
+<p>Auslöser für ein Gespräch sind Gründung, Übernahme, Abmahnung, eine unbrauchbare Mobilansicht oder der Wechsel der bestehenden Agentur.</p>
+<h2>Preismodell</h2>
+<p>Setup-Gebühr (Onboarding, Fotos, Text-Initialisierung) plus monatliche Hosting- und Wartungspauschale (z. B. 49 € bis 129 € / Monat inkl. Domain, Betreuung und Notdienst-Updates).</p>
+<p>Die Pauschale muss den tatsächlichen Betreuungsaufwand decken – die Kalkulation und die Stufen stehen in Kapitel 16.</p>
+<h2>Vertriebsweg und Abgrenzung</h2>
+<p>Der stärkste Kanal ist die Empfehlung aus dem bestehenden Kundenkreis, danach die regionale Direktansprache und Multiplikatoren wie Steuerberater und Praxismanager. Als Einstieg eignet sich ein kostenloser Vergleichscheck der bestehenden Praxis-Website (Ladezeit, Recht, Sichtbarkeit).</p>
+<p>Gegenüber Baukasten-Anbietern, klassischen Agenturen und Plattform-Websites (z. B. Doctolib) wird nicht über den Preis, sondern über Rechtssicherheit, Betreuung und Sichtbarkeit argumentiert. Vollständige Einwandbehandlung und Wettbewerbsabgrenzung: Kapitel 17.</p>
+</section>
+<section id="k05">
+<h2 class="chapter">Recht & Compliance</h2>
+<p>Rechtliche Pflichten, Datenschutz und Barrierefreiheit einer Praxis-Website. <strong>Kein Rechtsrat</strong> – die Texte werden vor Go-Live von der Praxis geprüft und im Zweifel rechtlich finalisiert.</p>
+<h2>1. Relevante Gesetze</h2>
+<table>
+<thead>
+<tr>
+<th>Gesetz</th>
+<th>Was es regelt</th>
+<th>Relevanz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DSGVO</strong></td>
+<td>Personenbezogene Daten, Informationspflichten (Art. 12–14), Betroffenenrechte, AV-Verträge (Art. 28)</td>
+<td>Hoch – jede Website</td>
+</tr>
+<tr>
+<td><strong>TTDSG § 25</strong></td>
+<td>Cookies/Client-Speicherung: Einwilligung für nicht notwendige Zugriffe</td>
+<td>Hoch – bei Tracking/Consent</td>
+</tr>
+<tr>
+<td><strong>DDG § 5</strong> (Nachfolger TMG)</td>
+<td>Impressumspflicht (Anbieterkennzeichnung)</td>
+<td>Hoch – Pflichtseite</td>
+</tr>
+<tr>
+<td><strong>HWG</strong> (Heilmittelwerbegesetz)</td>
+<td>Werbegrenzen für Heilmittel und Behandlungen: § 3 irreführend, § 11 Nr. 7 Angstmache, § 11 Nr. 11 Äußerungen Dritter, § 12 Krankheitsliste (Anlage A); Bußgeld bis 50.000 €</td>
+<td>Hoch – arztspezifisch</td>
+</tr>
+<tr>
+<td><strong>MBO-Ä § 27</strong></td>
+<td>Berufsrechtliches Werbeverbot: keine anpreisende, irreführende, vergleichende Werbung</td>
+<td>Hoch – arztspezifisch</td>
+</tr>
+<tr>
+<td><strong>UWG</strong></td>
+<td>Unlauterer Wettbewerb (Abmahnungen)</td>
+<td>Mittel</td>
+</tr>
+<tr>
+<td><strong>BFSG</strong> (seit 28.06.2025)</td>
+<td>Barrierefreiheit von Dienstleistungen inkl. Websites (EN 301 549 / WCAG 2.1 AA), Barrierefreiheitserklärung</td>
+<td>Hoch – Pflichtseite</td>
+</tr>
+<tr>
+<td><strong>MStV § 18 Abs. 2</strong></td>
+<td>Verantwortlichkeitsangabe im Impressum</td>
+<td>Mittel</td>
+</tr>
+</tbody>
+</table>
+<h2>2. Pflichtseiten (immer vorhanden)</h2>
+<ol>
+<li><strong>Impressum</strong> – Name/Anschrift, Kontakt und die arztspezifischen Berufsangaben (Berufsbezeichnung, zuständige Ärztekammer, Kassenärztliche Vereinigung, Land der Approbation, geltende Berufsordnung). Fehlende Berufsangaben sind abmahnbar.</li>
+<li><strong>Datenschutzerklärung</strong> – Verantwortlicher, verarbeitete Daten, Rechtsgrundlagen, Betroffenenrechte, Hosting inkl. Auftragsverarbeitung (Art. 28 DSGVO).</li>
+<li><strong>Barrierefreiheitserklärung</strong> – nach BFSG Anlage 3 mit Feedback-Kontakt und Hinweis auf die Schlichtungsstelle.</li>
+</ol>
+<h2>3. HWG-Kernregeln</h2>
+<ul>
+<li><strong>Informieren statt anpreisen</strong> – keine Wirkversprechen („Heilung garantiert", „Erfolg sicher")</li>
+<li><strong>Keine Angstmacherei</strong> (§ 11 Nr. 7) – „Ohne Vorsorge droht Krebs" ist unzulässig</li>
+<li><strong>Keine Krankengeschichten</strong> in missbräuchlicher oder irreführender Weise (§ 11 Nr. 3), keine Vorher/Nachher-Darstellungen</li>
+<li><strong>§ 12 Anlage A:</strong> Werbung zu bösartigen Neubildungen, Suchtkrankheiten, meldepflichtigen Infektionen und Schwangerschaftskomplikationen ist außerhalb der Fachkreise unzulässig → bei diesen Themen rein informativ bleiben</li>
+<li><strong>Äußerungen Dritter</strong> (§ 11 Nr. 11): Patientenstimmen nur mit Einwilligung und nie anpreisend</li>
+<li><strong>Zuwendungen/Gewinnspiele</strong> (§ 7): keine Verlosungen mit Arzneimittelbezug</li>
+</ul>
+<h2>4. Rechtstexte erstellen</h2>
+<p>Grundsatz: Die Texte im Template sind <strong>Muster mit Platzhaltern</strong> und werden je Praxis gefüllt und geprüft.</p>
+<h3>Impressum (§ 5 DDG + Berufsrecht)</h3>
+<ul>
+<li>Praxisname, Anschrift (Straße, PLZ, Ort), Telefon, E-Mail</li>
+<li>Berufsbezeichnung (Fachärztin/Facharzt für …)</li>
+<li>Zuständige Ärztekammer und Kassenärztliche Vereinigung</li>
+<li>Land der Approbation, Verweis auf die Berufsordnung</li>
+<li>Verantwortlich i. S. v. § 18 Abs. 2 MStV</li>
+<li>Optional: Umsatzsteuer-ID, Aufsichtsbehörde</li>
+</ul>
+<blockquote>
+<p>Kammer, KV und Approbationsland werden <strong>bei der Praxis erfragt</strong> – niemals aus Altbeständen übernommen oder geraten.</p>
+</blockquote>
+<h3>Datenschutzerklärung</h3>
+<ul>
+<li>Verantwortlicher (Name, Anschrift, Kontakt)</li>
+<li>Zugriffsdaten (IP, Datum/Uhrzeit, Seite, Browsertyp) – Rechtsgrundlage Art. 6 Abs. 1 lit. f DSGVO</li>
+<li>Kontaktformular: Zweck (Anfragebearbeitung, Art. 6 Abs. 1 lit. b), Speicherdauer, keine Weitergabe</li>
+<li>Cookies/Tracking: standardmäßig nur technisch notwendige Speicherung</li>
+<li>Hosting inkl. Auftragsverarbeitung (Art. 28 DSGVO) – Angabe des konkreten Hosters</li>
+<li>Rechte der Betroffenen (Art. 15–21) und Beschwerderecht bei der Aufsichtsbehörde</li>
+<li>Je Praxis ergänzen: Online-Terminbuchung, eingebundene Dienste, Fotoeinwilligungen</li>
+</ul>
+<h3>Barrierefreiheitserklärung (BFSG Anlage 3)</h3>
+<ul>
+<li>Stand der Vereinbarkeit mit EN 301 549 / WCAG 2.1 AA („weitgehend barrierefrei" + bekannte Einschränkungen)</li>
+<li>Feedback-Kontakt (E-Mail/Telefon der Praxis)</li>
+<li>Schlichtungsstelle: Bundesfachstelle für Barrierefreiheit</li>
+<li>Datum der Erstellung und letzten Überprüfung</li>
+</ul>
+<h2>5. Datenschutz-Default: keine externen Requests</h2>
+<p>Grundregel des Templates: <strong>keine externen Requests, kein Tracking ohne Einwilligung</strong> – damit entfällt ein Consent-Banner vollständig (TTDSG § 25).</p>
+<table>
+<thead>
+<tr>
+<th>Baustein</th>
+<th>Lösung</th>
+<th>Warum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Karten</td>
+<td>OpenStreetMap-Link/-Embed oder statische Karte</td>
+<td>Google Maps überträgt Daten an Google</td>
+</tr>
+<tr>
+<td>Fonts</td>
+<td>System-Stack oder selbst gehostete woff2</td>
+<td>Google Fonts = Request an Google</td>
+</tr>
+<tr>
+<td>JS-Bibliotheken</td>
+<td>lokal gehostet + SRI</td>
+<td>kein CDN-Roundtrip, keine Fremdabhängigkeit</td>
+</tr>
+<tr>
+<td>Analytics</td>
+<td>keins (Default)</td>
+<td>keine Einwilligung nötig, keine IP-Speicherung</td>
+</tr>
+<tr>
+<td>Formular</td>
+<td><code>sende.php</code> (PHP-Mail)</td>
+<td>keine Datenbank, kein Dritt-Anbieter</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Falls Tracking gewünscht:</strong> datensparsame, selbst gehostete Lösung bevorzugen (Plausible, Matomo mit IP-Anonymisierung), Consent-Layer einbinden, Datenschutzerklärung ergänzen (Zweck, Anbieter, Art. 6 Abs. 1 lit. a, Widerruf erreichbar halten).</p>
+<p>Weitere Praxis-Fälle: Terminbuchung (Kapitel 07), Bewertungs-Widgets vermeiden und Portale nur sachlich verlinken, Newsletter nur mit Double-Opt-in (für Praxen meist unnötig), keine Social-Media-Buttons mit Tracking.</p>
+<h2>6. Barrierefreiheit (BFSG / WCAG 2.1 AA)</h2>
+<p>Seit 28.06.2025 gilt das BFSG auch für Praxis-Websites. Maßgeblich ist EN 301 549, Kern: WCAG 2.1 AA.</p>
+<p><strong>Pflicht-Umsetzung im Template:</strong></p>
+<ul>
+<li>Kontraste ≥ 4,5:1 (Text), 3:1 (große Flächen/UI) – Markenfarben prüfen, dunklere Variante für Text</li>
+<li>Vollständige Tastaturbedienbarkeit, sichtbarer Fokus (<code>:focus-visible</code>)</li>
+<li>Semantisches HTML: eine H1 je Seite, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;time&gt;</code></li>
+<li>Alt-Texte für Bilder, dekorative Bilder <code>alt=""</code>, Icons <code>aria-hidden</code></li>
+<li>Skip-Link „Zum Inhalt springen", <code>lang="de"</code></li>
+<li>Formulare mit <code>label for</code>, verständlichen Fehlermeldungen, <code>aria-expanded</code> für Akkordeons</li>
+</ul>
+<p><strong>Häufige Stolperfallen:</strong> zu schwache Markenkontraste, „hier klicken"-Links, Nur-Hover-Interaktionen, Karussells ohne Pause, <code>div</code>-Spaghetti statt Semantik, PDF-Formulare ohne Textschicht.</p>
+<p><strong>Prüfung:</strong> axe DevTools, Lighthouse Accessibility ≥ 90, Tab-Navigation komplett, Zoom 200 % ohne horizontalen Scroll, Screenreader-Stichprobe (Startseite + Formular).</p>
+<h2>7. Checklisten</h2>
+<p><strong>Rechtstexte</strong>
+- [ ] Impressum mit Kammer, KV, Approbationsland und Verantwortlichem vollständig
+- [ ] Datenschutzerklärung inkl. Hosting, Formular und Terminbuchung
+- [ ] Barrierefreiheitserklärung mit Feedback-Kontakt und Schlichtungsstelle
+- [ ] Praxis hat die Texte gegengelesen (OK dokumentiert), Stand-Datum geführt</p>
+<p><strong>Datenschutz</strong>
+- [ ] Keine externen Ressourcen (DevTools → Network → keine Fremd-Domains)
+- [ ] Kein Tracking ohne Consent-System
+- [ ] Karte = OSM/statisch, Fonts lokal</p>
+<p><strong>Barrierefreiheit</strong>
+- [ ] axe/Lighthouse ohne kritische Fehler
+- [ ] Tab-Navigation und Fokus auf allen Seiten, Kontraste geprüft
+- [ ] Zoom 200 % ohne Inhaltsverlust</p>
+<h2>8. Im Factory-Modell</h2>
+<ul>
+<li>Rechtstexte sind <strong>Praxis-Daten</strong>: Impressum, Datenschutz und Barrierefreiheitserklärung liegen im Praxis-Repository und werden beim Onboarding strukturiert erfasst (Kammer, KV, Approbationsland, Ansprechpartner).</li>
+<li>Das zentrale Theme liefert die Muster und die Barrierefreiheits-Basis; Änderungen daran wirken über den Runner in alle Praxen.</li>
+<li><strong>Verantwortlichkeit bleibt bei der Praxis</strong> (Inhalte und Rechtstexte), engel&amp;engel betreut die Technik – das wird dokumentiert (Kapitel 12).</li>
+<li>Änderungen an Diensten (neue Terminbuchung, neues Tracking) erfordern immer ein Update der Datenschutzerklärung.</li>
+</ul>
+</section>
+<section id="k06">
+<h2 class="chapter">Inhalte & Medien</h2>
+<p>Patientenzentrierte Inhalte, Bilder und Bewertungsmanagement für Praxis-Websites.</p>
+<h2>1. Leitprinzip: die 10-Sekunden-Regel</h2>
+<p>Ein Besucher muss in <strong>unter 10 Sekunden</strong> erkennen: Was ist das für eine Praxis, wie sind die <strong>Sprechzeiten</strong>, wie bekomme ich einen <strong>Termin</strong>, was gilt im <strong>Notfall</strong>. Alles andere ist sekundär – auch auf dem Smartphone, ohne Scrollen.</p>
+<h2>2. Seitenstruktur</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Seite</th>
+<th>Kerninhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Startseite</td>
+<td>Hero (Fachbereich + Ort), Termin-CTA, Sprechzeiten-Kurzübersicht, Notfall-Banner, Kernleistungen</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Leistungen</td>
+<td>Kassen- und IGeL-Leistungen getrennt und verständlich</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Team</td>
+<td>Ärzt:innen mit Facharztbezeichnung, Foto (nur mit Einwilligung)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Sprechzeiten + Anfahrt</td>
+<td>Tabelle, Parken, ÖPNV, Barrierefreiheit der Praxis</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Termin</td>
+<td>Telefonnummer groß, Online-Buchung, „Was mitbringen"</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Notfall</td>
+<td>116117, 112, Akutsprechstunde, nächste Notaufnahme</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Aktuelles</td>
+<td>Urlaubsvertretung (der größte Anruf-Vermeider), Neuerungen</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Patienteninfo</td>
+<td>Formulare, Abläufe, Services</td>
+</tr>
+<tr>
+<td>9</td>
+<td>FAQ</td>
+<td>echte Patientenfragen mit FAQ-Schema</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Kontakt + Rechtliches</td>
+<td>Impressum, Datenschutz, Barrierefreiheitserklärung</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Textregeln</h2>
+<ul>
+<li><strong>Verständliche Sprache</strong> – medizinische Begriffe erklären („DMP = strukturierte Betreuung bei chronischen Erkrankungen")</li>
+<li><strong>Sachlich, warm, persönlich</strong> – „wir" statt institutionell; keine Superlative (HWG!)</li>
+<li><strong>Konkret statt generisch</strong> – „Akutsprechstunde täglich 8–10 Uhr, ohne Termin" statt „gute Erreichbarkeit"</li>
+<li><strong>Handlungsorientiert</strong> – CTAs wie „Termin vereinbaren", „Sprechzeiten ansehen"</li>
+<li><strong>Niedrige Hürden betonen</strong> (Hausarzt) – „ohne Überweisung", „Hausbesuche möglich"</li>
+<li><strong>IGeL transparent</strong> – Selbstzahler-Leistungen klar kennzeichnen und erklären</li>
+</ul>
+<h2>4. Schwerpunktseiten (Fachbereich-Spezialisierung)</h2>
+<p>Baukasten je Schwerpunktseite:</p>
+<ol>
+<li>H1 fachlich + regional</li>
+<li>Intro: für wen, warum wichtig (sachlich)</li>
+<li>Anlässe als Aufzählung</li>
+<li>Ablauf (Schritte, Dauer, Vorbereitung)</li>
+<li>Leistungen im Detail (faktenbasiert)</li>
+<li>FAQ (2–4 Fragen, FAQ-Schema)</li>
+<li>CTA (Termin + Telefon)</li>
+<li>Verwandte Themen (interne Links)</li>
+</ol>
+<p><strong>HWG-Check:</strong> informieren statt anpreisen – keine Heilungsversprechen, keine Angstmache, bei § 12-Krankheiten (Onkologie, Sucht …) rein informativ.</p>
+<h2>5. Bilder &amp; Medien</h2>
+<h3>Rechtliches zuerst</h3>
+<table>
+<thead>
+<tr>
+<th>Motiv</th>
+<th>Regel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Team-/Ärzt:innen-Fotos</td>
+<td>schriftliche Einwilligung mit Zweck und Widerruf, DSGVO-konform aufbewahren</td>
+</tr>
+<tr>
+<td>Patientenfotos</td>
+<td>nur mit ausdrücklicher Einwilligung, nie im Werbekontext; bei Kindern zusätzlich Sorgeberechtigte</td>
+</tr>
+<tr>
+<td>Vorher/Nachher</td>
+<td>im medizinischen Werbekontext unzulässig (HWG § 11 Abs. 1 Nr. 3)</td>
+</tr>
+<tr>
+<td>Stockfotos</td>
+<td>Lizenz prüfen, keine Wasserzeichen, Lizenznachweis dokumentieren</td>
+</tr>
+<tr>
+<td>Krankenhaus-/Gerätebilder</td>
+<td>nur mit Einwilligung der Einrichtung, keine Logos ohne Freigabe</td>
+</tr>
+</tbody>
+</table>
+<h3>HWG-konforme Bildwahl</h3>
+<ul>
+<li>seriös und menschenwürdig – keine schockierenden Krankheitsbilder, keine Leidens-Darstellungen</li>
+<li>keine Bilder, die Heilung oder Erfolg suggerieren</li>
+<li>keine Bilddarstellungen von Körperveränderungen in missbräuchlicher Weise (§ 11 Nr. 5)</li>
+<li>sachlich-informative Darstellungen von Behandlungen sind zulässig, anpreisende nicht</li>
+</ul>
+<h3>Technische Anforderungen</h3>
+<ul>
+<li>Formate: WebP/AVIF für Fotos, SVG für Logo und Icons</li>
+<li>Größe: Ziel &lt; 200 KB pro Bild, Hero &lt; 300 KB</li>
+<li><code>width</code>/<code>height</code> immer setzen (kein Layout-Shift), <code>loading="lazy"</code> außer Hero, Hero mit <code>fetchpriority="high"</code></li>
+<li>beschreibende Alt-Texte, dekorative Bilder <code>alt=""</code></li>
+<li>Dateinamen klein, mit Bindestrich, ohne Umlaute (<code>dr-muster-sprechzimmer.webp</code>)</li>
+</ul>
+<h2>6. Bewertungen &amp; Reputation</h2>
+<p><strong>Rechtlicher Rahmen:</strong> HWG § 11 Nr. 11 – Äußerungen Dritter sind unzulässig, wenn sie missbräuchlich, abstoßend oder irreführend sind. Keine Fake-Bewertungen (UWG, Berufsrecht). Sachliche Verweise auf Jameda, Doctolib oder das Google-Business-Profil sind erlaubt.</p>
+<p><strong>Empfohlene Praxis:</strong></p>
+<ol>
+<li>Nicht zitieren, sondern verlinken – neutraler Linkblock („Bewertungen auf Jameda / Google"), keine Sterne-Widgets, die Fremddaten laden</li>
+<li>Natürlich sammeln – die Praxis bittet nach dem Termin höflich um eine Bewertung, ohne Anreize</li>
+<li>Portale pflegen – Jameda-, Doctolib- und GBP-Profil aktuell halten (Sprechzeiten, Fotos, Antworten)</li>
+</ol>
+<p><strong>Umgang:</strong> Positiv kurz und persönlich danken. Negativ zeitnah, sachlich und lösungsorientiert antworten – niemals öffentlich über medizinische Details (Schweigepflicht, § 203 StGB). Offensichtlich falsche Bewertungen bei der Plattform melden.</p>
+<h2>7. Checklisten</h2>
+<p><strong>Content</strong>
+- [ ] Sprechzeiten, Notfall und Termin-CTA in den ersten 10 Sekunden sichtbar (Desktop und Mobile)
+- [ ] Texte in „Wir"-Form, verständlich, ohne Fachjargon-Wände
+- [ ] Keine Heilsversprechen oder Anpreisungen (HWG-Review)
+- [ ] Jede Schwerpunktseite folgt dem Baukasten
+- [ ] Urlaubsvertretung aktuell gepflegt</p>
+<p><strong>Bilder</strong>
+- [ ] Einwilligungen für alle Personenbilder liegen schriftlich vor
+- [ ] Keine Vorher/Nachher- oder irreführenden Bilder
+- [ ] Bilder als WebP/AVIF, &lt; 200 KB, Dimensionen und Alt-Texte gesetzt
+- [ ] Stock-Lizenzen dokumentiert</p>
+<p><strong>Bewertungen</strong>
+- [ ] Keine ungenehmigten Patientenstimmen auf der Website
+- [ ] Portale neutral verlinkt, keine Daten ladenden Widgets
+- [ ] Antwort-Richtlinie für negative Bewertungen abgestimmt
+- [ ] GBP-/Jameda-Daten konsistent mit der Website</p>
+<h2>8. Im Factory-Modell</h2>
+<ul>
+<li>Inhalte liegen im <strong>Praxis-Repository</strong> (<code>/content</code>), Bilder als optimierte Assets daneben – dadurch bleibt das Theme für alle Praxen identisch.</li>
+<li>Der <strong>Bild-Workflow</strong> ist Teil des Onboardings: Bedarf klären, Einwilligungen einholen, konvertieren, Alt-Texte und Dimensionen hinterlegen.</li>
+<li>Die redaktionelle Pflege liegt zentral bei engel&amp;engel – die Praxis meldet Änderungen formlos (Kapitel 03), die technische Betreuung steht in Kapitel 14.</li>
+</ul>
+</section>
+<section id="k07">
+<h2 class="chapter">Online-Terminbuchung</h2>
+<h2>1. Anbieter im Praxiskontext</h2>
+<table>
+<thead>
+<tr>
+<th>Anbieter</th>
+<th>Typ</th>
+<th>Hinweise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Doctolib</strong></td>
+<td>Marktplatz + Praxis-Kalender</td>
+<td>große Reichweite; die Praxis braucht einen Vertrag; DSGVO-Einwilligung und Hosting-Standort prüfen lassen</td>
+</tr>
+<tr>
+<td><strong>medatixx Terminplan</strong> (Terminplan/agenda)</td>
+<td>Praxissoftware-Addon</td>
+<td>naheliegend für Bestandskunden mit medatixx-Software; Integration meist als Portal-Link oder iframe</td>
+</tr>
+<tr>
+<td><strong>Jameda-Terminbuchung</strong></td>
+<td>Portal</td>
+<td>Reichweite über das Jameda-Profil</td>
+</tr>
+<tr>
+<td><strong>Terminland / andere</strong></td>
+<td>Einzelanbieter</td>
+<td>übernehmen, wenn die Praxis den Dienst bereits nutzt</td>
+</tr>
+</tbody>
+</table>
+<h2>2. Umsetzung auf der Website</h2>
+<ol>
+<li><strong>Termin-Seite</strong> (<code>/termin</code>) als zentrale Anlaufstelle:
+   - Telefonnummer groß, mit Hinweis auf die besten Zeiten (viele Patienten rufen lieber an)
+   - Online-Buchung-Button prominent („Jetzt online Termin buchen") → externer Link/Portal
+   - Hinweis auf die Akutsprechstunde ohne Termin</li>
+<li><strong>Startseite:</strong> Termin-CTA im Hero, verlinkt auf <code>/termin</code></li>
+<li><strong>Konfiguration:</strong> Buchungslink zentral in <code>config.js</code> (<code>bookingUrl</code>) pflegen und an beiden Stellen einbinden</li>
+<li><strong>Konsistenz:</strong> Website, Google-Business-Profil und Portale zeigen denselben Buchungsweg</li>
+</ol>
+<h2>3. Entscheidung je Praxis</h2>
+<ul>
+<li><strong>Nur Telefon + Akutsprechstunde</strong> – reicht vielen Hausarztpraxen, kein externer Dienst nötig</li>
+<li><strong>Portal-Anbieter vorhanden</strong> (Doctolib/Jameda) – sachlich verlinken, nicht anpreisen (HWG, Kapitel 05)</li>
+<li><strong>medatixx-Terminplan</strong> – bei Bestandskunden bevorzugt: ein System, keine zusätzliche DSGVO-Partei</li>
+<li><strong>Eigene Buchung</strong> (z. B. Terminland) – nur auf Wunsch, AV-Vertrag prüfen</li>
+</ul>
+<h2>4. Datenschutz</h2>
+<ul>
+<li>Externe Buchung ist Drittverarbeitung → <strong>AV-Vertrag</strong> mit dem Anbieter verlangen und in der Datenschutzerklärung einen Abschnitt „Online-Terminbuchung" führen (Anbieter, Zweck, Rechtsgrundlage, Empfänger)</li>
+<li>Liegt der Anbieter außerhalb der EU, Angemessenheitsbeschluss oder Standardvertragsklauseln dokumentieren (Standort jeweils aktuell prüfen)</li>
+<li><strong>Keine Patientendaten über eigene Server</strong> – die Buchung läuft ausschließlich beim Anbieter</li>
+</ul>
+<h2>5. Checkliste</h2>
+<ul>
+<li class="check">☐ Buchungslink auf <code>/termin</code> und im Hero, konsistent mit dem Google-Business-Profil</li>
+<li class="check">☐ Datenschutzerklärung um Online-Terminbuchung ergänzt (Anbieter + AV-Vertrag)</li>
+<li class="check">☐ Testbuchung end-to-end durchgeführt und wieder storniert</li>
+<li class="check">☐ Telefonnummer weiterhin prominent (Fallback ohne Internet)</li>
+</ul>
+<h2>6. Im Factory-Modell</h2>
+<ul>
+<li>Der Buchungslink ist ein <strong>Feld in den Praxis-Daten</strong> (<code>bookingUrl</code>) – eine Änderung des Anbieters ist damit ein Datenupdate, kein Template-Eingriff.</li>
+<li>Die Entscheidung für einen Anbieter fällt im Onboarding (Kapitel 12) und wird in der Praxisdatei dokumentiert.</li>
+</ul>
+</section>
+<section id="k08">
+<h2 class="chapter">SEO – lokale Suche & strukturierte Daten</h2>
+<p>Praxis-Websites werden fast ausschließlich <strong>lokal</strong> gesucht („Hausarzt [Ort]", „[Leistung] [Ort]"). Der Fokus liegt daher auf lokaler Sichtbarkeit und strukturierten Daten – nicht auf Masse an Keywords.</p>
+<h2>1. On-Page-Grundlagen (je Seite)</h2>
+<ul>
+<li><strong>Eindeutiger <code>title</code></strong> (≤ ~60 Zeichen): „Hausarzt in Musterstadt | Hausarztpraxis Muster"</li>
+<li><strong><code>meta description</code></strong> (≤ ~155 Zeichen) mit Leistung + Ort</li>
+<li><strong>Eine H1 je Seite</strong>, fachlich und regional („Vorsorge &amp; Check-up in Musterstadt")</li>
+<li><strong><code>canonical</code></strong> auf jeder Seite</li>
+<li>Verständliche URLs (<code>/leistungen</code>, <code>/sprechzeiten</code>), keine Parameter, keine Umlaute</li>
+</ul>
+<h2>2. Strukturierte Daten (JSON-LD)</h2>
+<table>
+<thead>
+<tr>
+<th>Seite</th>
+<th>Schema</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Startseite</td>
+<td><code>Physician</code></td>
+<td><code>medicalSpecialty</code> (z. B. GeneralPractice), <code>openingHoursSpecification</code>, <code>address</code>, <code>geo</code>, <code>telephone</code>, <code>url</code></td>
+</tr>
+<tr>
+<td>FAQ</td>
+<td><code>FAQPage</code></td>
+<td>Question/Answer je Frage</td>
+</tr>
+<tr>
+<td>Aktuelles</td>
+<td><code>Article</code>/<code>NewsArticle</code></td>
+<td>mit <code>datePublished</code></td>
+</tr>
+</tbody>
+</table>
+<p>Validierung über den <strong>Rich Results Test</strong> von Google.</p>
+<h2>3. Lokale SEO</h2>
+<ul>
+<li><strong>Google Business Profile (GBP):</strong> Kategorien (z. B. „Hausarzt"), Sprechzeiten, Fotos, Website-URL verknüpfen; Beiträge für Neuigkeiten (Urlaubsvertretung!)</li>
+<li><strong>NAP-Konsistenz:</strong> Name, Adresse und Telefon identisch auf Website, GBP, Jameda, Doctolib und in der KV-Suche</li>
+<li><strong>Portale verlinken:</strong> Jameda/Doctolib sachlich verlinken (HWG-konform, Kapitel 06)</li>
+<li><strong>Standortbezug</strong> in H1 und Titeln, „in [Ort]" natürlich einbauen – keine Keyword-Stuffing-Seiten</li>
+</ul>
+<h2>4. Technisches SEO</h2>
+<ul>
+<li><strong><code>sitemap.xml</code></strong> mit allen Seiten, <code>priority</code>/<code>lastmod</code>; bei Google Search Console und Bing Webmaster einreichen</li>
+<li><strong><code>robots.txt</code></strong> – KI-Crawler ausdrücklich erlauben (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended); erhöht die Chance, in KI-Antworten zitiert zu werden</li>
+<li><strong>Search Console</strong> einrichten: Indexierung, Sitemap, Core-Web-Vitals-Bericht</li>
+<li><strong>404-Seite</strong> vorhanden, keine verwaisten Links</li>
+</ul>
+<h2>5. Content-SEO (HWG-konform)</h2>
+<ul>
+<li><strong>Schwerpunktseiten</strong> je Leistung mit Anlässen, Ablauf und FAQ – informierend, nicht anpreisend</li>
+<li><strong>FAQ</strong> mit echten Patientenfragen (Long-Tail: „Was ist ein Gesundheits-Check-up?")</li>
+<li><strong>Aktuelles</strong> regelmäßig pflegen – Aktualität ist ein Ranking-Signal und vermeidet Anrufe</li>
+<li><strong>Keine Doorway-Pages</strong> – jede Seite muss echten Wert haben</li>
+</ul>
+<h2>6. Checkliste</h2>
+<ul>
+<li class="check">☐ JSON-LD <code>Physician</code> validiert (Rich Results Test)</li>
+<li class="check">☐ <code>sitemap.xml</code> und <code>robots.txt</code> live, in der Search Console eingereicht</li>
+<li class="check">☐ GBP verknüpft, NAP auf Website = GBP = Jameda</li>
+<li class="check">☐ Jede Seite mit unique title/description/H1 und canonical</li>
+<li class="check">☐ KI-Crawler in <code>robots.txt</code> erlaubt</li>
+</ul>
+<h2>7. Im Factory-Modell</h2>
+<ul>
+<li>Title, Description, H1 und JSON-LD werden <strong>aus den Praxis-Daten generiert</strong> (Generator in der Pipeline) – keine handgepflegten Meta-Tags je Seite.</li>
+<li>Der Generator zieht Ort, Fachbereich, Koordinaten und Sprechzeiten aus <code>config</code>/Content und erzeugt <code>sitemap.xml</code> und <code>robots.txt</code> mit der echten Domain.</li>
+<li>Nach dem Go-Live: Search Console je Praxis anlegen (Domain-Verifizierung) und GBP verknüpfen – Teil des Onboardings.</li>
+</ul>
+</section>
+<section id="k09">
+<h2 class="chapter">Performance</h2>
+<p>Ziel sind <strong>grüne Core Web Vitals</strong>: LCP ≤ 2,5 s, INP ≤ 200 ms, CLS ≤ 0,1. Für statisch ausgelieferte Seiten ist das ohne Kunstgriffe erreichbar – die Ladezeit ist gleichzeitig das stärkste Verkaufsargument gegenüber WordPress-Praxen.</p>
+<h2>1. Ziele</h2>
+<table>
+<thead>
+<tr>
+<th>Metrik</th>
+<th>Zielwert</th>
+<th>Was sie misst</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LCP</strong> (Largest Contentful Paint)</td>
+<td>≤ 2,5 s</td>
+<td>wann das größte sichtbare Element geladen ist</td>
+</tr>
+<tr>
+<td><strong>INP</strong> (Interaction to Next Paint)</td>
+<td>≤ 200 ms</td>
+<td>Reaktionszeit auf Nutzerinteraktionen</td>
+</tr>
+<tr>
+<td><strong>CLS</strong> (Cumulative Layout Shift)</td>
+<td>≤ 0,1</td>
+<td>visuelle Stabilität während des Ladens</td>
+</tr>
+</tbody>
+</table>
+<h2>2. Kernmaßnahmen (in dieser Reihenfolge)</h2>
+<ol>
+<li><strong>Statisch ausliefern</strong> – keine Server-Roundtrips, kein Datenbankzugriff, HTTP/2 und <code>cache-control</code> gesetzt</li>
+<li><strong>Ein einziges Stylesheet</strong> – Designsystem statt Framework-CSS, kritische Assets per <code>preload</code></li>
+<li><strong>JavaScript klein halten</strong> – React lokal (ca. 140 KB Vendor + 28 KB App-Bundle), kein Hydration-Overhead, Skripte am Body-Ende</li>
+<li><strong>Bilder optimieren</strong> – WebP/AVIF, <code>loading="lazy"</code> (außer Hero), <code>width</code>/<code>height</code> gesetzt, responsive <code>srcset</code></li>
+<li><strong>Fonts lokal</strong> – woff2 selbst gehostet, <code>font-display: swap</code>, nur benötigte Schnitte, System-Stack als Default</li>
+<li><strong>Caching</strong> – CSS/JS 7 Tage, Bilder/Fonts 30 Tage, Versionierung über <code>?v=…</code> bei Änderungen</li>
+</ol>
+<h2>3. Messung</h2>
+<ul>
+<li><strong>Lighthouse</strong> (Chrome DevTools) – Ziel: Performance ≥ 90, alle CWV grün</li>
+<li><strong>PageSpeed Insights</strong> – Labor- und Felddaten</li>
+<li>Nach Go-Live: Core-Web-Vitals-Bericht in der Search Console beobachten</li>
+</ul>
+<h2>4. Typische Fehler in Praxis-Projekten</h2>
+<ul>
+<li>Stockfotos in Originalgröße (2 MB+) → vorher komprimieren</li>
+<li>Google Fonts oder CDN-Requests → kosten LCP und verletzen die Datenschutz-Grundregel</li>
+<li>Layout-Shifts durch fehlende Bilddimensionen oder nachladende Banner</li>
+<li>Dutzende CSS/JS-Dateien statt einem Bundle</li>
+<li>Consent-Banner oder Popups, die Inhalte nachladen – ein Consent-Layer ist nur bei aktivem Tracking nötig</li>
+</ul>
+<h2>5. Checkliste</h2>
+<ul>
+<li class="check">☐ Lighthouse ≥ 90, LCP &lt; 2,5 s (Test mit 4G-Drosselung)</li>
+<li class="check">☐ CLS &lt; 0,1 (Bilddimensionen gesetzt, keine nachladenden Elemente)</li>
+<li class="check">☐ INP &lt; 200 ms (kein blockierendes JS, leichtgewichtiges FAQ-Akkordeon)</li>
+<li class="check">☐ Bilder WebP/AVIF + lazy, Hero eager mit <code>fetchpriority="high"</code></li>
+<li class="check">☐ Cache-Header gesetzt, Assets versioniert</li>
+<li class="check">☐ Fonts lokal mit <code>swap</code>, kein externes CSS/JS</li>
+</ul>
+<h2>6. Im Factory-Modell</h2>
+<ul>
+<li>Die Performance-Budgets sind <strong>Teil der Pipeline</strong>: Ein Build, der die Grenzen reißt (z. B. unkomprimierte Bilder im Praxis-Repo), wird nicht ausgeliefert – Bildoptimierung läuft als Build-Schritt.</li>
+<li>Das zentrale Theme wird einmal optimiert; alle Praxen profitieren, ohne dass jemand einzelne Seiten nachbessern muss.</li>
+<li>Messwerte je Praxis werden nach dem Go-Live in der Search Console und über einen Uptime-/Performance-Check beobachtet (Kapitel 14).</li>
+</ul>
+</section>
+<section id="k10">
+<h2 class="chapter">Sicherheit</h2>
+<p>Sicherheit für statisch ausgelieferte Praxis-Websites. Grundprinzip: <strong>minimale Angriffsfläche</strong> – was nicht existiert, kann nicht ausgenutzt werden.</p>
+<h2>1. Kernprinzipien</h2>
+<ol>
+<li><strong>Statische Auslieferung</strong> – kein Redaktionssystem auf dem Server, kein Server-Side-Code außer dem Formular-Handler</li>
+<li><strong>TLS überall</strong> – HTTPS erzwingen, HTTP→HTTPS 301, Zertifikat automatisch erneuern lassen</li>
+<li><strong>Sicherheits-Header</strong> – zentral gesetzt, versioniert und regelmäßig geprüft</li>
+<li><strong>Vendor-Dateien mit SRI</strong> – <code>integrity="sha384-…"</code> auf allen lokal gehosteten JS-Dateien, Downloads verifiziert</li>
+<li><strong>Keine Secrets in der Website</strong> – keine API-Keys oder Zugangsdaten in HTML/JS/CSS; Formular-Empfänger nur serverseitig</li>
+</ol>
+<h2>2. Sicherheits-Header</h2>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Sollwert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Strict-Transport-Security</code></td>
+<td><code>max-age=31536000; includeSubDomains; preload</code></td>
+</tr>
+<tr>
+<td><code>X-Frame-Options</code></td>
+<td><code>SAMEORIGIN</code></td>
+</tr>
+<tr>
+<td><code>X-Content-Type-Options</code></td>
+<td><code>nosniff</code></td>
+</tr>
+<tr>
+<td><code>Referrer-Policy</code></td>
+<td><code>strict-origin-when-cross-origin</code></td>
+</tr>
+<tr>
+<td><code>Permissions-Policy</code></td>
+<td><code>camera=(), microphone=(), geolocation=(), payment=(), usb=(), …</code></td>
+</tr>
+<tr>
+<td><code>Cross-Origin-Opener-Policy</code></td>
+<td><code>same-origin</code></td>
+</tr>
+<tr>
+<td><code>Cross-Origin-Resource-Policy</code></td>
+<td><code>same-origin</code></td>
+</tr>
+</tbody>
+</table>
+<p>Prüfbefehl: <code>curl -sI https://www.domain.de | grep -iE "strict-transport|x-frame|x-content|referrer|permissions"</code></p>
+<h2>3. Formular-Härtung</h2>
+<ul>
+<li><strong>Nur POST</strong> akzeptieren (sonst 405)</li>
+<li><strong>Honeypot-Feld</strong> – Bots füllen versteckte Felder aus und werden still abgewiesen</li>
+<li><strong>Referer-/Host-Prüfung</strong> – Requests fremder Domains ablehnen</li>
+<li><strong>Input-Sanitierung</strong> – <code>strip_tags</code>/<code>trim</code> auf allen Feldern, keine CRLF-Injection in Mail-Header (<code>From:</code>/<code>Reply-To:</code> nur aus einer festen Feldliste)</li>
+<li><strong>Keine Datenbank</strong> – Mailversand ohne Speicherung von Patientendaten</li>
+<li>Optional: Rate-Limit über Session oder Zeitfenster, wenn Spam zunimmt</li>
+</ul>
+<h2>4. OWASP-Bezug (Relevanz für statische Seiten)</h2>
+<table>
+<thead>
+<tr>
+<th>Risiko</th>
+<th>Umsetzung hier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01 Zugriffskontrolle</td>
+<td>Dateirechte, <code>Options -Indexes</code>, Regeln für sensible Dateien</td>
+</tr>
+<tr>
+<td>A02 Kryptografie</td>
+<td>TLS 1.2+, HSTS, keine Eigenbau-Krypto</td>
+</tr>
+<tr>
+<td>A03 Injection</td>
+<td>nur der Formular-Handler, Parameter strikt bereinigt, keine Shell-/DB-Aufrufe</td>
+</tr>
+<tr>
+<td>A04 Designfehler</td>
+<td>Formular läuft mit minimalen Rechten (nur Mailversand)</td>
+</tr>
+<tr>
+<td>A05 Fehlkonfiguration</td>
+<td>Konfiguration versioniert, Verzeichnislisting aus, keine Debug-Ausgaben</td>
+</tr>
+<tr>
+<td>A06 Verwundbare Komponenten</td>
+<td>Vendor-JS gepinnt + SRI, Build-Tools aktuell halten</td>
+</tr>
+<tr>
+<td>A07 Authentifizierung</td>
+<td>öffentliche Seite ohne Login; Admin-Zugänge mit 2FA</td>
+</tr>
+<tr>
+<td>A08 Datenintegrität</td>
+<td>SRI verhindert manipuliertes JS</td>
+</tr>
+<tr>
+<td>A09 Monitoring</td>
+<td>Verfügbarkeits- und SSL-Ablauf-Überwachung (Kapitel 14)</td>
+</tr>
+<tr>
+<td>A10 SSRF</td>
+<td>kein Server-Side-Fetch im Formular-Handler</td>
+</tr>
+</tbody>
+</table>
+<h2>5. Checkliste</h2>
+<ul>
+<li class="check">☐ HTTPS aktiv, 301-Umleitung, HSTS gesetzt</li>
+<li class="check">☐ Alle Header per <code>curl -sI</code> verifiziert</li>
+<li class="check">☐ Vendor-JS mit SRI, Downloads verifiziert</li>
+<li class="check">☐ Formular: Honeypot, Referer-Check und Sanitierung aktiv</li>
+<li class="check">☐ Repo-Scan auf Secrets (<code>grep -rEi "api[_-]?key|token|password" .</code>) ohne Treffer</li>
+<li class="check">☐ Verzeichnislisting aus, Formular-Handler nicht öffentlich debugbar</li>
+</ul>
+<h2>6. Im Factory-Modell</h2>
+<p>Bei einer zentralen Build- und Deployment-Pipeline verschiebt sich die Angriffsfläche von der Website zur <strong>Pipeline</strong>:</p>
+<ul>
+<li><strong>CI/CD-Secrets</strong> (Deploy-Zugänge, Webhook-Tokens) liegen ausschließlich in den CI-Variablen, nie im Repository oder im Theme</li>
+<li><strong>Runner härten:</strong> keine privilegierten Container, eigene Runner-Isolation je Praxis-Gruppe, Images regelmäßig aktualisieren</li>
+<li><strong>Zugänge:</strong> 2FA für GitLab und Coolify erzwingen, Rechte nach dem Prinzip der minimalen Berechtigung vergeben</li>
+<li><strong>Staging schützen:</strong> Vorschau-Umgebungen nicht öffentlich indexierbar und mit Zugriffsschutz versehen</li>
+<li><strong>Updates:</strong> Container- und Toolchain-Updates sind Teil der Wartungsroutine (Kapitel 14) – ein veralteter Runner ist das größte Risiko im gesamten Aufbau</li>
+</ul>
+</section>
+<section id="k11">
+<h2 class="chapter">Tech-Stack-Entscheidung</h2>
+<p>Dieses Kapitel führt die beiden Modelle zusammen, die im Projekt bisher nebeneinander stehen – und macht die Entscheidung explizit statt implizit.</p>
+<h2>1. Ausgangslage: zwei Modelle</h2>
+<p><strong>Modell A – Etablierter Betrieb (heute im Einsatz)</strong>
+Statische Website je Praxis: HTML/CSS mit Designsystem-Variablen, React 18 (lokal, SRI) für Routing und Interaktion, esbuild als Build, PHP 8.4 ausschließlich für den Formularversand, gehostet auf STRATO (deutsches Rechenzentrum, SSH/SFTP, <code>.htaccess</code>, SSL inklusive). Inhalte werden im Managed Service gepflegt, die Praxis liefert Änderungen per Mail.</p>
+<p><strong>Modell B – Factory (Idee aus dem Konzept)</strong>
+Zentrale Build- und Delivery-Ebene auf Terra Cloud + Coolify + GitLab, Hugo als Static Site Generator, ein Theme als Submodule, ein Repository je Praxis, Auslieferung über Nginx/Caddy-Container. Die redaktionelle Pflege liegt in beiden Modellen zentral bei engel&amp;engel.</p>
+<h2>2. Direktvergleich</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Modell A (STRATO, statisch, React)</th>
+<th>Modell B (Terra Cloud, Hugo-Factory)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hosting</td>
+<td>Webhosting-Tarif je Praxis, deutsches RZ</td>
+<td>eigener VPS + Container, deutsches RZ (Wortmann AG)</td>
+</tr>
+<tr>
+<td>Auslieferung</td>
+<td>Apache, statische Dateien, <code>.htaccess</code></td>
+<td>Nginx/Caddy hinter Coolify-Proxy, Traefik-Routing</td>
+</tr>
+<tr>
+<td>Build</td>
+<td>esbuild lokal, Seiten-Generator in Node</td>
+<td>Hugo im GitLab Runner, Theme als Submodule</td>
+</tr>
+<tr>
+<td>Inhaltsmodell</td>
+<td>Daten in <code>config.js</code>, Pflege zentral</td>
+<td>Content je Praxis-Repo, Pflege zentral</td>
+</tr>
+<tr>
+<td>Redaktion</td>
+<td>engel&amp;engel – die Praxis meldet Änderungen</td>
+<td>engel&amp;engel – die Praxis meldet Änderungen</td>
+</tr>
+<tr>
+<td>Neue Praxis anlegen</td>
+<td>Template kopieren, konfigurieren, hochladen</td>
+<td>Repo anlegen, Theme binden, Pipeline läuft</td>
+</tr>
+<tr>
+<td>Skalierung auf 50+ Praxen</td>
+<td>linearer Aufwand je Praxis (Upload, Pflege)</td>
+<td>Aufwand wächst unterproportional, zentrales Theme</td>
+</tr>
+<tr>
+<td>Betriebsrisiko</td>
+<td>verteilt: ein Ausfall trifft eine Praxis</td>
+<td>konzentriert: ein Ausfall trifft alle Praxen</td>
+</tr>
+<tr>
+<td>Know-how</td>
+<td>HTML/CSS/JS/Node, STRATO-Panel</td>
+<td>zusätzlich Hugo, GitLab CI, Docker, Coolify</td>
+</tr>
+<tr>
+<td>Kostenstruktur</td>
+<td>je Praxis ein Hosting-Tarif</td>
+<td>ein VPS + Runner, Kosten skalieren langsamer als die Kundenzahl</td>
+</tr>
+<tr>
+<td>Updates am Design</td>
+<td>je Praxis einzeln ausrollen</td>
+<td>zentral im Theme, wirkt in alle Praxen</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Entscheidungsregeln</h2>
+<ol>
+<li><strong>Einzelpraxis, seltene Änderungen, Managed Service</strong> → Modell A. Weniger bewegliche Teile, kein Server zu betreiben, sofort lieferbar.</li>
+<li><strong>Praxis mit häufig wechselnden Inhalten</strong> (Urlaub, News, Team) → das Modell ändert sich dadurch nicht, es braucht nur einen belastbaren Änderungsprozess mit kurzer Reaktionszeit (Kapitel 03).</li>
+<li><strong>Ab etwa 10–15 betreuten Praxen</strong> kippt der Aufwand: Der manuelle Rollout von Änderungen wird zum Engpass, die Factory zahlt sich aus.</li>
+<li><strong>Kunden mit eigener IT-Erwartung</strong> (MVZ, größere Gemeinschaftspraxen) erwarten klare Ansprechpartner, Berichte und Reaktionszeiten – keine Selbstbedienung im Redaktionssystem.</li>
+<li><strong>Kein Mischbetrieb ohne Grund:</strong> Wer beides parallel betreibt, pflegt zwei Toolchains. Die Entscheidung sollte pro Kunde fallen und dokumentiert werden – nicht pro Laune.</li>
+</ol>
+<h2>4. Warum kein Redaktionssystem</h2>
+<p>Die Pflege läuft <strong>zentral über engel&amp;engel</strong>. Die Praxis meldet Änderungen, wir setzen sie um. Damit entfällt die Redaktionsoberfläche vollständig.</p>
+<table>
+<thead>
+<tr>
+<th>Aspekt</th>
+<th>Ohne Redaktionssystem (gewählt)</th>
+<th>Mit CMS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Angriffsfläche</td>
+<td>keine Login-Oberfläche, kein zusätzliches System</td>
+<td>Login, Rollen, CMS-Versionen zu pflegen</td>
+</tr>
+<tr>
+<td>Inhaltliche Kontrolle</td>
+<td>jede Änderung läuft über geprüfte Hände (HWG, Sprechzeiten)</td>
+<td>Praxis kann ungeprüft veröffentlichen</td>
+</tr>
+<tr>
+<td>Aufwand beim Aufsetzen</td>
+<td>keiner</td>
+<td>Einrichtung, Rollen, Freigabeworkflow, Schulung</td>
+</tr>
+<tr>
+<td>Laufender Aufwand</td>
+<td>Umsetzung je Änderung</td>
+<td>Systemupdates, Support, Schulungsnachfragen</td>
+</tr>
+<tr>
+<td>Reaktionszeit</td>
+<td>vertraglich zugesagt (Kapitel 03)</td>
+<td>sofort, aber ungeprüft</td>
+</tr>
+<tr>
+<td>Kosten für die Praxis</td>
+<td>Änderungskontingent in der Pauschale</td>
+<td>Systembetreuung plus Schulung</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Der Nachteil wird bewusst getragen:</strong> Änderungen kosten die Praxis eine Meldung und uns Arbeitszeit – deshalb braucht das Modell ein definiertes Kontingent und klare Reaktionszeiten. Im Gegenzug bleibt die Verantwortung für Rechtssicherheit und Qualität an einer Stelle.</p>
+<p><strong>Was die Praxis trotzdem kann:</strong> jederzeit Änderungen melden – per Telefon oder formloser E-Mail, ohne Formulare, ohne Login, mit Eingangsbestätigung.</p>
+<h2>5. Konsequenzen und offene Entscheidungen</h2>
+<ul>
+<li><strong>Theme-Wechsel ist die eigentliche Investition.</strong> Modell B bedeutet, das bestehende Template als Hugo-Theme neu aufzubauen (oder Hugo nur als Build-Werkzeug für die vorhandenen HTML-Templates zu nutzen). Das ist ein eigenes Arbeitspaket.</li>
+<li><strong>Ausfallkonzentration</strong> muss beantwortet werden: Was passiert, wenn der VPS oder die Pipeline steht? Antwort: statische Artefakte werden zusätzlich bei einem zweiten Ziel (oder als Archiv) vorgehalten und im Notfall manuell ausgeliefert.</li>
+<li><strong>Backup und Wiederherstellung</strong> brauchen ein Konzept (Praxis-Repos, Theme, Secrets, Build-Artefakte).</li>
+<li><strong>Der Vorteil von Modell A bleibt:</strong> Für eine einzelne Praxis ist es das robusteste und günstigste Modell – die Factory ist eine Skalierungsentscheidung, keine Qualitätsentscheidung.</li>
+</ul>
+<p><strong>Offene Punkte für eine Entscheidung:</strong></p>
+<ol>
+<li>Ab welcher Kundenzahl wird die Factory verbindlich?</li>
+<li>Wird das bestehende Template nach Hugo portiert oder als Build-Input beibehalten?</li>
+<li>Wer betreibt die Pipeline (engel&amp;engel selbst, mit welcher Ausfallsicherheit)?</li>
+<li>Welche Reaktionszeiten und Änderungskontingente werden je Paket zugesagt?</li>
+</ol>
+</section>
+<section id="k12">
+<h2 class="chapter">Umsetzungsprozess</h2>
+<p>Der Fahrplan von der Anfrage bis zur betreuten Praxis-Website.</p>
+<h2>1. Projektphasen</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Inhalt</th>
+<th>Beteiligte Skills</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0. Kickoff</strong></td>
+<td>Angebot und Leistungsumfang, Praxis-Daten sammeln, Ansprechpartner, Zugänge (Domain, GBP, Portale)</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>1. Konzeption</strong></td>
+<td>Seitenstruktur, Fachbereichs-Schwerpunkte, Farben/Logo, Terminbuchungs-Anbieter klären</td>
+<td>Inhalte &amp; Medien, Terminbuchung</td>
+</tr>
+<tr>
+<td><strong>2. Umsetzung</strong></td>
+<td>Template konfigurieren, Inhalte einpflegen, Rechtstexte, Bilder</td>
+<td>Recht &amp; Compliance, Inhalte &amp; Medien</td>
+</tr>
+<tr>
+<td><strong>3. Qualität</strong></td>
+<td>Technische Tests, HWG-/Rechts-Review, Freigaberunde mit der Praxis</td>
+<td>QA &amp; Go-Live, Recht &amp; Compliance</td>
+</tr>
+<tr>
+<td><strong>4. Go-Live</strong></td>
+<td>Hosting-Setup, Upload, SSL, Search Console, Google Business Profile</td>
+<td>Deployment &amp; Betrieb, SEO</td>
+</tr>
+<tr>
+<td><strong>5. Betrieb</strong></td>
+<td>monatliche Wartungsroutine, Änderungsprozess, Monitoring</td>
+<td>QA &amp; Go-Live, Deployment &amp; Betrieb</td>
+</tr>
+</tbody>
+</table>
+<h2>2. Grundsätze</h2>
+<ol>
+<li><strong>Daten von der Praxis verifizieren</strong> – Sprechzeiten, Kammer/KV, Notfallnummern niemals raten oder aus Altbeständen übernehmen.</li>
+<li><strong>Freigaben dokumentieren</strong> – Inhalte, Rechtstexte und das finale Go-Live-OK schriftlich (E-Mail genügt).</li>
+<li><strong>Rechtssicher ab Phase 1</strong> – HWG, BFSG und DSGVO von Anfang an mitdenken, nicht nachrüsten.</li>
+<li><strong>Eine Basis, viele Praxen</strong> – je Praxis nur Daten, Farben und Inhalte ändern; die Template-Quellen bleiben unangetastet, sonst entsteht Fork-Aufwand.</li>
+<li><strong>Verantwortlichkeit trennen</strong> – engel&amp;engel betreut Technik und Deployment, Inhalte und Rechtstexte verantwortet die Praxis.</li>
+</ol>
+<h2>3. Meilensteine</h2>
+<ol>
+<li>Daten und Freigaben für die Inhalte vollständig</li>
+<li>Test-Website steht (Vorschau für die Praxis)</li>
+<li>Praxis-Freigabe erteilt (schriftlich)</li>
+<li>Live, Search Console und Google Business Profile verknüpft</li>
+<li>Erste Wartungsrunde abgeschlossen (30 Tage nach Go-Live)</li>
+</ol>
+<h2>4. Schritt 1 – Daten erfassen</h2>
+<ul>
+<li>Praxisname, Fachbereich, Claim/Untertitel</li>
+<li>Adresse, Telefon, E-Mail, ggf. Fax</li>
+<li><strong>Sprechzeiten</strong> je Tag, Akutsprechstunde, Urlaub und Schließtage</li>
+<li>Ärzt:innen: Name, Titel, Schwerpunkte, Kurzbiografie, <strong>Foto-Einwilligung</strong></li>
+<li>Leistungen: Kassen- und IGeL-Leistungen getrennt</li>
+<li>Notfall-Infos: 116117, 112, nächste Notaufnahme</li>
+<li>bestehende Profile: Doctolib, Jameda, Google Business Profile</li>
+<li>Rechtliches: Kammer, KV, Approbationsland, Berufsordnung</li>
+</ul>
+<h2>5. Schritt 2 – Konfiguration</h2>
+<ol>
+<li>Praxis-Daten zentral eintragen (in Modell A <code>config.js</code>, in Modell B <code>/content</code> + <code>config</code>)</li>
+<li>Farben setzen und <strong>Kontraste prüfen</strong> (Markenfarbe, dunkle Variante für Text)</li>
+<li>Seiten-Generator konfigurieren: Name, Domain, Adresse, Telefon, Titles/Descriptions</li>
+<li>Formular-Empfänger und Domain setzen</li>
+<li><code>robots.txt</code> und <code>sitemap.xml</code> mit der echten Domain</li>
+<li>JSON-LD <code>Physician</code> mit echten Koordinaten und Sprechzeiten</li>
+<li>Logo ersetzen (SVG), Farben anpassen</li>
+<li>Rechtstexte mit den Praxisangaben füllen</li>
+<li>Bilder aufbereiten und einbinden</li>
+</ol>
+<h2>6. Schritt 3 – Freigaberunde</h2>
+<ul>
+<li>Vorschau bereitstellen (lokaler Server oder geschützte Test-Subdomain)</li>
+<li>Die Praxis prüft: Sprechzeiten, Leistungen, Teamtexte, Telefonnummern, Anfahrt</li>
+<li>Schriftliches OK einholen und dokumentieren</li>
+</ul>
+<h2>7. Schritt 4 – Go-Live</h2>
+<ul>
+<li>Deployment und SSL nach Kapitel 14</li>
+<li>QA-Checkliste nach Kapitel 13 abarbeiten</li>
+<li>Search Console, Google Business Profile und Portale verknüpfen</li>
+<li>Übergabe und Wartungsprozess starten</li>
+</ul>
+<h2>8. Rollen</h2>
+<table>
+<thead>
+<tr>
+<th>Aufgabe</th>
+<th>Verantwortlich</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inhalte liefern und verifizieren</td>
+<td>Praxis</td>
+</tr>
+<tr>
+<td>Umsetzung und Deployment</td>
+<td>engel&amp;engel</td>
+</tr>
+<tr>
+<td>Rechtstexte final</td>
+<td>Praxis, bei Bedarf mit rechtlicher Prüfung</td>
+</tr>
+<tr>
+<td>Freigabe</td>
+<td>Praxis (schriftlich)</td>
+</tr>
+<tr>
+<td>Technischer Betrieb, Monitoring, Wartung</td>
+<td>engel&amp;engel</td>
+</tr>
+</tbody>
+</table>
+<h2>9. Projektdatei je Praxis</h2>
+<pre><code>projekte/&lt;praxis&gt;/
+├── daten.md        erfasste Praxis-Daten (Stand + Verantwortlicher)
+├── freigaben.md    Freigaben mit Datum (Inhalte, Rechtstexte, Go-Live)
+├── zugriffe.md     Zugangsliste (Domain, Hosting, GBP) – niemals ins öffentliche Repo
+└── website/        konfigurierte Kopie des Templates
+</code></pre>
+<blockquote>
+<p>Zugangsdaten gehören ausschließlich in einen Passwort-Manager, nie in ein Repository.</p>
+</blockquote>
+<h2>10. Checkliste</h2>
+<ul>
+<li class="check">☐ Alle Daten bei der Praxis verifiziert</li>
+<li class="check">☐ Farbschema und Logo angepasst, Kontraste geprüft</li>
+<li class="check">☐ Domain, <code>robots.txt</code>, <code>sitemap.xml</code>, JSON-LD und Formular konfiguriert</li>
+<li class="check">☐ Freigabe der Praxis dokumentiert</li>
+<li class="check">☐ Go-Live- und Wartungs-Checklisten abgearbeitet</li>
+</ul>
+<h2>11. Im Factory-Modell</h2>
+<ul>
+<li>Aus „Template kopieren und konfigurieren" wird „Repository anlegen und Theme binden"; die Datenerfassung (Schritt 1) bleibt unverändert und wird als strukturiertes Onboarding-Formular geführt.</li>
+<li>Die Freigaberunde bleibt ein <strong>menschlicher</strong> Schritt. Ohne dokumentierte Freigabe kein Go-Live.</li>
+<li>Jede Praxis erhält ein eigenes Repository (Daten) plus das gemeinsame Theme; Änderungen am Theme laufen über eine Freigabe und werden versioniert ausgerollt (Kapitel 02).</li>
+</ul>
+</section>
+<section id="k13">
+<h2 class="chapter">QA & Go-Live</h2>
+<h2>1. Abnahmekriterien</h2>
+<ul>
+<li class="check">☐ Alle Pflichtseiten vorhanden und von jeder Seite erreichbar (Navigation vollständig)</li>
+<li class="check">☐ Sprechzeiten und Notfallhinweis auf der Startseite</li>
+<li class="check">☐ Impressum vollständig (inkl. Kammer, KV, Approbationsland), Datenschutzerklärung, Barrierefreiheitserklärung</li>
+<li class="check">☐ HWG-Check: keine Heilsversprechen, keine verbotenen Krankheitsbezüge, keine Fotos ohne Einwilligung</li>
+<li class="check">☐ Mobile-Ansicht geprüft, Ladezeit &lt; 3 s</li>
+<li class="check">☐ SSL aktiv, HTTP→HTTPS-Umleitung, Security-Header gesetzt</li>
+<li class="check">☐ <code>sitemap.xml</code>, <code>robots.txt</code> und JSON-LD validiert</li>
+<li class="check">☐ Kontaktformular sendet an das Praxis-Postfach, DSGVO-Hinweis vorhanden</li>
+</ul>
+<h2>2. Automatische Prüfungen</h2>
+<pre><code class="language-bash"># 1. Seite erreichbar + Statuscode
+curl -sI https://www.domain.de/leistungen | head -1        # HTTP/2 200
 
-<section id="go-to-market">
-  <h2>4. Go-to-Market &amp; Strategie für „Engel &amp; Engel“</h2>
+# 2. Security-Header
+curl -sI https://www.domain.de | grep -iE &quot;strict-transport|x-frame|x-content|referrer|permissions&quot;
 
-  <h3>Positionierung</h3>
-  <blockquote>„Die unhackbar schnelle Praxis-Website – rechtssicher in Deutschland gehostet.“</blockquote>
-  <p>WordPress-Praxen leiden häufig unter Wartungsverträgen, die nur Sicherheitsupdates einspielen. Positionieren Sie das Hugo-Setup als wartungsfreie Festung (kein WordPress-Patching mehr nötig).</p>
+# 3. JSON-LD vorhanden
+curl -s https://www.domain.de/ | grep -o 'application/ld+json' | head -1
 
-  <h3>Vertriebsargumente gegenüber Praxisinhabern</h3>
-  <ol>
-    <li><strong>DSGVO &amp; Vertrauen:</strong> Datenhaltung bei Terra Cloud im deutschen Rechenzentrum.</li>
-    <li><strong>Top-Google-Ranking:</strong> Perfekte Ladezeiten bringen messbare SEO-Vorteile bei lokalen Suchanfragen („Hautarzt Alfeld“).</li>
-    <li><strong>Ausfallsicherheit:</strong> Statische Seiten kennen keine Datenbank-Timeouts oder PHP-Crashes.</li>
-  </ol>
-
-  <h3>Preismodell</h3>
-  <p>Setup-Gebühr (Onboarding, Fotos, Text-Initialisierung) plus monatliche Hosting- und Wartungspauschale (z. B. 49 € bis 129 € / Monat inkl. Domain, CMS-Zugang und Notdienst-Updates).</p>
+# 4. Verwaiste Links (Stichprobe): alle hrefs der Startseite crawlen
+</code></pre>
+<ul>
+<li><strong>Lighthouse</strong> (Desktop und Mobile): Performance, Accessibility, SEO, Best Practices jeweils ≥ 90</li>
+<li><strong>Rich Results Test</strong> für JSON-LD, <strong>W3C Nu Html Checker</strong> für HTML</li>
+<li><strong>axe DevTools</strong> für Barrierefreiheit</li>
+<li><strong>404-Test:</strong> nicht existierende URL liefert die 404-Seite</li>
+</ul>
+<h2>3. Manuelle Tests</h2>
+<ul>
+<li><strong>Formular:</strong> echte Absendung an das Praxis-Postfach, Pflichtfelder, Honeypot (gefüllt), Fehlermeldung bei Versandfehler</li>
+<li><strong>Navigation:</strong> jede Seite über das Menü erreichbar, aktiver Menüpunkt korrekt, Browser-Zurück funktioniert</li>
+<li><strong>Mobile:</strong> iPhone- und Android-Stichprobe (Hamburger-Menü, Sprechzeiten-Tabelle, Termin-CTA ohne Scrollen sichtbar)</li>
+<li><strong>Zoom 200 %</strong> ohne horizontales Scrollen, Tab-Navigation vollständig</li>
+</ul>
+<h2>4. Übergabe an die Praxis</h2>
+<ul>
+<li>Kurzdokumentation: wie die Praxis online gefunden wird, wer der Ansprechpartner ist</li>
+<li><strong>Änderungsprozess:</strong> Praxis meldet Änderungen (Sprechzeiten, Urlaub), der Dienstleister deployt – mit definierter Reaktionszeit</li>
+<li>Zugang zum Google Business Profile klären</li>
+<li>Erste Woche nach Go-Live: täglicher Kurzcheck (Formular, Verfügbarkeit, Analytics falls vorhanden)</li>
+</ul>
+<h2>5. Wartungsroutine (monatlich)</h2>
+<ul>
+<li class="check">☐ Formularversand testen</li>
+<li class="check">☐ Sprechzeiten und Urlaubsvertretung aktuell?</li>
+<li class="check">☐ SSL gültig, Security-Header unverändert</li>
+<li class="check">☐ Uptime-Monitor ohne Alarme</li>
+<li class="check">☐ Abhängigkeiten und Build-Tools auf Sicherheitsupdates geprüft</li>
+</ul>
+<h2>6. Im Factory-Modell</h2>
+<p>Die Prüfungen wandern in die Pipeline und werden damit für jede Praxis reproduzierbar:</p>
+<table>
+<thead>
+<tr>
+<th>Prüfung</th>
+<th>Umsetzung in der Pipeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTML-Validierung</td>
+<td>Build schlägt fehl bei Validator-Fehlern</td>
+</tr>
+<tr>
+<td>Links</td>
+<td>Link-Check über alle generierten Seiten im CI-Job</td>
+</tr>
+<tr>
+<td>Security-Header</td>
+<td>Header-Check gegen die Staging-/Live-Domain</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Lighthouse CI mit Budgets (LCP/CLS/INP, Bundle-Größe)</td>
+</tr>
+<tr>
+<td>Barrierefreiheit</td>
+<td>axe-CI im Build</td>
+</tr>
+<tr>
+<td>Rechtstexte</td>
+<td>Pflichtfeld-Prüfung: Impressum/Datenschutz/Barrierefreiheit vorhanden und gefüllt</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Wichtig:</strong> Automatische Prüfungen ersetzen die manuelle Abnahme nicht. Formularversand, Mobilansicht und die inhaltliche Freigabe durch die Praxis bleiben Handarbeit – sie sind der letzte Schritt vor dem Go-Live.</p>
+</section>
+<section id="k14">
+<h2 class="chapter">Betrieb & Wartung</h2>
+<h2>1. Hosting: zwei Wege</h2>
+<table>
+<thead>
+<tr>
+<th>Kriterium</th>
+<th>STRATO-Webhosting (Modell A)</th>
+<th>Terra Cloud + Coolify (Modell B)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Betriebsaufwand</td>
+<td>keiner – Webhosting-Tarif, Panel</td>
+<td>eigener Server: Updates, Monitoring, Backups</td>
+</tr>
+<tr>
+<td>Auslieferung</td>
+<td>Apache, <code>.htaccess</code>, PHP 8.4</td>
+<td>Nginx/Caddy-Container hinter Coolify-Proxy</td>
+</tr>
+<tr>
+<td>SSL</td>
+<td>automatisch über STRATO</td>
+<td>Let's Encrypt über Coolify</td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td>SFTP/rsync je Praxis</td>
+<td>Git-Push, Webhook, Pipeline</td>
+</tr>
+<tr>
+<td>Skalierung</td>
+<td>ein Tarif je Praxis</td>
+<td>eine Infrastruktur für viele Praxen</td>
+</tr>
+<tr>
+<td>Ausfallrisiko</td>
+<td>verteilt (je Praxis)</td>
+<td>konzentriert (alle Praxen)</td>
+</tr>
+<tr>
+<td>DSGVO</td>
+<td>deutsches Rechenzentrum, AV-Vertrag</td>
+<td>deutsches Rechenzentrum (Wortmann AG), AV-Vertrag</td>
+</tr>
+<tr>
+<td>Kosten</td>
+<td>ab ca. 10 €/Monat je Praxis</td>
+<td>ein VPS + Runner für alle Praxen</td>
+</tr>
+<tr>
+<td>Passend für</td>
+<td>Einzelpraxen, Managed Service</td>
+<td>viele Praxen, zentrale Pflege</td>
+</tr>
+</tbody>
+</table>
+<h2>2. Deployment-Workflow (Modell A)</h2>
+<table>
+<thead>
+<tr>
+<th>Änderung</th>
+<th>Vorgehen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sprechzeiten, Aktuelles</td>
+<td>Datenquelle anpassen (in <code>config.js</code>/Content) → nur geänderte Dateien hochladen</td>
+</tr>
+<tr>
+<td>Design</td>
+<td><code>styles.css</code> anpassen → Upload, Cache-Busting (<code>?v=</code>) erhöhen</td>
+</tr>
+<tr>
+<td>Interaktion/JS</td>
+<td>Quelle editieren → Build (<code>npm run build</code>) → kompiliertes Bundle hochladen</td>
+</tr>
+<tr>
+<td>Geplant</td>
+<td>GitLab CI/CD: Push auf <code>main</code> → rsync/lftp auf das Hosting (Zugangsdaten in CI-Variablen)</td>
+</tr>
+</tbody>
+</table>
+<p>Wichtig beim Upload: <code>.htaccess</code>, Formular-Handler, <code>assets/</code>, <code>robots.txt</code> und <code>sitemap.xml</code> mitnehmen – auch versteckte Dateien.</p>
+<h2>3. Monitoring</h2>
+<ul>
+<li><strong>Verfügbarkeit:</strong> externer Monitor auf die Startseite jeder Praxis, Alarm bei Ausfall (Uptime-Monitor oder Zabbix)</li>
+<li><strong>SSL-Ablauf:</strong> Warnung einrichten, auch wenn die Verlängerung automatisch läuft</li>
+<li><strong>Formular:</strong> monatlicher Testversand (das Formular ist der einzige dynamische Teil)</li>
+<li><strong>Core Web Vitals:</strong> Search-Console-Bericht nach dem Go-Live beobachten</li>
+<li><strong>Im Factory-Modell zusätzlich:</strong> Pipeline-Status, Runner-Auslastung, Speicherplatz der Praxis-Repositories</li>
+</ul>
+<h2>4. Backup und Wiederherstellung</h2>
+<table>
+<thead>
+<tr>
+<th>Was</th>
+<th>Wie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Website-Dateien</td>
+<td>Hosting-Backup (Tarif-Funktion) + Kopie im Repository</td>
+</tr>
+<tr>
+<td>Praxis-Daten und Inhalte</td>
+<td>Git-Historie je Praxis – vollständig versioniert</td>
+</tr>
+<tr>
+<td>Theme und Konfiguration</td>
+<td>zentrales Repository</td>
+</tr>
+<tr>
+<td>Zugangsdaten</td>
+<td>Passwort-Manager (nie im Repo)</td>
+</tr>
+<tr>
+<td>Datenbanken</td>
+<td>nur relevant, wenn eine Praxis echte Anwendungsdaten hat – Standard ist: keine</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Wiederherstellung üben:</strong> Ein Restore aus dem Repository plus Deployment muss dokumentiert und mindestens einmal durchgespielt sein.</p>
+<h2>5. Wartungsroutine (monatlich)</h2>
+<ul>
+<li class="check">☐ Formularversand je Praxis testen</li>
+<li class="check">☐ Sprechzeiten, Urlaub, Aktuelles aktuell?</li>
+<li class="check">☐ SSL gültig, Security-Header unverändert</li>
+<li class="check">☐ Verfügbarkeitsmonitor ohne Alarme</li>
+<li class="check">☐ Abhängigkeiten, Build-Tools und (im Factory-Modell) Container-Images aktualisiert</li>
+<li class="check">☐ Backups vorhanden und lesbar</li>
+</ul>
+<h2>6. Störungen und Notfälle</h2>
+<table>
+<thead>
+<tr>
+<th>Störung</th>
+<th>Sofortmaßnahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seite nicht erreichbar</td>
+<td>Hosting-Status prüfen, DNS prüfen, letzte Änderung zurückrollen</td>
+</tr>
+<tr>
+<td>Formular sendet nicht</td>
+<td>Ersatzweg kommunizieren (Telefon/E-Mail prominent), Handler prüfen</td>
+</tr>
+<tr>
+<td>Falsche Inhalte live</td>
+<td>Rollback auf den letzten Commit, Korrektur, erneut deployen</td>
+</tr>
+<tr>
+<td>Kompromittierung vermutet</td>
+<td>Seite offline nehmen, Zugänge rotieren, Ursache klären, dann wieder online</td>
+</tr>
+</tbody>
+</table>
+<p>Grundsatz: <strong>Rollback vor Ursachenforschung.</strong> Die Seite muss zuerst wieder korrekt stehen.</p>
+<h2>7. Checkliste</h2>
+<ul>
+<li class="check">☐ Domain und SSL live, HTTP→HTTPS 301 geprüft</li>
+<li class="check">☐ Alle Dateien inklusive versteckter Dateien deployed</li>
+<li class="check">☐ Formular sendet an das Praxis-Postfach</li>
+<li class="check">☐ Search Console, Bing und Google Business Profile verknüpft</li>
+<li class="check">☐ Backup aktiv, Monitoring und SSL-Warnung eingerichtet</li>
+</ul>
+</section>
+<section id="k15">
+<h2 class="chapter">Roadmap</h2>
+<p>Von der ersten Pilotpraxis zur betreuten Website-Flotte.</p>
+<h2>1. Phasen</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Ziel</th>
+<th>Voraussetzungen</th>
+<th>Erfolgskriterien</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0. Vorbereitung</strong></td>
+<td>Entscheidung A/B (Kapitel 11), Angebots- und Preisstruktur, Onboarding-Unterlagen</td>
+<td>Kalkulation (Kapitel 16), Mustertexte, Checklisten</td>
+<td>ein verkaufsfähiges Angebot inkl. Preisstufen</td>
+</tr>
+<tr>
+<td><strong>1. Pilot (1 Praxis)</strong></td>
+<td>eine reale Praxis vollständig umsetzen – mit dem bestehenden Modell A</td>
+<td>Pilotkunde mit Freigabebereitschaft</td>
+<td>live, Freigaben dokumentiert, Wartungsroutine läuft 30 Tage</td>
+</tr>
+<tr>
+<td><strong>2. Ausbau (3–10 Praxen)</strong></td>
+<td>Wiederholbarkeit beweisen: Onboarding, Freigabe, Go-Live ohne Sonderfälle</td>
+<td>standardisierte Unterlagen aus Phase 1</td>
+<td>Zeitaufwand je Praxis sinkt messbar</td>
+</tr>
+<tr>
+<td><strong>3. Automatisierung (10–25 Praxen)</strong></td>
+<td>Factory-Elemente einführen: zentrale Pipeline, Theme, automatische Prüfungen</td>
+<td>Entscheidung für Modell B, Theme-Portierung</td>
+<td>Rollout von Designänderungen in Stunden statt Tagen</td>
+</tr>
+<tr>
+<td><strong>4. Skalierung (25–50+ Praxen)</strong></td>
+<td>Betrieb industrialisieren: Monitoring, Reporting, klare SLAs</td>
+<td>Betriebskonzept, Ausfallsicherheit, Personal</td>
+<td>Betreuungsaufwand je Praxis sinkt weiter</td>
+</tr>
+</tbody>
+</table>
+<h2>2. Meilensteine und Entscheidungspunkte</h2>
+<table>
+<thead>
+<tr>
+<th>Meilenstein</th>
+<th>Entscheidung, die dort fällt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pilot live</td>
+<td>Passt der Änderungsprozess im Alltag (Reaktionszeit, Kontingent)?</td>
+</tr>
+<tr>
+<td>10 Praxen betreut</td>
+<td>Wechsel auf Factory-Architektur oder weiter mit Einzelhosting?</td>
+</tr>
+<tr>
+<td>Theme portiert</td>
+<td>Bleibt das Design zentral pflegbar?</td>
+</tr>
+<tr>
+<td>25 Praxen</td>
+<td>Einstieg in Automatisierung von Monitoring und Reporting?</td>
+</tr>
+<tr>
+<td>50 Praxen</td>
+<td>Eigenes Team, Partner oder Plattformbetrieb?</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Offene Fragen</h2>
+<ol>
+<li>Welche Reaktionszeiten und Änderungskontingente gelten je Paket?</li>
+<li>Wie wird die Ausfallsicherheit der zentralen Ebene sichergestellt (Redundanz, Zweitauslieferung)?</li>
+<li>Welche Reaktionszeiten werden vertraglich zugesagt (Wartung, Störung, Änderungen)?</li>
+<li>Bleibt der Hosting-Standort je Praxis frei wählbar oder wird er vereinheitlicht?</li>
+<li>Wie werden Praxen übernommen, die bereits eine Website haben (Migration, Redirects, Domainumzug)?</li>
+</ol>
+<h2>4. Abhängigkeiten</h2>
+<ul>
+<li><strong>Rechtstexte und HWG-Prüfung</strong> sind der häufigste Zeitfresser im Projekt – Unterlagen dafür müssen in Phase 0 fertig sein.</li>
+<li><strong>Foto-Termine</strong> bei der Praxis takten den Zeitplan; ohne Bilder kein Go-Live.</li>
+<li><strong>Der Domainumzug</strong> einer bestehenden WordPress-Seite braucht ein Redirect-Konzept, sonst gehen Rankings verloren.</li>
+</ul>
+<h2>5. Nächste Schritte</h2>
+<ol>
+<li>Pilotpraxis auswählen und Daten aufnehmen (Kapitel 12, Schritt 1)</li>
+<li>Angebot mit Preisstufen aus Kapitel 16 finalisieren</li>
+<li>Entscheidung zu Kapitel 11 dokumentieren (Modell A oder B, mit Begründung)</li>
+<li>Wartungs- und Störungsprozess (Kapitel 14) schriftlich fixieren</li>
+</ol>
+</section>
+<section id="k16">
+<h2 class="chapter">Kosten & Kalkulation</h2>
+<blockquote>
+<p><strong>Hinweis:</strong> Die Zahlen in diesem Kapitel sind <strong>Annahmen und Rechenbeispiele</strong>, keine Angebote. Vor dem Verkauf werden sie mit echten Preisen (Hosting, Infrastruktur, Arbeitszeit) gefüllt.</p>
+</blockquote>
+<h2>1. Kostenblöcke</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Bestandteile</th>
+<th>Charakter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Infrastruktur</strong></td>
+<td>Webhosting je Praxis (Modell A) <strong>oder</strong> VPS + Runner (Modell B), Domain, SSL, Backup</td>
+<td>monatlich, fix</td>
+</tr>
+<tr>
+<td><strong>Einrichtung</strong></td>
+<td>Datenerfassung, Konfiguration, Inhalte, Bilder, Rechtstexte, QA, Go-Live</td>
+<td>einmalig, Arbeitszeit</td>
+</tr>
+<tr>
+<td><strong>Betrieb</strong></td>
+<td>Wartung, Änderungen, Monitoring, Formular-Tests, Reporting</td>
+<td>monatlich, Arbeitszeit</td>
+</tr>
+<tr>
+<td><strong>Vertrieb</strong></td>
+<td>Akquise, Erstgespräch, Angebot, Nachfassen</td>
+<td>einmalig, Arbeitszeit</td>
+</tr>
+<tr>
+<td><strong>Werkzeuge</strong></td>
+<td>Design-/Bildbearbeitung, Monitoring, Passwort-Manager</td>
+<td>monatlich, fix (geteilt)</td>
+</tr>
+</tbody>
+</table>
+<h2>2. Annahmen für das Rechenbeispiel</h2>
+<table>
+<thead>
+<tr>
+<th>Größe</th>
+<th>Annahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Einrichtungsaufwand je Praxis</td>
+<td>1,5–3 Personentage (ohne Fototermin)</td>
+</tr>
+<tr>
+<td>Wartungsaufwand je Praxis</td>
+<td>30–60 Minuten pro Monat</td>
+</tr>
+<tr>
+<td>Änderungsaufwand</td>
+<td>15–30 Minuten pro Meldung</td>
+</tr>
+<tr>
+<td>Hosting je Praxis (Modell A)</td>
+<td>ab ca. 10 €/Monat</td>
+</tr>
+<tr>
+<td>Infrastruktur (Modell B)</td>
+<td>ein VPS + Runner für alle Praxen, mit echten Angeboten zu kalkulieren</td>
+</tr>
+<tr>
+<td>Domain</td>
+<td>ca. 10–15 €/Jahr (oft inklusive)</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Rechenbeispiel je Praxis (Modell A, Managed Service)</h2>
+<table>
+<thead>
+<tr>
+<th>Posten</th>
+<th>Betrag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hosting-Tarif</td>
+<td>ca. 10 €/Monat</td>
+</tr>
+<tr>
+<td>Wartung (45 Min/Monat, interner Stundensatz)</td>
+<td>abhängig vom Satz</td>
+</tr>
+<tr>
+<td>Kleinänderungen (Annahme 1–2 pro Monat)</td>
+<td>abhängig vom Satz</td>
+</tr>
+<tr>
+<td><strong>Deckungsbeitrag</strong></td>
+<td>Monatspauschale minus Infrastruktur minus Arbeitszeit</td>
+</tr>
+</tbody>
+</table>
+<p>Bei einer Pauschale von 49 €/Monat bleiben nach Abzug von ca. 10 € Hosting rund 39 € vor Arbeitszeit. Das ist die zentrale Kennzahl: <strong>Die Pauschale muss den tatsächlichen Betreuungsaufwand decken</strong> – deshalb ist die Wartungsroutine (Kapitel 14) so kurz wie möglich zu halten.</p>
+<h2>4. Preisstufen</h2>
+<table>
+<thead>
+<tr>
+<th>Stufe</th>
+<th>Leistung</th>
+<th>Preisspanne (Beispiel)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Basis</strong></td>
+<td>Website, Hosting, Domain, SSL, Wartung, Änderungen im Monatskontingent</td>
+<td>49–69 €/Monat</td>
+</tr>
+<tr>
+<td><strong>Komfort</strong></td>
+<td>zusätzlich erweitertes Änderungskontingent, priorisierte Umsetzung, kürzere Reaktionszeit</td>
+<td>79–99 €/Monat</td>
+</tr>
+<tr>
+<td><strong>Premium</strong></td>
+<td>zusätzlich Redaktionsservice, SEO-Betreuung, Reporting, kürzere Reaktionszeit</td>
+<td>ab 129 €/Monat</td>
+</tr>
+</tbody>
+</table>
+<p>Dazu eine <strong>einmalige Setup-Gebühr</strong> (Onboarding, Texte, Bilder, Rechtstexte, Go-Live), die den Einrichtungsaufwand aus Abschnitt 2 abbildet.</p>
+<h2>5. Skaleneffekte</h2>
+<ul>
+<li><strong>Modell A skaliert linear:</strong> jede Praxis bringt eigenen Hosting-Aufwand und eigene Wartungszeit mit.</li>
+<li><strong>Modell B skaliert unterproportional:</strong> Theme-Änderungen und Pipeline-Optimierungen wirken für alle Praxen gleichzeitig. Fixkosten (VPS, Runner) verteilen sich auf immer mehr Kunden.</li>
+<li><strong>Der eigentliche Hebel ist die Wartungszeit</strong>, nicht das Hosting: Wenn die Routine je Praxis von 60 auf 20 Minuten sinkt, verdoppelt sich der Deckungsbeitrag, ohne dass ein Kunde mehr zahlt.</li>
+</ul>
+<h2>6. Risiken</h2>
+<table>
+<thead>
+<tr>
+<th>Risiko</th>
+<th>Wirkung</th>
+<th>Gegenmaßnahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Baukasten-Anbieter (ab wenigen Euro/Monat)</td>
+<td>Preisdruck nach unten</td>
+<td>Nutzen argumentieren: Rechtssicherheit, Betreuung, Sichtbarkeit – nicht „nur eine Website"</td>
+</tr>
+<tr>
+<td>Preisverfall durch KI-Websites</td>
+<td>Einstiegsangebote werden billiger</td>
+<td>Fokus auf Betreuung, Haftung und Beratung statt auf reine Erstellung</td>
+</tr>
+<tr>
+<td>Zu niedrige Pauschale bei steigender Änderungsfrequenz</td>
+<td>Marge kippt</td>
+<td>Änderungskontingent vertraglich definieren, Mehrbedarf bepreisen</td>
+</tr>
+<tr>
+<td>Klumpenrisiko (Modell B)</td>
+<td>ein Ausfall trifft alle Praxen</td>
+<td>Redundanz, zweites Auslieferungsziel, dokumentierter Notfallplan</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="k17">
+<h2 class="chapter">Vertrieb & Einwände</h2>
+<h2>1. Zielkunden</h2>
+<table>
+<thead>
+<tr>
+<th>Profil</th>
+<th>Merkmale</th>
+<th>Eignung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Einzelpraxis Hausarzt</strong></td>
+<td>seltene Änderungen, wenig IT-Affinität, Preisfokus</td>
+<td>ideal für Managed Service (Modell A)</td>
+</tr>
+<tr>
+<td><strong>Fachpraxis</strong> (Orthopädie, Dermatologie, Gynäkologie)</td>
+<td>mehr Selbstzahler-Leistungen, höherer Anspruch an Außendarstellung</td>
+<td>gute Marge, oft Interesse an Schwerpunktseiten</td>
+</tr>
+<tr>
+<td><strong>Gemeinschaftspraxis / MVZ</strong></td>
+<td>mehrere Ärzte, eigene Verwaltung, höhere Budgets</td>
+<td>mehr Abstimmung, klare Ansprechpartner und Reaktionszeiten gefragt</td>
+</tr>
+<tr>
+<td><strong>Neugründung / Praxisübernahme</strong></td>
+<td>Website ist Pflicht, Entscheidung fällt schnell</td>
+<td>kurze Verkaufszyklen, klarer Bedarf</td>
+</tr>
+<tr>
+<td><strong>Praxis mit veralteter WordPress-Seite</strong></td>
+<td>leidet unter Wartung, langsamer Seite, DSGVO-Fragen</td>
+<td>stärkstes Argument für den Wechsel</td>
+</tr>
+</tbody>
+</table>
+<h2>2. Kaufauslöser</h2>
+<ul>
+<li>Praxisgründung oder Übernahme (Website ist Teil der Pflichtausstattung)</li>
+<li>Abmahnung oder Unsicherheit wegen DSGVO, Impressum, Google Fonts</li>
+<li>Website ist langsam oder auf dem Smartphone unbrauchbar</li>
+<li>Ruhestand und Nachfolge (Neustart der Außendarstellung)</li>
+<li>Ärger mit der bestehenden Agentur: lange Wartezeiten, hohe Rechnungen, keine Erreichbarkeit</li>
+<li>Neue Leistung, die beworben werden soll (ohne anpreisend zu werden)</li>
+</ul>
+<h2>3. Kanäle</h2>
+<table>
+<thead>
+<tr>
+<th>Kanal</th>
+<th>Vorgehen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Empfehlungen</strong></td>
+<td>bestehende Praxiskunden als Referenz, Ärztenetzwerke, Kollegenkreise</td>
+</tr>
+<tr>
+<td><strong>Regionale Nähe</strong></td>
+<td>direkte Ansprache im Umfeld, Qualität der Demo überzeugt schneller als jede Präsentation</td>
+</tr>
+<tr>
+<td><strong>Steuerberater und Praxismanager</strong></td>
+<td>Multiplikatoren, die Gründungen begleiten</td>
+</tr>
+<tr>
+<td><strong>Kammer-/KV-Umfeld und regionale Netzwerke</strong></td>
+<td>Sichtbarkeit bei Fortbildungen und Stammtischen</td>
+</tr>
+<tr>
+<td><strong>Website als Referenz</strong></td>
+<td>eine schnelle, rechtssichere Praxis-Website ist das beste Verkaufsargument</td>
+</tr>
+<tr>
+<td><strong>Portale und Verzeichnisse</strong></td>
+<td>Google Business Profile, Jameda: Sichtbarkeit dort, wo Patienten suchen</td>
+</tr>
+</tbody>
+</table>
+<h2>4. Positionierung</h2>
+<blockquote>
+<p>„Die unhackbar schnelle Praxis-Website – rechtssicher in Deutschland gehostet."</p>
+</blockquote>
+<p>Kernbotschaft: <strong>keine Wartungsverträge für Sicherheitsupdates, kein Plugin-Risiko, keine Abmahnfalle</strong> – dafür eine Seite, die auf dem Smartphone in unter einer Sekunde steht und deren Inhalte betreut werden.</p>
+<h2>5. Einwandbehandlung</h2>
+<table>
+<thead>
+<tr>
+<th>Einwand</th>
+<th>Antwort</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>„Wir haben schon eine Website."</td>
+<td>Wie schnell lädt sie auf dem Smartphone? Sind Impressum, Datenschutz und Barrierefreiheitserklärung aktuell? Wir vergleichen kostenlos und zeigen die Lücken.</td>
+</tr>
+<tr>
+<td>„Das ist uns zu teuer."</td>
+<td>Die Pauschale enthält Hosting, Betreuung, Sicherheit und Rechtspflege – bei WordPress kostet derselbe Aufwand Wartungsvertrag plus Ausfallrisiko.</td>
+</tr>
+<tr>
+<td>„Wir können das selbst mit einem Baukasten."</td>
+<td>Können Sie – aber Impressumspflichten, HWG-Grenzen und Barrierefreiheit bleiben Ihre Verantwortung. Wir liefern die Rechtssicherheit mit.</td>
+</tr>
+<tr>
+<td>„Wir haben keine Zeit für ein Projekt."</td>
+<td>Der Aufwand für die Praxis ist ein Termin (Daten und Fotos) plus eine Freigaberunde. Den Rest übernehmen wir.</td>
+</tr>
+<tr>
+<td>„Wir ändern nie etwas."</td>
+<td>Dann ist genau das der günstigste Fall: wenig Aufwand, volle Betreuung. Änderungen sind später jederzeit möglich.</td>
+</tr>
+<tr>
+<td>„Was ist mit unserer Praxissoftware / Terminbuchung?"</td>
+<td>Wir binden an, was Sie nutzen (Doctolib, medatixx, Jameda) – oder verlinken nur.</td>
+</tr>
+<tr>
+<td>„Wer haftet, wenn etwas falsch ist?"</td>
+<td>Inhalte und Rechtstexte verantwortet die Praxis, Technik und Betrieb verantworten wir – schriftlich festgehalten.</td>
+</tr>
+<tr>
+<td>„Können wir das später selbst pflegen?"</td>
+<td>Bewusst nicht: Sie melden Änderungen formlos, wir setzen sie um. Das spart Ihnen Einarbeitung und Haftungsrisiko – und die Texte bleiben geprüft.</td>
+</tr>
+</tbody>
+</table>
+<h2>6. Abgrenzung</h2>
+<table>
+<thead>
+<tr>
+<th>Wettbewerber</th>
+<th>Deren Vorteil</th>
+<th>Unser Vorteil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Baukasten (Jimdo, IONOS, Wix)</td>
+<td>günstig, sofort verfügbar</td>
+<td>Rechtssicherheit, Betreuung, Sichtbarkeit, keine Eigenverantwortung für Rechtstexte</td>
+</tr>
+<tr>
+<td>Klassische Agentur</td>
+<td>Designvielfalt, Kampagnen</td>
+<td>spezialisiert auf Praxen, HWG- und BFSG-Kenntnis, feste monatliche Kosten</td>
+</tr>
+<tr>
+<td>WordPress-Freelancer</td>
+<td>individuell, vertraut</td>
+<td>kein Plugin-Risiko, keine Update-Abhängigkeit, deutlich bessere Ladezeiten</td>
+</tr>
+<tr>
+<td>Doctolib-Website</td>
+<td>aus einem System</td>
+<td>freie Gestaltung, kein Plattform-Lock-in, Terminbuchung bleibt frei wählbar</td>
+</tr>
+<tr>
+<td>KI-Website-Generatoren</td>
+<td>sehr günstig, sehr schnell</td>
+<td>geprüfte Inhalte, HWG-konforme Texte, echter Ansprechpartner, laufende Betreuung</td>
+</tr>
+</tbody>
+</table>
+<h2>7. Nächste Schritte im Vertrieb</h2>
+<ol>
+<li>Demo-Praxis-Website als Verkaufsinstrument fertigstellen</li>
+<li>Referenz aus der Pilotphase (Kapitel 15) einholen</li>
+<li>Angebotsunterlage mit den Preisstufen aus Kapitel 16 erstellen</li>
+<li>Vergleichscheck als Einstiegsangebot: „Wir prüfen Ihre Praxis-Website kostenlos auf Ladezeit, Recht und Sichtbarkeit."</li>
+</ol>
 </section>
 
 <footer class="doc-foot">
