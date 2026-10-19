@@ -38,23 +38,22 @@ Statische Website (HTML/CSS/JS) ohne Redaktionssystem und ohne Datenbank, zentra
 
 Eine Praxis ist damit kein eigenes Hosting-Paket mehr, sondern ein Repository plus Domain auf einer gemeinsamen, zentral betriebenen Plattform.
 
-## 6. Wirtschaftlichkeit
+## 6. Kosten je 10 Praxen
 
-> **Alle Zahlen sind Annahmen** und vor dem Verkauf mit echten Werten (Hosting, interner Stundensatz, Aufwände) zu ersetzen.
+> Grobe Schätzung, keine Angebote. Coolify, GitLab und Hugo sind Open Source — es gibt **keine Lizenzkosten**.
 
-| Größe | Annahme |
+| Posten | Größenordnung |
 | --- | --- |
-| Einrichtung je Praxis | 1,5–3 Personentage |
-| Wartung je Praxis | 30–60 Minuten pro Monat |
-| Änderungen | 1–2 Meldungen pro Monat, 15–30 Minuten je Meldung |
-| VPS (Terra Cloud) inkl. Backup | Größenordnung 20–60 €/Monat — mit echtem Angebot zu ersetzen |
-| Domains je Praxis | ca. 10–15 €/Jahr (in der Pauschale enthalten) |
+| VPS (Terra Cloud) inkl. Backup | ca. 30–80 €/Monat |
+| Domains (10 × ca. 12 €/Jahr) | ca. 10 €/Monat |
+| KI-Nutzung (Claude, für Texte und Pflege) | ca. 20–120 €/Monat |
+| **Sachkosten gesamt** | **ca. 60–210 €/Monat** |
+| Arbeitszeit laufend | 8–15 Stunden/Monat |
+| Arbeitszeit einmalig (Aufbau plus Einrichtung) | ca. 25–45 Personentage |
 
-**Preisstufen:** einmalige Setup-Gebühr (deckt den Einrichtungsaufwand) plus Monatspauschale — **49 € (Basis), 89 € (Komfort), ab 129 € (Premium)** inklusive Hosting, Domain, SSL und Betreuung.
+Das sind **6–21 € Sachkosten pro Praxis und Monat**. Der eigentliche Kostentreiber ist die Arbeitszeit, nicht die Technik — deshalb zählt jede Minute, die die Routine je Praxis kürzer wird (Vorlagen, Standardisierung, KI-Unterstützung).
 
-**Deckungsbeitrag Basis (49 €/Monat):** 49 € minus rund 4 € Infrastrukturanteil (Annahme: 40 €/Monat VPS, verteilt auf 10 Praxen) = **ca. 45 € vor Arbeitszeit**. Bei 45 Minuten Wartung plus rund 1,5 Änderungen (75 Minuten gesamt) liegt der **Break-even bei etwa 36 € internem Stundensatz**. Die Basisstufe trägt sich also, solange die Wartungsroutine schlank bleibt — oder der Preis steigt.
-
-**Skaleneffekt:** Die Infrastruktur kostet unabhängig von der Zahl der Praxen dasselbe; Theme-Änderungen und Pipeline-Optimierungen wirken für alle Praxen gleichzeitig. Der eigentliche Hebel ist die Wartungszeit: von 60 auf 20 Minuten je Praxis verdoppelt sich der Deckungsbeitrag, ohne dass ein Kunde mehr zahlt.
+Auf der Erlösseite stehen bei 10 Praxen 490–990 €/Monat (49–99 € je Praxis) plus die einmalige Setup-Gebühr.
 
 ## 7. Fahrplan
 

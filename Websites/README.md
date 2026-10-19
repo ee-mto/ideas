@@ -15,7 +15,7 @@ Der gewählte Ansatz trifft den Nerv des Marktes: Arztpraxen leiden unter schwer
 | Dokument | Markdown | HTML |
 | --- | --- | --- |
 | **Management Summary** (Kurzfassung für die Geschäftsführung) | [00-MANAGEMENT-SUMMARY.md](md/00-MANAGEMENT-SUMMARY.md) | [ansehen](html/summary.html) |
-| **Präsentationsdeck** (12 Folien zum Durchklicken) | – | [öffnen](html/deck.html) |
+| **Präsentationsdeck** (11 Folien zum Durchklicken) | – | [öffnen](html/deck.html) |
 
 ## Inhaltsverzeichnis
 
