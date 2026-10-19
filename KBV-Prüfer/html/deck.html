@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KBV-Prüfer — Präsentation</title>
+<style>
+:root{
+  --gold:#c9a227; --gold-soft:#e8cf7a; --ink:#f4f1ea; --muted:#9aa0a6;
+  --bg:#0b0b0d; --panel:#141419; --line:#2a2a31; --good:#7ac77a;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  padding:18px;
+}
+#stage{
+  position:relative;width:100%;max-width:1280px;aspect-ratio:16/9;
+  background:linear-gradient(160deg,#141419 0%,#0e0e11 60%,#131317 100%);
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  box-shadow:0 24px 70px rgba(0,0,0,.6);font-size:16px;
+}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;
+  padding:4.2em 5em;gap:.6em}
+.slide.active{display:flex}
+.kicker{font-size:1em;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700}
+h1{font-size:3.1em;line-height:1.15;margin:.25em 0 0;font-weight:700;letter-spacing:-.01em}
+h2{font-size:2.1em;line-height:1.2;margin:0 0 .5em;font-weight:700;letter-spacing:-.01em}
+h2 .num{color:var(--gold);margin-right:.5em}
+p,li{font-size:1.12em;line-height:1.55;color:#dcd9d2;margin:0}
+ul{margin:0;padding-left:1.4em}
+li{margin:.42em 0}
+.sub{color:var(--muted);font-size:1.15em;margin-top:.4em}
+.rule{width:4.5em;height:4px;background:var(--gold);border-radius:2px;margin:.9em 0 .2em}
+.cols{display:flex;gap:1.4em;margin-top:.4em}
+.card{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.1em 1.2em}
+.card h3{margin:0 0 .35em;font-size:1.15em;color:var(--gold);font-weight:650}
+.card p{font-size:1em;color:#c9c6bf}
+table{width:100%;border-collapse:collapse;font-size:1.02em;margin-top:.5em}
+th,td{border-bottom:1px solid var(--line);padding:.5em .7em;text-align:left;vertical-align:top}
+th{color:var(--gold);font-weight:650}
+tr:last-child td{border-bottom:none}
+.hl{color:var(--gold-soft);font-weight:650}
+.big{font-size:1.9em;font-weight:700;color:var(--gold)}
+.note{font-size:.95em;color:var(--muted);margin-top:.7em}
+#bar-wrap{width:100%;max-width:1280px;height:3px;background:#1d1d22;border-radius:2px;overflow:hidden}
+#bar{height:100%;width:8%;background:var(--gold);transition:width .25s ease}
+#ctrl{display:flex;align-items:center;gap:14px;font-size:14px;color:var(--muted)}
+button{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:8px;
+  padding:8px 16px;font-size:14px;cursor:pointer}
+button:hover{border-color:var(--gold);color:var(--gold)}
+#hint{position:fixed;bottom:8px;right:12px;font-size:12px;color:#4c4c55}
+@media print{
+  @page{size:A4 landscape;margin:8mm}
+  html,body{background:#fff;color:#16181d;height:auto;display:block;padding:0}
+  #bar-wrap,#ctrl,#hint{display:none}
+  #stage{transform:none;max-width:none;width:100%;aspect-ratio:auto;border:none;box-shadow:none;
+    background:#fff;font-size:14px;border-radius:0}
+  .slide{display:flex;position:static;page-break-after:always;height:186mm;padding:0;
+    background:#fff;color:#16181d}
+  .slide:last-child{page-break-after:auto}
+  h1,h2{color:#16181d}
+  h2 .num,.kicker{color:#a8861d}
+  p,li,.card p{color:#3a3f47}
+  .card,.big,th,.hl{color:#16181d}
+  .card{background:#faf6ea;border-color:#e6e3da}
+  .card h3,th,.big,.hl{color:#8a6d12}
+  table{font-size:12px}
+  th,td{border-color:#e6e3da}
+  .note{color:#6b7280}
+}
+</style>
+</head>
+<body>
+
+<div id="stage">
+
+<section class="slide active">
+  <span class="kicker">engel&amp;engel gmbh</span>
+  <h1>KBV-Prüfer</h1>
+  <div class="rule"></div>
+  <p class="sub">IT-Sicherheits-Audits für Arztpraxen nach § 390 SGB V — prüfen, dokumentieren, nachweisen.</p>
+  <p class="note">Vorlage für die Geschäftsführung · Oktober 2026</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">01</span>Ausgangslage</h2>
+  <ul>
+    <li>Die <strong>IT-Sicherheitsrichtlinie nach § 390 SGB V</strong> ist seit 01.04.2025 in Kraft, die Zusatzanforderungen gelten seit <strong>01.10.2025</strong>.</li>
+    <li>Sie ist für jede Praxis <strong>verbindlich</strong> — auch ohne Anbindung an die Telematikinfrastruktur.</li>
+    <li>Die <strong>Verantwortung liegt beim Praxisinhaber</strong>; er darf die Umsetzung delegieren, aber nicht abgeben.</li>
+    <li>Es gibt <strong>keine Praxis-Audits</strong> durch die KBV und keine Nachweispflicht gegenüber der KV — im Schadensfall zählt trotzdem, was dokumentiert ist.</li>
+  </ul>
+  <p class="note">Genau diese Lücke füllen wir: prüfen, bewerten, dokumentieren, nachverfolgen.</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">02</span>Was wir anbieten</h2>
+  <div class="cols">
+    <div class="card"><h3>Prüfung</h3><p>KBV-Haftungsschutz-Check nach allen geltenden Anlagen — Pauschalpreis, mit SLV rabattiert.</p></div>
+    <div class="card"><h3>Dokumentation</h3><p>Auditbericht, Maßnahmenplan mit Ampelsystem, Netzplan, IT-Sicherheitsordner, Prüf-Siegel.</p></div>
+    <div class="card"><h3>Betreuung</h3><p>Service-Level-Vertrag mit laufender Überwachung, Add-ons und festen Reaktionszeiten.</p></div>
+  </div>
+  <p class="note">Wir verkaufen nicht „Sicherheit“, sondern Nachweis- und Dokumentationssicherheit.</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">03</span>Der Rechtsrahmen</h2>
+  <table>
+    <tr><th>Praxisgröße</th><th>Kriterium</th><th>Geltende Anlagen</th></tr>
+    <tr><td>Praxis</td><td>bis 5 Personen mit Datenverarbeitung</td><td>Anlage 1 (50) + Anlage 5 (9)</td></tr>
+    <tr><td>Mittlere Praxis</td><td>6 bis 20 Personen</td><td>+ Anlage 2 (10)</td></tr>
+    <tr><td>Großpraxis / MVZ</td><td>über 20 Personen oder erheblicher Umfang</td><td>+ Anlage 3 (17)</td></tr>
+    <tr><td>Mit Großgeräten</td><td>CT, MRT, PET, Linearbeschleuniger</td><td>+ Anlage 4 (6)</td></tr>
+  </table>
+  <p class="note">Anlage 5 (TI-Komponenten) gilt für jede Praxis — die Anlagen sind kumulativ zu erfüllen.</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">04</span>Muss oder Soll?</h2>
+  <table>
+    <tr><th>Anforderung</th><th>Anlage</th><th>Verbindlichkeit</th></tr>
+    <tr><td>Firewall am Netzübergang ins Internet</td><td>A1 Nr. 11</td><td class="hl">Muss</td></tr>
+    <tr><td>Netzplan und Dokumentation des Netzes</td><td>A1 Nr. 12</td><td class="hl">Muss</td></tr>
+    <tr><td>Datensicherung mit Intervallen und Verantwortlichen</td><td>A1 Nr. 21–24</td><td class="hl">Muss</td></tr>
+    <tr><td>Systeme ohne Sicherheitsupdates ausmustern oder separieren</td><td>A1 Nr. 17</td><td class="hl">Muss</td></tr>
+    <tr><td>Einweisung und Sensibilisierung des Teams</td><td>A1 Nr. 9</td><td class="hl">Muss</td></tr>
+    <tr><td>Test der Wiederherstellbarkeit</td><td>A1 Nr. 25</td><td>Soll</td></tr>
+    <tr><td>Netzsegmentierung</td><td>A3 Nr. 2 / A4 Nr. 6</td><td>Soll</td></tr>
+  </table>
+  <p class="note">Die Trennung ist unser Verkaufsvorteil: wir behaupten kein Muss, wo nur ein Soll steht.</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">05</span>Der Prüfprozess</h2>
+  <table>
+    <tr><th>Phase</th><th>Inhalt</th><th>Aufwand</th></tr>
+    <tr><td>1. Vorbereitung</td><td>Praxistyp, Anlagen, IT-Liste, Zugänge</td><td>1–2 Wochen vorab</td></tr>
+    <tr><td>2. Fernprüfung</td><td>Monitoring und Skripte: Patch-Stand, EoL, Backup, Rechte, Firewall-Regeln</td><td>0,5–1 Tag</td></tr>
+    <tr><td>3. Vor-Ort-Termin</td><td>Sichtprüfung, Gespräche, Unterlagen</td><td>0,5–2 Tage</td></tr>
+    <tr><td>4. Auswertung</td><td>Bewertung je Anforderung, Ampel, Priorisierung</td><td>0,5–1 Tag</td></tr>
+    <tr><td>5. Abschluss</td><td>Ergebnis vorstellen, Entscheidungen einholen</td><td>1–2 Stunden</td></tr>
+    <tr><td>6. Dokumentation</td><td>Bericht, Ordner, Zertifikat</td><td>0,5–1 Tag</td></tr>
+  </table>
+</section>
+
+<section class="slide">
+  <h2><span class="num">06</span>Warum das kalkulierbar ist</h2>
+  <div class="cols">
+    <div class="card"><h3>Fernprüfung</h3><p>Alles, was Systeme über sich selbst auskunft: Patch-Stand, End-of-Life-Listen, Backup-Protokolle, Berechtigungen, Firewall-Regeln, E-Mail-Konfiguration, TI-Updates.</p></div>
+    <div class="card"><h3>Vor Ort</h3><p>Nur was Menschen, Räume und Geräte betrifft: Arbeitsplätze, Serverraum, Verkabelung, Medizingeräte, TI-Konnektor, Gespräche, Unterlagen.</p></div>
+  </div>
+  <p class="note">Diese Trennung ist der Grund, warum ein Festpreis funktioniert — und sie ist der Standardprozess, den wir einmal aufbauen.</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">07</span>Das Portfolio in vier Ebenen</h2>
+  <div class="cols">
+    <div class="card"><h3>1. Prüfung</h3><p>Pauschalpreis je Paketgröße, mit SLV rabattiert.</p></div>
+    <div class="card"><h3>2. Managed Services</h3><p>Vier Add-ons als laufende Leistung.</p></div>
+    <div class="card"><h3>3. Dokumentation</h3><p>IT-Sicherheitsordner und Prüf-Siegel.</p></div>
+    <div class="card"><h3>4. Folgeprojekte</h3><p>Behebung der gefundenen Mängel — der Ertrag nach der Prüfung.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2><span class="num">08</span>Die vier Add-ons</h2>
+  <table>
+    <tr><th>Modul</th><th>Leistung</th><th>Nachweis für die Praxis</th></tr>
+    <tr><td>Awareness</td><td>Jahres-Briefing für MFAs und Ärzte</td><td>Teilnahmezertifikat im QM-Ordner</td></tr>
+    <tr><td>Backup</td><td>Betrieb plus quartalsweiser Restore-Test</td><td>Prüfprotokoll je Quartal</td></tr>
+    <tr><td>EoL-Reporting</td><td>Inventarisierung, quartalsweiser Bericht</td><td>PDF-Bericht mit Support-Enden</td></tr>
+    <tr><td>Netzwerk</td><td>Managed Firewall und VLAN-Trennung</td><td>Netzplan und Konfigurationsdoku</td></tr>
+  </table>
+  <p class="note">Bewusst als Empfehlung positioniert, wo die Richtlinie nur Soll verlangt (z. B. Restore-Test, Segmentierung).</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">09</span>Zertifizierung</h2>
+  <div class="cols">
+    <div class="card"><h3>Person, nicht Firma</h3><p>Zertifiziert wird der Mitarbeiter — mindestens zwei Personen einplanen.</p></div>
+    <div class="card"><h3>Aufwand</h3><p>580 € Gebühr, 50 Fragen in 90 Minuten, bestanden ab 66 %, Laufzeit 3 Jahre.</p></div>
+    <div class="card"><h3>Danach</h3><p>280 € Rezertifizierung, 48 Stunden Weiterbildung in drei Jahren.</p></div>
+  </div>
+  <p class="note">Freiwillig — aber der günstigste Vertrauensbeweis: Eintrag im KBV-Verzeichnis zertifizierter Dienstleister.</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">10</span>Kosten je 10 Praxen</h2>
+  <table>
+    <tr><th>Posten</th><th>Größenordnung</th><th>Art</th></tr>
+    <tr><td>Werkzeuge (Monitoring, Inventarisierung, Doku)</td><td>ca. 50–200 €/Monat</td><td>laufend</td></tr>
+    <tr><td>KI-Unterstützung (Claude, Berichte und Auswertungen)</td><td>ca. 20–120 €/Monat</td><td>laufend</td></tr>
+    <tr><td><span class="hl">Sachkosten gesamt</span></td><td class="big">ca. 70–320 €/Monat</td><td>laufend</td></tr>
+    <tr><td>Arbeitszeit laufend (10 × 20–40 h/Jahr)</td><td>17–33 Stunden/Monat</td><td>laufend</td></tr>
+    <tr><td>Arbeitszeit einmalig (Prozess, Vorlagen, Zertifizierung)</td><td>ca. 20–40 Personentage</td><td>einmalig</td></tr>
+  </table>
+  <p class="note">Erlösseite: Prüfung 490–1.290 € je Praxis (Paket L nach Aufwand), SLV-Pauschale und Add-ons — der Kostentreiber ist auch hier die Arbeitszeit, nicht die Technik.</p>
+</section>
+
+<section class="slide">
+  <h2><span class="num">11</span>Was wir vorschlagen</h2>
+  <ul>
+    <li><strong>Zertifizierung beantragen</strong> — zwei Personen, Nachweise der letzten sechs Jahre beglaubigen lassen.</li>
+    <li><strong>Auditstandard aufsetzen</strong> — Fernprüfung per Skript, Sichtprüfung, Berichtsvorlage mit Ampelsystem.</li>
+    <li><strong>Pilotpraxis prüfen</strong> und den Aufwand messen, danach Pauschalpreise und SLV-Rabatt festlegen.</li>
+    <li><strong>Bestandskunden zuerst</strong> ansprechen — dieselben Praxen wie im Website-Geschäft.</li>
+    <li><strong>Add-ons nach Bedarf</strong> aus den Prüfungsergebnissen verkaufen, nicht im Paket vorab.</li>
+  </ul>
+  <p class="note">Diskussion und Freigabe.</p>
+</section>
+
+</div>
+
+<div id="bar-wrap"><div id="bar"></div></div>
+<div id="ctrl">
+  <button id="prev">Zurück</button>
+  <span id="counter">1 / 12</span>
+  <button id="next">Weiter</button>
+  <button id="full">Vollbild</button>
+</div>
+<div id="hint">Pfeiltasten · Leertaste · F für Vollbild · Strg+P für PDF</div>
+
+<script>
+var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+var i = 0;
+function show(n){
+  if (n < 0) n = 0;
+  if (n > slides.length - 1) n = slides.length - 1;
+  i = n;
+  slides.forEach(function(s, k){ s.classList.toggle('active', k === i); });
+  document.getElementById('counter').textContent = (i + 1) + ' / ' + slides.length;
+  document.getElementById('bar').style.width = ((i + 1) / slides.length * 100) + '%';
+}
+function fit(){
+  var st = document.getElementById('stage');
+  st.style.fontSize = (st.clientWidth / 80) + 'px';
+}
+document.getElementById('prev').onclick = function(){ show(i - 1); };
+document.getElementById('next').onclick = function(){ show(i + 1); };
+document.getElementById('full').onclick = function(){
+  if (document.fullscreenElement) { document.exitFullscreen(); }
+  else { document.documentElement.requestFullscreen(); }
+};
+document.addEventListener('keydown', function(e){
+  var k = e.key;
+  if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || k === ' ') { e.preventDefault(); show(i + 1); }
+  else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp') { e.preventDefault(); show(i - 1); }
+  else if (k === 'Home') { show(0); }
+  else if (k === 'End') { show(slides.length - 1); }
+  else if (k === 'f' || k === 'F') { document.getElementById('full').click(); }
+});
+window.addEventListener('resize', fit);
+fit(); show(0);
+</script>
+</body>
+</html>

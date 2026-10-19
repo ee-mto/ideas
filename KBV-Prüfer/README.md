@@ -9,6 +9,12 @@
 
 Der Ansatz mit dem im Service-Level-Vertrag (SLV) rabattierten Pauschalpreis der Prüfung und dem gestaffelten Festpreis für Nicht-Vertragskunden ist ein starkes Fundament: Er belohnt Bestandskunden, schafft einen konkreten Anreiz für den Abschluss eines SLV und senkt die Einstiegshürde für Neukunden. Um daraus ein vollständiges Portfolio nach § 390 SGB V zu bauen, wird das Modell auf vier Ebenen erweitert. Ein KBV-Zertifikat nach § 390 SGB V bildet den Nachweis (Kapitel 11).
 
+## Für die Vorlage beim Chef
+
+| Dokument | Markdown | HTML |
+| --- | --- | --- |
+| **Präsentationsdeck** (12 Folien zum Durchklicken) | – | [öffnen](html/deck.html) |
+
 ## Inhaltsverzeichnis
 
 ### I. Modell & Markt
@@ -63,5 +69,5 @@ Die offene Frage aus der Vorlage — was per Fernwartung geprüft wird und was v
 | Ordner | Inhalt |
 | --- | --- |
 | [`md/`](md/) | Quelltexte — ein Dokument je Kapitel |
-| [`html/`](html/index.html) | `index.html` — Gesamtdokument für Browser und PDF-Export |
+| [`html/`](html/index.html) | `index.html` — Gesamtdokument; `deck.html` — Präsentation für die Geschäftsführung |
 | [`tools/`](tools/) | `convert_to_html.py` — erzeugt das HTML aus den Markdown-Quellen |
